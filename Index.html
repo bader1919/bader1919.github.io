@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bader Abdulrahim - Analysis Projects</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <style>
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                        url('https://i.ibb.co/5G7fR5x/freepik-edit-5.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            margin-top: 56px;
+        }
+        .page-section {
+            min-height: calc(100vh - 56px);
+            padding-top: 56px;
+            display: none;
+        }
+        .page-section.active {
+            display: block;
+        }
+        .approach-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .approach-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .approach-list li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #0d6efd;
+        }
+        .data-info {
+            background-color: #e9ecef;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .card-img-top {
+            height: 250px;
+            object-fit: cover;
+            object-position: center;
+        }
+        .section-content {
+            margin-top: 20px;
+        }
+        .schema-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            padding: 20px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90vh;
+        }
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .close {
+            position: absolute;
+            right: 35px;
+            top: 15px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .nav-link {
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover {
+            transform: translateY(-2px);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            padding: 20px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90vh;
+        }
+        .close {
+            position: absolute;
+            right: 35px;
+            top: 15px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">Bader Abdulrahim</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home" onclick="showPage('home')">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#smart-home" onclick="showPage('smart-home')">Smart Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#exports" onclick="showPage('exports')">Exports</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hikvision" onclick="showPage('hikvision')">Hikvision</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <section id="home" class="page-section active">
+        <div class="hero-section animate__animated animate__fadeIn">
+            <div class="container text-center">
+                <h1 class="display-4 mb-4">Capstone Project: Analytics Solutions</h1>
+                <h1 class="display-4 mb-4">(Lightning 
+                    Talk #1)</h1>
+                <p class="lead mb-4">Bader Abdulrahim - Dec 2024</p>
+            </div>
+        </div>
+        
+        <div class="container py-5">
+            <div class="row g-4">
+                <!-- Project Cards -->
+                <div class="col-lg-4 animate__animated animate__fadeInLeft">
+                    <div class="card h-100 shadow">
+                        <img src="https://i.ibb.co/4PwnhXN/representation-user-experience-interface-design.jpg" class="card-img-top" alt="Smart Home">
+                        <div class="card-body">
+                            <h5 class="card-title">Smart Home Analysis</h5>
+                            <p class="card-text">Optimize Home Assistant setup for better automation and control.</p>
+                            <button class="btn btn-primary" onclick="showPage('smart-home')">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 animate__animated animate__fadeInUp">
+                    <div class="card h-100 shadow">
+                        <img src="https://i.ibb.co/0fL62Zq/freepik-edit-Candid-image-photography-natural-textures-highly-r-9.jpg" class="card-img-top" alt="Exports">
+                        <div class="card-body">
+                            <h5 class="card-title">Bahrain Export Analysis</h5>
+                            <p class="card-text">Comprehensive analysis of export data from 2020-2024.</p>
+                            <button class="btn btn-primary" onclick="showPage('exports')">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 animate__animated animate__fadeInRight">
+                    <div class="card h-100 shadow">
+                        <img src="https://i.ibb.co/02G3jnW/i-Stock-1446045839.jpg" class="card-img-top" alt="Security">
+                        <div class="card-body">
+                            <h5 class="card-title">Hikvision NVR Analysis</h5>
+                            <p class="card-text">Security monitoring system optimization.</p>
+                            <button class="btn btn-primary" onclick="showPage('hikvision')">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Smart Home Page -->
+    <section id="smart-home" class="page-section">
+        <div class="container py-5">
+            <h2 class="mb-4 animate__animated animate__fadeInDown">
+                <i class="fas fa-home me-2"></i>Smart Home Analysis
+            </h2>
+            
+            <div class="row">
+                <!-- Main Content -->
+                <div class="col-lg-8 animate__animated animate__fadeInLeft">
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-body">
+                            <div class="section-content">
+                                <h3>Scenario:</h3>
+                                <p>The aim is to optimize Home Assistant setup for smarter automation, improved climate control, and enhanced security monitoring. Your goal is to analyze the data from Home Assistant to uncover inefficiencies and identify opportunities for improvement in your operations.
+                                    .</p>
+                                
+                                <h4>Key Questions:</h4>
+                                <ol>
+                                    <li>Which automations are prone to failures or delays, and how can they be improved?</li>
+                                    <li>Are there specific rooms with inconsistent temperature or humidity levels that require better control?</li>
+                                    <li>Do motion, door, or window sensors trigger unnecessarily, leading to false positives or missed critical events?</li>
+                                </ol>
+
+                                <h4>Approach:</h4>
+                                <div class="row mt-4">
+                                    <div class="col-md-4">
+                                        <h5 class="h6">Automation Performance</h5>
+                                        <ul class="approach-list">
+                                            <li>Review automation logs</li>
+                                            <li>Identify success rates</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h5 class="h6">Climate Insights</h5>
+                                        <ul class="approach-list">
+                                            <li>Temperature analysis</li>
+                                            <li>Comfort range monitoring</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h5 class="h6">Security Monitoring</h5>
+                                        <ul class="approach-list">
+                                            <li>Sensor log analysis</li>
+                                            <li>False positive detection</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="data-info mt-4">
+                                    <h4>Data Size:</h4>
+                                    <ul>
+                                        <li>Tables: 13 main tables (e.g., states, events, statistics, statistics_meta)</li>
+                                        <li>Columns: ~30 columns across the tables</li>
+                                        <li>Rows: ~50,000 around 500 MB Database</li>
+                                        <li><a href="https://drive.google.com/drive/folders/1Nd_O0aG1eIuuSALKPxBG3knq1d51xS0L?usp=drive_link" class="btn btn-primary btn-sm mt-2">Access Dataset</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Schema Sidebar -->
+                <div class="col-lg-4 animate__animated animate__fadeInRight">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h4 class="h5 mb-3">Database Schema</h4>
+                            <img src="https://i.ibb.co/3YjtGwf/homeassistant-1.png" 
+                                 alt="Home Assistant Schema" 
+                                 class="schema-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exports Page -->
+    <section id="exports" class="page-section">
+        <div class="container py-5">
+            <h2 class="mb-4 animate__animated animate__fadeInDown">
+                <i class="fas fa-chart-line me-2"></i>Bahrain Export Analysis (2020-2024)
+            </h2>
+            
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="card shadow-sm animate__animated animate__slideInLeft">
+                        <div class="card-body">
+                            <div class="section-content">
+                                <h3>Scenario:</h3>
+                                <p>A stakeholder has approached us with a request to analyze Bahrain's export data from 2020 to 2024. They want insights into trends, seasonal patterns, and significant changes in export values.</p>
+                                
+                                <h4>Key Questions:</h4>
+                                <ol>
+                                    <li>How has Bahrain's export performance changed over the years?</li>
+                                    <li>Which months typically have the highest and lowest export values?</li>
+                                    <li>Are there any noticeable seasonal patterns or anomalies in the data?</li>
+                                </ol>
+
+                                <h4>Approach:</h4>
+                                <div class="row mt-4">
+                                    <div class="col-md-4">
+                                        <h5>Trend Analysis</h5>
+                                        <ul class="approach-list">
+                                            <li>Compare yearly exports</li>
+                                            <li>Identify significant changes</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h5>Seasonal Patterns</h5>
+                                        <ul class="approach-list">
+                                            <li>Analyze monthly trends</li>
+                                            <li>Study external factors</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h5>Growth Analysis</h5>
+                                        <ul class="approach-list">
+                                            <li>Track performance</li>
+                                            <li>Identify key sectors</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="card shadow-sm animate__animated animate__slideInRight">
+                        <div class="card-body">
+                            <h4 class="h5 mb-3">Data Sources</h4>
+                            <div class="list-group">
+                                <a href="https://www.data.gov.bh/explore/dataset/total-export-1-2024/table/" 
+                                   class="list-group-item list-group-item-action">
+                                    2024 Exports Data (49,442 records)
+                                </a>
+                                <a href="https://www.data.gov.bh/explore/dataset/total-exports-2023/table/" 
+                                   class="list-group-item list-group-item-action">
+                                    2023 Exports Data (59,345 records)
+                                </a>
+                                <a href="https://www.data.gov.bh/explore/dataset/03-total-export-2019-2022/table/" 
+                                   class="list-group-item list-group-item-action">
+                                    2020-2022 Historical Data (147,612 records)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hikvision Page -->
+    <section id="hikvision" class="page-section">
+        <div class="container py-5">
+            <h2 class="mb-4 animate__animated animate__fadeInDown">
+                <i class="fas fa-video me-2"></i>Hikvision NVR Analysis
+            </h2>
+            
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="card shadow-sm animate__animated animate__zoomIn">
+                        <div class="card-body">
+                            <div class="section-content">
+                                <h3>Scenario:</h3>
+                                <p> The aim is to optimize Home Assistant setup for smarter automation, improved climate control, and enhanced security monitoring. Your goal is to analyze the data from Home Assistant to uncover inefficiencies and identify opportunities for improvement in your operations.</p>
+                                
+                                <h4>Key Questions:</h4>
+                                <ol>
+                                    <li>What are the most common alerts, and how often do they occur?</li>
+                                    <li>Are there any unusual patterns in user logins or system access?</li>
+                                    <li>How often do cameras or system components encounter errors or downtime?</li>
+                                </ol>
+                                <!-- Image Modal -->
+<div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage">
+</div>
+
+                                <h4>Approach:</h4>
+                                <div class="row mt-4">
+                                    <div class="col-md-4">
+                                        <h5>Alert Analysis</h5>
+                                        <ul class="approach-list">
+                                            <li>Identify most frequent alerts</li>
+                                            <li>Correlate with camera zones</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h5>User Activity</h5>
+                                        <ul class="approach-list">
+                                            <li>Analyze login patterns</li>
+                                            <li>Review admin activities</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h5>System Health</h5>
+                                        <ul class="approach-list">
+                                            <li>Track error logs</li>
+                                            <li>Monitor system uptime</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="data-info mt-4">
+                                    <h4>Dataset Details:</h4>
+                                    <ul class="mb-0">
+                                        <li>7 columns with 2000 rows monthly</li>
+                                        <li>Source: Hikvision NVR logs (CSV format)</li>
+                                        <li><a href="https://ga-tamkeenbh.slack.com/files/U07LSNTBQDP/F084NC8AAUB/log.csv" 
+                                               class="btn btn-primary btn-sm mt-2">Access Log Data</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="card shadow-sm animate__animated animate__fadeInRight">
+                        <div class="card-body">
+                            <h4 class="h5 mb-3">System Overview</h4>
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <h5 class="h6">Alert Distribution</h5>
+                                    <canvas id="alertChart"></canvas>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <h5 class="h6">System Health</h5>
+                                    <canvas id="healthChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+<script>
+// Alert Distribution Chart
+const alertCtx = document.getElementById('alertChart').getContext('2d');
+new Chart(alertCtx, {
+    type: 'doughnut',
+    data: {
+        labels: ['Motion Detection', 'Camera Offline', 'Unauthorized Access', 'System Warnings'],
+        datasets: [{
+            data: [45, 15, 25, 15],
+            backgroundColor: [
+                '#0088FE',
+                '#FF8042',
+                '#FFBB28',
+                '#FF0000'
+            ]
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'bottom'
+            }
+        }
+    }
+});
+
+// System Health Chart
+const healthCtx = document.getElementById('healthChart').getContext('2d');
+new Chart(healthCtx, {
+    type: 'line',
+    data: {
+        labels: ['00:00', '04:00', '08:00', '12:00', '16:00', '20:00'],
+        datasets: [{
+            label: 'Uptime %',
+            data: [100, 98, 99, 100, 97, 99],
+            borderColor: '#0088FE',
+            tension: 0.1
+        },
+        {
+            label: 'Storage %',
+            data: [75, 78, 82, 85, 88, 90],
+            borderColor: '#00C49F',
+            tension: 0.1
+        },
+        {
+            label: 'Network %',
+            data: [95, 92, 97, 96, 94, 98],
+            borderColor: '#FFBB28',
+            tension: 0.1
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'bottom'
+            }
+        },
+        scales: {
+            y: {
+                beginAtZero: false,
+                min: 50,
+                max: 100
+            }
+        }
+    }
+});
+</script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2024 Bader Abdulrahim. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const smartHomeImage = document.getElementById('smartHomeImage');
+        const modal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+    
+        // Show modal with the clicked image
+        smartHomeImage.addEventListener('click', () => {
+            modalImage.src = smartHomeImage.src;
+            modal.classList.add('show');
+        });
+    
+        // Close the modal
+        function closeModal() {
+            modal.classList.remove('show');
+        }
+    
+        // Close modal when clicking outside the image
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+    </script>
+    
+    <script>
+    function showPage(pageId) {
+        // Hide all pages
+        document.querySelectorAll('.page-section').forEach(page => {
+            page.classList.remove('active');
+        });
+        
+        // Show selected page
+        document.getElementById(pageId).classList.add('active');
+        
+        // Update navigation
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.classList.remove('active');
+        });
+        document.querySelector(`a[href="#${pageId}"]`).classList.add('active');
+
+        // Trigger animations
+        const animations = document.querySelectorAll('.animate__animated');
+        animations.forEach(element => {
+            element.style.opacity = '0';
+            element.style.opacity = '1';
+            element.classList.forEach(className => {
+                if (className.startsWith('animate__')) {
+                    element.classList.remove(className);
+                    void element.offsetWidth; // Trigger reflow
+                    element.classList.add(className);
+                }
+            });
+        });
+    }
+
+    // Initialize event listeners
+    document.addEventListener('DOMContentLoaded', function() {
+        // Show home page by default
+        showPage('home');
+    });
+    </script>
+</body>
+</html>
