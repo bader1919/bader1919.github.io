@@ -1,2 +1,4 @@
 title: Baders Protofolio 
 logo:
+show_downloads: true
+theme: jekyll-theme-minimal
