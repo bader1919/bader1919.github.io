@@ -3,12 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="assets-and-js/css/style.css">
+    <title>Bader's Portfolio</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/script.js" defer></script>
 </head>
 <body>
-    <h1>Welcome to My Portfolio</h1>
-    <p>This is my personal website where I showcase my work.</p>
-    <img src="assets-and-js/images/img.jpg" alt="Profile Picture">
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">Bader1919</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Welcome to My Portfolio</h1>
+        <p>Showcasing my projects and skills</p>
+        <a href="projects.html" class="btn">View Projects</a>
+    </header>
+
+    <!-- About Section -->
+    <section class="about">
+        <h2>About Me</h2>
+        <p>I am a tech enthusiast specializing in smart home solutions, automation, and data analytics.</p>
+        <img src="assets/img/profile.jpg" alt="Bader's Profile Picture">
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects">
+        <h2>My Projects</h2>
+        <div class="project-list">
+            <div class="project-card">
+                <img src="assets/img/project1.jpg" alt="Project 1">
+                <h3>Smart Home Automation</h3>
+                <p>Automating homes with advanced IoT solutions.</p>
+            </div>
+            <div class="project-card">
+                <img src="assets/img/project2.jpg" alt="Project 2">
+                <h3>Data Analytics Dashboard</h3>
+                <p>Using Power BI and SQL to analyze data effectively.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <h2>Contact Me</h2>
+        <p>Have a project in mind? Let’s talk!</p>
+        <a href="mailto:bader1919@example.com" class="btn">Email Me</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Bader Abdulrahim. All rights reserved.</p>
+    </footer>
 </body>
 </html>
