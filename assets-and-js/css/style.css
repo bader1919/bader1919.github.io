@@ -1,113 +1,22 @@
-/* General Styles */
+/* Custom Styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
 }
 
-/* Navbar */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #007BFF;
-    padding: 15px 30px;
-    color: white;
-}
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-}
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-.nav-links li {
-    display: inline;
-}
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-.nav-links a:hover {
-    text-decoration: underline;
-}
-
-/* Hero Section */
-.hero {
-    background: url("../img/hero-bg.jpg") no-repeat center center/cover;
-    padding: 100px 20px;
-    color: white;
-}
-.hero h1 {
-    font-size: 40px;
-    margin-bottom: 10px;
-}
-.hero p {
-    font-size: 20px;
-}
-.btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
-    background-color: #0056b3;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
-.btn:hover {
-    background-color: #003d80;
-}
-
-/* Sections */
-.about, .projects, .contact {
-    padding: 50px 20px;
-    background-color: white;
-    margin: 20px;
-    border-radius: 8px;
-}
-
-/* Projects */
-.project-list {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-.project-card {
-    background: white;
-    padding: 20px;
-    width: 300px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-}
-.project-card img {
-    width: 100%;
-    border-radius: 5px;
-}
-.project-card h3 {
-    margin-top: 10px;
-}
-
-/* Contact */
-.contact {
-    background-color: #007BFF;
-    color: white;
-}
-.contact .btn {
-    background-color: white;
+h2 {
     color: #007BFF;
-}
-.contact .btn:hover {
-    background-color: #e0e0e0;
+    margin-bottom: 20px;
 }
 
-/* Footer */
+.card {
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
 footer {
-    padding: 20px;
     background-color: #333;
     color: white;
 }
