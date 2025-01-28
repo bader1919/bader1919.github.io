@@ -8,6 +8,10 @@ h2 {
     margin-bottom: 20px;
 }
 
+section {
+    padding: 40px 0;
+}
+
 .card {
     transition: transform 0.3s ease-in-out;
 }
@@ -17,6 +21,35 @@ h2 {
 }
 
 footer {
+    text-align: center;
+    padding: 20px 0;
     background-color: #333;
     color: white;
+}
+
+footer a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.nav-link.active {
+    font-weight: bold;
+    border-bottom: 2px solid #fff;
+}
+
+.btn {
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+html {
+    scroll-behavior: smooth;
 }
