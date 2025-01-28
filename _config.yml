@@ -1,10 +1,28 @@
 title: "Bader's Portfolio"
-logo:
-show_downloads: true
-remote_theme: pages-themes/minimal@v0.2.0
-baseurl: ""
-url: "https://bader1919.github.io"
+description: "Showcasing smart home automation, data analytics, and tech solutions."
+logo: assets/img/logo.png # Provide a path to your logo if you want to use it
+show_downloads: false # No need to show download links unless required
+remote_theme: pages-themes/minimal@v0.2.0 # Using a minimal theme
+baseurl: "" # Leave empty unless hosting under a subdirectory
+url: "https://bader1919.github.io" # Your GitHub Pages URL
+
+# Plugins for additional functionality
 plugins:
   - jekyll-remote-theme
   - jekyll-feed
   - jekyll-seo-tag
+
+# Navigation links (optional, if using theme-provided navigation)
+nav_links:
+  - title: "Home"
+    url: "/"
+  - title: "About"
+    url: "/about.html"
+  - title: "Projects"
+    url: "/projects.html"
+  - title: "Contact"
+    url: "/contact.html"
+
+# SEO and meta data
+author: "Bader Abdulrahim"
+email: "bader1919@example.com"
