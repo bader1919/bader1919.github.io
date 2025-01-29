@@ -1222,104 +1222,131 @@ body {
       options: options
     });
   }
+class PresentationManager {
+    constructor() {
+        this.currentSlide = 0;
+        this.slides = []; // Slides will be dynamically loaded
+        this.progressIndicator = document.getElementById('progressIndicator');
+        this.slideCounter = document.getElementById('slideCounter');
 
-  // Hook into your slide navigation logic to initialize the chart on Slide 2
-  document.addEventListener('DOMContentLoaded', () => {
-    const slides = document.querySelectorAll('.page-section');
-
-    slides.forEach((slide, index) => {
-      slide.addEventListener('transitionend', () => {
-        if (index === 1) { // Slide 2 index
-          initializeProblemImpactChart();
-        }
-      });
-    });
-  });
-</script>
-
-<!-- Script to Manage Navigation -->
-<script>
-  const slides = document.querySelectorAll(".page-section");
-  const progressBar = document.getElementById("progressBar");
-  const currentSlideElem = document.getElementById("currentSlide");
-  const totalSlidesElem = document.getElementById("totalSlides");
-  const shortcutHelp = document.getElementById("shortcutHelp");
-
-  let currentSlide = 0;
-  const totalSlides = slides.length;
-
-  // Initialize Slide Info
-  totalSlidesElem.textContent = totalSlides;
-
-  // Function to Show a Specific Slide
-  function showSlide(index) {
-    if (index < 0 || index >= totalSlides) return;
-
-    slides.forEach((slide, i) => {
-      slide.style.display = i === index ? "block" : "none";
-    });
-
-    currentSlide = index;
-    currentSlideElem.textContent = currentSlide + 1;
-    updateProgressBar();
-  }
-
-  // Update Progress Bar
-  function updateProgressBar() {
-    const progress = ((currentSlide + 1) / totalSlides) * 100;
-    progressBar.style.width = `${progress}%`;
-    progressBar.setAttribute("aria-valuenow", progress);
-  }
-
-  // Navigate to the Next Slide
-  function nextSlide() {
-    if (currentSlide < totalSlides - 1) showSlide(currentSlide + 1);
-  }
-
-  // Navigate to the Previous Slide
-  function previousSlide() {
-    if (currentSlide > 0) showSlide(currentSlide - 1);
-  }
-
-  // Keyboard Shortcuts
-  document.addEventListener("keydown", (e) => {
-    switch (e.key) {
-      case "ArrowRight":
-        nextSlide();
-        break;
-      case "ArrowLeft":
-        previousSlide();
-        break;
-      case " ":
-        nextSlide();
-        break;
-      case "Home":
-        showSlide(0);
-        break;
-      case "End":
-        showSlide(totalSlides - 1);
-        break;
-      case "h":
-        shortcutHelp.classList.toggle("d-none");
-        break;
-      case "f":
-        document.fullscreenElement
-          ? document.exitFullscreen()
-          : document.documentElement.requestFullscreen();
-        break;
-      default:
-        break;
+        this.initSlides();
+        this.initEventListeners();
+        this.showSlide(0);
     }
-  });
 
-  // Touch Indicators
-  document.querySelector(".touch-indicator.left").addEventListener("click", previousSlide);
-  document.querySelector(".touch-indicator.right").addEventListener("click", nextSlide);
+    /**
+     * Initializes the slide content dynamically.
+     */
+    initSlides() {
+        const slideData = [
+            `<h1>Welcome to the Data Analytics Capstone</h1><p>Introduction to the project</p>`,
+            `<h1>Problem Statement</h1><p>Exploring issues in Home Assistant automation.</p>`,
+            `<h1>Objectives</h1><p>Understanding the goals of this research.</p>`,
+            `<h1>Data Analysis Methods</h1><p>Statistical techniques used in this study.</p>`,
+            `<h1>Results & Insights</h1><p>Findings from the dataset analysis.</p>`,
+            `<h1>Conclusion</h1><p>Final thoughts and recommendations.</p>`
+        ];
 
-  // Show the first slide on load
-  showSlide(0);
+        const slideContainer = document.getElementById('slideContainer');
+        slideData.forEach((content, index) => {
+            const slideElement = document.createElement('div');
+            slideElement.classList.add('slide');
+            slideElement.innerHTML = content;
+            slideContainer.appendChild(slideElement);
+        });
 
+        this.slides = document.querySelectorAll('.slide'); // Refresh slide references
+    }
 
+    /**
+     * Sets up event listeners for buttons, keyboard controls, and gestures.
+     */
+    initEventListeners() {
+        document.getElementById('prevSlide').addEventListener('click', () => this.navigatePrevious());
+        document.getElementById('nextSlide').addEventListener('click', () => this.navigateNext());
+
+        // Keyboard Navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') this.navigateNext();
+            if (e.key === 'ArrowLeft') this.navigatePrevious();
+            if (e.key === 'f') this.toggleFullscreen();
+        });
+
+        // Swipe Gestures for Mobile
+        let touchStartX = 0;
+        document.addEventListener('touchstart', (e) => touchStartX = e.touches[0].clientX);
+        document.addEventListener('touchend', (e) => {
+            const touchEndX = e.changedTouches[0].clientX;
+            if (touchStartX - touchEndX > 50) this.navigateNext();
+            if (touchStartX - touchEndX < -50) this.navigatePrevious();
+        });
+    }
+
+    /**
+     * Shows the slide at the given index.
+     * @param {number} index - Index of the slide to be displayed.
+     */
+    showSlide(index) {
+        if (index < 0 || index >= this.slides.length) return;
+
+        // Hide all slides
+        this.slides.forEach(slide => slide.classList.remove('active'));
+
+        // Show the selected slide
+        this.slides[index].classList.add('active');
+
+        this.currentSlide = index;
+        this.updateProgress();
+        this.updateSlideCounter();
+    }
+
+    /**
+     * Moves to the next slide.
+     */
+    navigateNext() {
+        if (this.currentSlide < this.slides.length - 1) {
+            this.showSlide(this.currentSlide + 1);
+        }
+    }
+
+    /**
+     * Moves to the previous slide.
+     */
+    navigatePrevious() {
+        if (this.currentSlide > 0) {
+            this.showSlide(this.currentSlide - 1);
+        }
+    }
+
+    /**
+     * Updates the progress bar based on the current slide index.
+     */
+    updateProgress() {
+        const progress = ((this.currentSlide + 1) / this.slides.length) * 100;
+        this.progressIndicator.style.width = `${progress}%`;
+    }
+
+    /**
+     * Updates the slide counter display.
+     */
+    updateSlideCounter() {
+        this.slideCounter.textContent = `Slide ${this.currentSlide + 1} of ${this.slides.length}`;
+    }
+
+    /**
+     * Toggles full-screen mode.
+     */
+    toggleFullscreen() {
+        if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen();
+        } else {
+            document.exitFullscreen();
+        }
+    }
+}
+
+// Initialize Presentation when the DOM is loaded
+document.addEventListener('DOMContentLoaded', () => new PresentationManager());
   
 </script>
 </body>
