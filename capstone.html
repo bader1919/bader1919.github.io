@@ -18,81 +18,157 @@
     <!-- Custom Styles -->
     <style>
 
-        .page-section {
+        ./* === Root Variables for Consistent Styling === */
+:root {
+    --primary-color: #3B82F6;
+    --secondary-color: #10B981;
+    --background-dark: #1F2937;
+    --text-light: #F3F4F6;
+    --button-hover: #2563EB;
+}
+
+/* === Global Reset and Base Styling === */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    overflow: hidden; /* Prevents unwanted scrolling */
+}
+
+/* === Slide Container === */
+.slide-container {
+    max-width: 100vw;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px; /* Prevent content from touching edges */
+    text-align: center;
     overflow: hidden;
 }
 
-.page-section {
-    opacity: 0;
-    transform: translateX(100%);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    position: absolute;
+/* === Individual Slides === */
+.slide {
     width: 100%;
+    height: 100vh;
+    display: none;
+    opacity: 0;
+    transform: scale(0.98);
+    position: absolute;
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.page-section.active {
+/* === Active Slide (Visible Slide) === */
+.slide.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     opacity: 1;
-    transform: translateX(0);
+    transform: scale(1);
     position: relative;
 }
 
-        /* Hero Section Styles */
-        .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                        url('https://i.ibb.co/5G7fR5x/freepik-edit-5.jpg');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 100px 0;
-            margin-top: 56px;
-        }
-        
-        /* Page Sections */
-        .page-section {
-            min-height: calc(100vh - 56px);
-            padding-top: 56px;
-        }
-        
-        /* Navigation Link Hover Effect */
-        .nav-link {
-            transition: all 0.3s ease;
-        }
-        .nav-link:hover {
-            transform: translateY(2px);
-        }
-
-        /* Card Hover Effect */
-        .card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-
-            /* Style for the page numbers */
-        .slide-info #currentSlide,
-        .slide-info #totalSlides {
-        color: #fff; /* Current slide is green */
-        }
-
-        /* Style for total slides */
-        .slide-info #totalSlides {
-        color: #fff; /* Total slides are red */
-        }
-
-        /* Optional: Style for "Slide" and "of" */
-        .slide-info {
-        font-size: 16px; /* Adjust size as needed */
-        font-weight: bold;
-        color: #fff; /* Blue for default text ("Slide" and "of") */
+/* === Progress Bar === */
+.progress-bar {
+    width: 0%;
+    height: 5px;
+    background-color: var(--primary-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: width 0.5s ease;
 }
 
-        }
+/* === Slide Navigation Controls === */
+.slide-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+}
+
+/* === Navigation Buttons === */
+.btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--button-hover);
+}
+
+.btn-outline-light {
+    border: 2px solid var(--text-light);
+    color: var(--text-light);
+}
+
+.btn-outline-light:hover {
+    background-color: var(--text-light);
+    color: var(--background-dark);
+}
+
+/* === Slide Counter (Center Bottom) === */
+#slideCounter {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--text-light);
+}
+
+/* === Accessibility: Hide Focus Skip Link === */
+.visually-hidden-focusable {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.visually-hidden-focusable:focus {
+    position: static;
+    width: auto;
+    height: auto;
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+    .btn {
+        font-size: 14px;
+        padding: 10px 16px;
+    }
+
+    .slide-navigation {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #slideCounter {
+        font-size: 16px;
+    }
+}
     </style>
 </head>
 <body>
