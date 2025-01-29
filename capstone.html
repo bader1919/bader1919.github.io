@@ -1224,22 +1224,27 @@ class PresentationManager {
     /**
      * Initializes the slide content dynamically.
      */
-    initSlides() {
-        const slideData = [
-            `<h1>Welcome to the Data Analytics Capstone</h1><p>Introduction to the project</p>`,
-            `<h1>Problem Statement</h1><p>Exploring issues in Home Assistant automation.</p>`,
-            `<h1>Objectives</h1><p>Understanding the goals of this research.</p>`,
-            `<h1>Data Analysis Methods</h1><p>Statistical techniques used in this study.</p>`,
-            `<h1>Results & Insights</h1><p>Findings from the dataset analysis.</p>`,
-            `<h1>Conclusion</h1><p>Final thoughts and recommendations.</p>`
-        ];
+initSlides() {
+    const slideData = [
+        `<h1>Welcome to the Data Analytics Capstone</h1><p>Introduction to the project</p>`,
+        `<h1>Problem Statement</h1><p>Exploring issues in Home Assistant automation.</p>`,
+        `<h1>Key Research Questions</h1><p>Questions guiding the analysis.</p>`, // Add this line
+        `<h1>Objectives</h1><p>Understanding the goals of this research.</p>`,
+        `<h1>Data Analysis Methods</h1><p>Statistical techniques used in this study.</p>`,
+        `<h1>Results & Insights</h1><p>Findings from the dataset analysis.</p>`,
+        `<h1>Conclusion</h1><p>Final thoughts and recommendations.</p>`
+    ];
 
-        const slideContainer = document.getElementById('slideContainer');
-        slideData.forEach((content, index) => {
-            const slideElement = document.createElement('div');
-            slideElement.classList.add('slide');
-            slideElement.innerHTML = content;
-            slideContainer.appendChild(slideElement);
+    const slideContainer = document.getElementById('slideContainer');
+    slideData.forEach((content, index) => {
+        const slideElement = document.createElement('div');
+        slideElement.classList.add('slide');
+        slideElement.innerHTML = content;
+        slideContainer.appendChild(slideElement);
+    });
+
+    this.slides = document.querySelectorAll('.slide'); // Refresh slide references
+}
         });
 
         this.slides = document.querySelectorAll('.slide'); // Refresh slide references
