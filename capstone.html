@@ -17,6 +17,30 @@
     
     <!-- Custom Styles -->
     <style>
+
+        .page-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; /* Prevent content from touching edges */
+    overflow: hidden;
+}
+
+.page-section {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    position: absolute;
+    width: 100%;
+}
+
+.page-section.active {
+    opacity: 1;
+    transform: translateX(0);
+    position: relative;
+}
+
         /* Hero Section Styles */
         .hero-section {
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
