@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,158 +16,60 @@
     <!-- Animate.css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
     
+    
     <!-- Custom Styles -->
     <style>
-        /* === Root Variables for Consistent Styling === */
-        :root {
-            --primary-color: #3B82F6;
-            --secondary-color: #10B981;
-            --background-dark: #1F2937;
-            --text-light: #F3F4F6;
-            --button-hover: #2563EB;
+        /* Hero Section Styles */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                        url('https://i.ibb.co/5G7fR5x/freepik-edit-5.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            margin-top: 56px;
         }
-
-        /* === Global Reset and Base Styling === */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        
+        /* Page Sections */
+        .page-section {
+            min-height: calc(100vh - 56px);
+            padding-top: 56px;
+        }
+        
+        /* Navigation Link Hover Effect */
+        .nav-link {
             transition: all 0.3s ease;
         }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: var(--background-dark);
-            color: var(--text-light);
-            line-height: 1.6;
-            scroll-behavior: smooth;
-            overflow: hidden; /* Prevents unwanted scrolling */
+        .nav-link:hover {
+            transform: translateY(2px);
         }
 
-        /* === Slide Container === */
-        .slide-container {
-            max-width: 100vw;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            overflow: hidden;
+        /* Card Hover Effect */
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+
+            /* Style for the page numbers */
+        .slide-info #currentSlide,
+        .slide-info #totalSlides {
+        color: #fff; /* Current slide is green */
         }
 
-        /* === Individual Slides === */
-        .slide {
-            width: 100%;
-            height: 100vh;
-            display: none;
-            opacity: 0;
-            transform: scale(0.98);
-            position: absolute;
-            transition: opacity 0.5s ease, transform 0.5s ease;
+        /* Style for total slides */
+        .slide-info #totalSlides {
+        color: #fff; /* Total slides are red */
         }
 
-        /* === Active Slide (Visible Slide) === */
-        .slide.active {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            opacity: 1;
-            transform: scale(1);
-            position: relative;
-        }
+        /* Optional: Style for "Slide" and "of" */
+        .slide-info {
+        font-size: 16px; /* Adjust size as needed */
+        font-weight: bold;
+        color: #fff; /* Blue for default text ("Slide" and "of") */
+}
 
-        /* === Progress Bar === */
-        .progress-bar {
-            width: 0%;
-            height: 5px;
-            background-color: var(--primary-color);
-            position: fixed;
-            top: 0;
-            left: 0;
-            transition: width 0.5s ease;
-        }
-
-        /* === Slide Navigation Controls === */
-        .slide-navigation {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            position: fixed;
-            bottom: 20px;
-            left: 0;
-            padding: 10px 20px;
-            background-color: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(5px);
-        }
-
-        /* === Navigation Buttons === */
-        .btn {
-            padding: 12px 20px;
-            font-size: 16px;
-            border-radius: 5px;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-primary {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--button-hover);
-        }
-
-        .btn-outline-light {
-            border: 2px solid var(--text-light);
-            color: var(--text-light);
-        }
-
-        .btn-outline-light:hover {
-            background-color: var(--text-light);
-            color: var(--background-dark);
-        }
-
-        /* === Slide Counter (Center Bottom) === */
-        #slideCounter {
-            font-size: 18px;
-            font-weight: bold;
-            color: var(--text-light);
-        }
-
-        /* === Accessibility: Hide Focus Skip Link === */
-        .visually-hidden-focusable {
-            position: absolute;
-            left: -9999px;
-            top: -9999px;
-            width: 1px;
-            height: 1px;
-            overflow: hidden;
-        }
-
-        .visually-hidden-focusable:focus {
-            position: static;
-            width: auto;
-            height: auto;
-        }
-
-        /* === Responsive Design === */
-        @media (max-width: 768px) {
-            .btn {
-                font-size: 14px;
-                padding: 10px 16px;
-            }
-
-            .slide-navigation {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            #slideCounter {
-                font-size: 16px;
-            }
         }
     </style>
 </head>
@@ -178,7 +81,7 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#slide1">Introduction</a></li>
@@ -189,7 +92,7 @@
                     <li class="nav-item"><a class="nav-link" href="#slide5">Analysis Approach</a></li>
                     <li class="nav-item"><a class="nav-link" href="#slide6">Methods</a></li>
                     <li class="nav-item"><a class="nav-link" href="#slide7">Dataset</a></li>
-                </ul>
+                </ul> -->
             </div>
         </div>
     </nav>
@@ -246,45 +149,37 @@
         <div class="container py-5">
             <h1 class="text-primary mb-4">Introduction to Home Assistant</h1>
             <p>Home Assistant is an open-source home automation platform designed with a strong focus on local control and privacy. It provides a powerful yet simple framework, enabling users to manage and understand their smart homes effectively.</p>
-            <p>The platform's data model revolves around four key components: <strong>events</strong>, <strong>states</strong>, <strong>services</strong>, and <strong>context</strong>. This straightforward structure allows users to monitor ongoing activities and analyze historical data seamlessly.</p>
+            <p>The platform's data model revolves around four key components: 1. Device states (e.g., on/off, temperature, humidity) 2.Automation logs (e.g., triggers, actions, failures)  as it shown below. 3.Sensor data (e.g., motion, door/window status). 4.Historical statistics (e.g., energy usage, climate trends). This straightforward structure allows users to monitor ongoing activities and analyze historical data seamlessly.</p>
 
             <!-- Two Columns: Left and Right -->
             <div class="row">
                 <!-- Left Column -->
                 <div class="col-md-6">
-                    <div class="card p-3">
-                        <h4 class="text-secondary">Who Uses It?</h4>
-                        <ul>
-                            <li><strong>Homeowners:</strong> Enhance comfort, efficiency, and security.</li>
-                            <li><strong>Smart Home Enthusiasts:</strong> Customize and optimize smart home setups.</li>
-                            <li><strong>Developers:</strong> Create advanced automation workflows and integrations.</li>
-                        </ul>
-                    </div>
+                    <div class="col p-3">
+                            
                     
-                    <div class="card p-3 mt-4">
-                        <h4 class="text-secondary">What Kind of Data Does It Have?</h4>
-                        <ul>
-                            <li>Device states (e.g., on/off, temperature, humidity)</li>
-                            <li>Automation logs (e.g., triggers, actions, failures)</li>
-                            <li>Sensor data (e.g., motion, door/window status)</li>
-                            <li>Historical statistics (e.g., energy usage, climate trends)</li>
-                        </ul>
-                    </div>
-                </div>
+                    <div class="col p-3 mt-4">
+                        <h4 class="text-secondary">Type of User</h4>
 
-                <!-- Right Column -->
-                <div class="col-md-6">
-                    <div class="card p-3">
+                        <li><strong>Homeowners:</strong> Enhance comfort, efficiency, and security.</li>
+                        <li><strong>Smart Home Enthusiasts:</strong> Customize and optimize smart home setups.</li>
+                        <li><strong>Developers:</strong> Create advanced automation workflows and integrations.</li>
+                    </div>
+    
+                    <div class="col p-3 mt-4">
                         <h4 class="text-secondary">Key Metrics</h4>
-                        <ul>
-                            <li><strong>456,794</strong> Active Home Assistant Installations</li>
-                            <li><strong>78.71%</strong> of installations share usage statistics</li>
-                            <li><strong>80.45%</strong> of installations share integrations</li>
-                            <li><strong>58.62%</strong> of installations share add-ons</li>
-                        </ul>
-                    </div>
 
-                    <div class="card p-3 mt-4" style="height: 300px;">
+                        <li><strong>456,794</strong> Active Home Assistant Installations</li>
+                        <li><strong>78.71%</strong> of installations share usage statistics</li>
+                        <li><strong>80.45%</strong> of installations share integrations</li>
+                        <li><strong>58.62%</strong> of installations share add-ons</li>
+                    </div>
+                    </div>
+                </div> 
+               <!-- Right Column -->
+               <div class="col-md-6">
+                <div class="col p-3">
+                    <div class="col p-3 mt-4" style="height: 300px;">
                         <h4 class="text-secondary">Installation Statistics</h4>
                         <canvas id="installationChart"></canvas>
                     </div>
@@ -308,7 +203,7 @@
                 </p>
 
                 <!-- Key Issues -->
-                <div class="card p-3">
+                <div class="col p-3">
                     <h4 class="text-secondary">Key Issues:</h4>
                     <div class="row">
                         <!-- Automation Failures -->
@@ -354,7 +249,7 @@
 
             <!-- System Overview -->
             <div class="row">
-                <div class="card p-3">
+                <div class="col p-3">
                     <h4 class="text-secondary">System Overview</h4>
                     <div class="row text-center">
                         <div class="col-3">
@@ -397,7 +292,7 @@
             <div class="row">
                 <!-- Automation Performance -->
                 <div class="col-md-6">
-                    <div class="card p-3 shadow">
+                    <div class="col p-3 shadow">
                         <h4 class="text-secondary"><i class="fa fa-cogs text-primary"></i> Automation Performance</h4>
                         <ul class="small">
                             <li>📌 What percentage of automations fail or experience delays?</li>
@@ -411,7 +306,7 @@
 
                 <!-- Climate Control -->
                 <div class="col-md-6">
-                    <div class="card p-3 shadow">
+                    <div class="col p-3 shadow">
                         <h4 class="text-secondary"><i class="fa fa-thermometer-half text-danger"></i> Climate Control Optimization</h4>
                         <ul class="small">
                             <li>🌡 How often does Home Assistant maintain the ideal comfort range?</li>
@@ -426,7 +321,7 @@
             <div class="row mt-4">
                 <!-- Sensor Accuracy -->
                 <div class="col-md-6">
-                    <div class="card p-3 shadow">
+                    <div class="col p-3 shadow">
                         <h4 class="text-secondary"><i class="fa fa-shield-alt text-warning"></i> Security & Sensor Accuracy</h4>
                         <ul class="small">
                             <li>🔐 How often do motion, door, or window sensors trigger false positives?</li>
@@ -439,7 +334,7 @@
 
                 <!-- System Optimization -->
                 <div class="col-md-6">
-                    <div class="card p-3 shadow">
+                    <div class="col p-3 shadow">
                         <h4 class="text-secondary"><i class="fa fa-chart-line text-success"></i> System Optimization & Efficiency</h4>
                         <ul class="small">
 <li>📊 What insights can we extract from historical logs?</li>
@@ -452,13 +347,13 @@
             </div>
 
             <!-- Expected Outcomes -->
-            <div class="card p-3 shadow mt-4 text-center">
+            <div class="col p-3 shadow mt-4 text-center">
                 <h4 class="text-secondary"><i class="fa fa-lightbulb text-info"></i> Expected Outcomes</h4>
                 <p class="small">
-                    ✅ Identify inefficiencies in <strong>Home Assistant automations</strong> <br>
-                    ✅ Recommend <strong>data-driven improvements</strong> for better climate control <br>
-                    ✅ Optimize <strong>sensor accuracy</strong> to improve security <br>
-                    ✅ Reduce <strong>automation failures and execution delays</strong>
+                    ✅ Identify inefficiencies in class="colHome Assistant automations</strong> <br>
+                    ✅ Recommend class="coldata-driven improvements</strong> for better climate control <br>
+                    ✅ Optimize class="colsensor accuracy</strong> to improve security <br>
+                    ✅ Reduce class="colautomation failures and execution delays</strong>
                 </p>
             </div>
         </div>
@@ -541,7 +436,7 @@
             <div class="row">
                 <!-- Key Risks -->
                 <div class="col-md-6">
-                    <div class="card p-3">
+                    <div class="col p-3">
                         <h4 class="text-secondary">Key Risks</h4>
 
                         <!-- Data Gaps -->
@@ -550,7 +445,7 @@
                             <p class="small mb-1">
                                 Missing or incomplete data may limit the depth of analysis.
                             </p>
-                            <strong>Mitigation:</strong>
+                            class="colMitigation:</strong>
                             <p class="small">
                                 Implement data validation checks and seek alternative data sources if necessary.
                             </p>
@@ -562,7 +457,7 @@
                             <p class="small mb-1">
                                 Running analytics on live data may slow down Home Assistant operations.
                             </p>
-                            <strong>Mitigation:</strong>
+                            class="colMitigation:</strong>
                             <p class="small">
                                 Schedule analytics tasks during off-peak hours and optimize query performance.
                             </p>
@@ -574,7 +469,7 @@
                             <p class="small mb-1">
                                 Users may resist configuration changes required by proposed optimizations.
                             </p>
-                            <strong>Mitigation:</strong>
+                            class="colMitigation:</strong>
                             <p class="small">
                                 Provide clear documentation and demonstrate the benefits of changes.
                             </p>
@@ -584,7 +479,7 @@
 
                 <!-- Core Assumptions -->
                 <div class="col-md-6">
-                    <div class="card p-3">
+                    <div class="col p-3">
                         <h4 class="text-secondary">Core Assumptions</h4>
 
                         <!-- Data Availability -->
@@ -616,188 +511,223 @@
         </div>
     </section>
 
-    <!-- Slide 6 -->
-    <section id="slide6" class="page-section" style="display: none;">
-        <div class="container py-5">
-            <!-- Slide Title -->
-            <h1 class="text-primary mb-4">Analysis Approach</h1>
+<!-- Slide 6 -->
+<section id="slide6" class="page-section" style="display: none;">
+    <div class="container py-5">
+        <!-- Slide Title -->
+        <h1 class="text-primary mb-4">Analysis Approach</h1>
 
-            <div class="row">
-                <!-- Approach Steps -->
-                <div class="col-md-6">
-                    <div class="card p-3">
-                        <h4 class="text-secondary">Approach</h4>
+        <div class="row">
+            <!-- Approach Steps -->
+            <div class="col-md-6">
+                <div class="col p-3">
 
-                        <!-- Step 1: Data Extraction -->
-                        <div class="bg-light p-3 rounded shadow mb-3">
-                            <h5>1. Data Extraction</h5>
-                            <ul class="small list-unstyled mt-2">
-                                <li>Query key tables (events, states, state_attributes) from MariaDB</li>
-                                <li>Focus on event types (automation_triggered, call_service, state_changed)</li>
-                            </ul>
-                        </div>
+                    <!-- Step 1: Data Extraction -->
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>1. Data Extraction</h5>
+                        <ul class="small list-unstyled mt-2">
+                            <li>Extract key tables (events, states, state_attributes) from MariaDB.</li>
+                            <li>Focus on critical event types: automation_triggered, call_service, and state_changed.</li>
+                            <li>HASS-data-detective: Automate extraction and decode BLOB data (e.g., JSON-formatted state attributes).</li>
+                        </ul>
+                    </div>
 
-                        <!-- Step 2: Data Cleaning & Preprocessing -->
-                        <div class="bg-light p-3 rounded shadow mb-3">
-                            <h5>2. Data Cleaning & Preprocessing</h5>
-                            <ul class="small list-unstyled mt-2">
-                                <li>Handle missing data, link events and states using context_id_hex</li>
-                                <li>Normalize timestamps and entity identifiers</li>
-                                <li>Remove duplicates to streamline analysis</li>
-                            </ul>
-                        </div>
+                    <!-- Step 2: Data Cleaning & Preprocessing -->
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>2. Data Cleaning & Preprocessing</h5>
+                        <ul class="small list-unstyled mt-2">
+                            <li>Handle missing data and link tables using context_id_hex (via HASS-data-detective).</li>
+                            <li>Normalize timestamps and standardize entity identifiers.</li>
+                            <li>Parse JSON dictionaries from BLOBs to extract structured data.</li>
+                            <li>Remove duplicates to ensure clean, streamlined data.</li>
+                        </ul>
+                    </div>
 
-                        <!-- Step 3: Analysis -->
-                        <div class="bg-light p-3 rounded shadow mb-3">
-                            <h5>3. Analysis</h5>
-                            <ul class="small list-unstyled mt-2">
-                                <li>Python: Measure automation success, response times, and state consistency</li>
-                                <li>Power BI Dashboards: Visualize trigger-response times, correlations, and reliability trends</li>
-                            </ul>
-                        </div>
+                    <!-- Step 3: Analysis -->
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>3. Analysis</h5>
+                        <ul class="small list-unstyled mt-2">
+                            <li>Use Python to measure automation success rates, response times, and state consistency.</li>
+                            <li>Build Power BI dashboards to visualize trigger-response times, correlations, and reliability trends.</li>
+                        </ul>
+                    </div>
 
-                        <!-- Step 4: Optimization -->
-                        <div class="bg-light p-3 rounded shadow mb-3">
-                            <h5>4. Optimization</h5>
-                            <ul class="small list-unstyled mt-2">
-                                <li>Detect inefficiencies, propose workflow adjustments</li>
-                                <li>Refine based on performance metrics</li>
-                            </ul>
-                        </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Optimization & Tool Details -->
+            <div class="col-md-6">
+                <div class="col p-3">
+                    <!-- Step 4: Optimization -->
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>4. Optimization</h5>
+                        <ul class="small list-unstyled mt-2">
+                            <li>Identify inefficiencies and propose workflow adjustments.</li>
+                            <li>Refine processes based on performance metrics and insights.</li>
+                        </ul>
+                    </div>
+
+                    <!-- HASS-data-detective Tool Section -->
+                    <div class="bg-light p-3 rounded shadow">
+                        <h5>Key Tool: HASS-data-detective</h5>
+                        <ul class="small list-unstyled mt-2">
+                            <li>Python package for Home Assistant database analysis.</li>
+                            <li>Decodes BLOB data (e.g., JSON attributes) into usable formats.</li>
+                            <li>Merges tables (e.g., events ↔ states) via context_id_hex.</li>
+                            <li>Automates data extraction and preprocessing workflows.</li>
+                        </ul>
                     </div>
                 </div>
-
-                <!-- Placeholder for Picture -->
-                <div class="col-md-6">
-                    <div class="card p-3">
+                       <!-- Workflow Diagram -->
                         <div class="bg-light p-3 rounded shadow text-center">
-                            <p class="small text-muted">Placeholder for Image</p>
-                            <div class="placeholder-img" style="width: 100%; height: 200px; background-color: #e9ecef;"></div>
+                          <p class="small text-muted">Analysis Workflow Diagram</p>
+                             <img src="https://i.ibb.co/BHzMXf2b/Capture.png" 
+                                alt="Analysis Workflow" 
+                                     class="img-fluid" 
+                                       style="max-height: 150px; width: auto; margin: 0 auto;">
+                                </div>
+                                </div>
+                            </div>
                         </div>
+                    </section>
+
+    <<!-- Slide 7 -->
+<section id="slide7" class="page-section" style="display: none;">
+    <div class="container py-5">
+        <!-- Slide Title -->
+        <h1 class="text-primary mb-4">Analysis Methods</h1>
+
+        <div class="row">
+            <!-- Proposed Techniques -->
+            <div class="col-md-6">
+                <div class="col p-3">
+                    <h4 class="text-secondary">Proposed Techniques</h4>
+
+                    <!-- Statistical Analysis -->
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>Statistical Analysis</h5>
+                        <ul class="small list-unstyled mt-2">
+                            <li>Success Rate: % of automation_triggered → state_changed</li>
+                            <li>Response Time: P90/P95 latency between trigger and state change</li>
+                            <li>Failure Analysis: Flag automations with missing state_changed or call_service errors</li>
+                        </ul>
+                    </div>
+
+                    <!-- Sequence Analysis -->
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>Sequence Analysis</h5>
+                        <ul class="small list-unstyled mt-2">
+                            <li>Validate workflows: automation_triggered → call_service → state_changed</li>
+                            <li>Detect delays (e.g., slow call_service) and out-of-order sequences</li>
+                        </ul>
+                    </div>
+
+                    <!-- Time Series Analysis -->
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>Time Series Analysis</h5>
+                        <ul class="small list-unstyled mt-2">
+                            <li>Track success rates & response times with rolling averages</li>
+                            <li>Identify seasonal trends (e.g., peak-time failures)</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Slide 7 -->
-    <section id="slide7" class="page-section" style="display: none;">
-        <div class="container py-5">
-            <!-- Slide Title -->
-            <h1 class="text-primary mb-4">Analysis Methods</h1>
-
-            <div class="row">
-                <!-- Proposed Techniques -->
-                <div class="col-md-6">
-                    <div class="card p-3"></div>
-                        <h4 class="text-secondary">Proposed Techniques</h4>
-
-                        <!-- Statistical Analysis -->
-                        <div class="bg-light p-3 rounded shadow mb-3">
-                            <h5>Statistical Analysis</h5>
-                            <ul class="small list-unstyled mt-2">
-                                <li>Success Rate: Percentage of automation_triggered events leading to state_changed</li>
-                                <li>Response Time: Time difference between automation_triggered and state_changed</li>
-                                <li>Failure Analysis: Identify automations with no state change</li>
-                            </ul>
-                        </div>
-
-                        <!-- Sequence Analysis -->
-                        <div class="bg-light p-3 rounded shadow mb-3">
-                            <h5>Sequence Analysis</h5>
-                            <ul class="small list-unstyled mt-2">
-                                <li>Extract valid sequences (automation_triggered → call_service → state_changed)</li>
-                                <li>Detect delays and outliers</li>
-                            </ul>
-                        </div>
-
-                        <!-- Time Series Analysis -->
-                        <div class="bg-light p-3 rounded shadow mb-3">
-                            <h5>Time Series Analysis</h5>
-                            <ul class="small list-unstyled mt-2">
-                                <li>Monitor success rates, response times, and seasonal trends</li>
-                                <li>Identify systemic issues and patterns</li>
-                            </ul>
-                        </div>
-
-                        <!-- Visualization -->
-                        <div class="bg-light p-3 rounded shadow mb-3">
-                            <h5>Visualization</h5>
-                            <ul class="small list-unstyled mt-2">
-                                <li>Use histograms, bar charts, and time series plots for insights</li>
-                                <li>Build interactive dashboards for real-time monitoring</li>
-                            </ul>
-                        </div>
+            <!-- Visualization & Enhancements -->
+            <div class="col-md-6">
+                <div class="col p-3">
+                    <!-- Visualization -->
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>Visualization</h5>
+                        <ul class="small list-unstyled mt-2">
+                            <li>Box plots for response time distributions</li>
+                            <li>Interactive dashboards (Power BI) with drill-downs</li>
+                            <li>Heatmaps for temporal failure patterns</li>
+                        </ul>
                     </div>
-                </div>
 
-                <!-- Placeholder for Picture -->
-                <div class="col-md-6">
-                    <div class="card p-3">
+                    <!-- Key Enhancements -->
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>Key Enhancements</h5>
+                        <ul class="small list-unstyled mt-2">
+                            <li>Correlate delays with system load (CPU/memory metrics)</li>
+                            <li>Root cause analysis using call_service error logs</li>
+                            <li>Leverage HASS-data-detective for BLOB-to-JSON parsing</li>
+                        </ul>
+                    </div>
+
+                    <!-- Workflow Diagram -->
                         <div class="bg-light p-3 rounded shadow text-center">
-                            <p class="small text-muted">Placeholder for Image</p>
-                            <div class="placeholder-img" style="width: 100%; height: 200px; background-color: #e9ecef;"></div>
-                        </div>
+                        <p class="small text-muted">Analysis Workflow Diagram</p>
+                        <img src="https://i.ibb.co/1Fq1N8P/Capture.png" 
+                            alt="Analysis Workflow" 
+                            class="img-fluid" 
+                            style="max-height: 150px; width: auto; margin: 0 auto;">
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+<!-- Slide 8 -->
+<section id="slide8" class="page-section" style="display: none;">
+    <div class="container py-5">
+        <!-- Slide Title -->
+        <h1 class="text-primary mb-4">Potential Audience</h1>
 
-    <!-- Slide 8 -->
-    <section id="slide8" class="page-section" style="display: none;">
-        <div class="container py-5">
-            <!-- Slide Title -->
-            <h1 class="text-primary mb-4">Potential Audience</h1>
-
-            <div class="row">
-                <!-- Audience Details -->
-                <div class="col-md-6">
-                    <div class="card p-3">
-                        <h4 class="text-secondary">Potential Audience</h4>
-                        <div class="bg-light p-3 rounded shadow mb-3">
-                            <h5>Home Assistant Users</h5>
-                            <p class="small">
-                                Regular users of Home Assistant seeking to understand and optimize their existing setups for better daily use.
-                            </p>
-                        </div>
-                        <div class="bg-light p-3 rounded shadow mb-3">
-                            <h5>Home Automation Enthusiasts</h5>
-                            <p class="small">
-                                Individuals seeking to enhance their smart home setups through optimized automation and climate control.
-                            </p>
-                        </div>
-                        <div class="bg-light p-3 rounded shadow mb-3">
-                            <h5>Data Analysts</h5>
-                            <p class="small">
-                                Professionals interested in leveraging IoT data for actionable insights and system improvements.
-                            </p>
-                        </div>
-                        <div class="bg-light p-3 rounded shadow mb-3">
-                            <h5>System Integrators</h5>
-                            <p class="small">
-                                Developers and engineers working on integrating and customizing Home Assistant platforms for diverse applications.
-                            </p>
-                        </div>
-                        <div class="bg-light p-3 rounded shadow">
-                            <h5>Smart Home Product Developers</h5>
-                            <p class="small">
-                                Companies designing sensors and automation devices aiming to improve product reliability and performance.
-                            </p>
-                        </div>
+        <div class="row">
+            <!-- Audience Details -->
+            <div class="col-md-6">
+                <div class="col p-3">
+                    <h4 class="text-secondary">Potential Audience</h4>
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>Home Assistant Users</h5>
+                        <p class="small">
+                            Regular users of Home Assistant seeking to understand and optimize their existing setups for better daily use.
+                        </p>
+                    </div>
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>Home Automation Enthusiasts</h5>
+                        <p class="small">
+                            Individuals seeking to enhance their smart home setups through optimized automation and climate control.
+                        </p>
+                    </div>
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>Data Analysts</h5>
+                        <p class="small">
+                            Professionals interested in leveraging IoT data for actionable insights and system improvements.
+                        </p>
                     </div>
                 </div>
+            </div>
 
-                <!-- Audience Distribution Chart -->
-                <div class="col-md-6">
-                    <div class="card p-3">
-                        <h4 class="text-secondary">Audience Distribution</h4>
-                        <canvas id="audienceDistributionChart" style="height: 250px;"></canvas>
+            <!-- Right Column: Audience Distribution Chart and Last Two Categories -->
+            <div class="col-md-6">
+                <div class="col p-3">
+                <!-- Last Two Audience Categories -->
+                <div class="col p-3">
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>System Integrators</h5>
+                        <p class="small">
+                            Developers and engineers working on integrating and customizing Home Assistant platforms for diverse applications.
+                        </p>
+                    </div>
+                    <div class="bg-light p-3 rounded shadow">
+                        <h5>Smart Home Product Developers</h5>
+                        <p class="small">
+                            Companies designing sensors and automation devices aiming to improve product reliability and performance.
+                        </p>
+                        </div>
+                        </div>
+                        
+                  
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Slide 9: Dataset Overview -->
     <section id="slide9" class="page-section" style="display: none;">
@@ -808,7 +738,7 @@
             <div class="row">
                 <!-- Key Tables -->
                 <div class="col-md-6">
-                    <div class="card p-3">
+                    <div class="col p-3">
                         <h4 class="text-secondary">Key Tables</h4>
                         <div class="bg-light p-3 rounded shadow mb-3">
                             <h5>events</h5>
@@ -902,26 +832,26 @@
 
                 <!-- Relational Schema -->
                 <div class="col-md-6">
-                    <div class="card p-3">
+                    <div class="col p-3">
                         <h4 class="text-secondary">Relational Schema</h4>
                         <div class="bg-light p-3 rounded shadow mb-3">
                             <h5>events</h5>
                             <p class="small">
-                                <strong>data_id</strong> → <em>event_data.data_id</em><br>
-                                <strong>event_type_id</strong> → <em>event_types.event_type_id</em>
+                                class="coldata_id</strong> → <em>event_data.data_id</em><br>
+                                class="colevent_type_id</strong> → <em>event_types.event_type_id</em>
                             </p>
                         </div>
                         <div class="bg-light p-3 rounded shadow mb-3">
                             <h5>states</h5>
                             <p class="small"></p>
-                                <strong>attributes_id</strong> → <em>state_attributes.attributes_id</em><br>
-                                <strong>metadata_id</strong> → <em>states_meta.metadata_id</em>
+                                class="colattributes_id</strong> → <em>state_attributes.attributes_id</em><br>
+                                class="colmetadata_id</strong> → <em>states_meta.metadata_id</em>
                             </p>
                         </div>
                         <div class="bg-light p-3 rounded shadow mb-3">
                             <h5>statistics</h5>
                             <p class="small">
-                                <strong>metadata_id</strong> → <em>statistics_meta.id</em>
+                                class="colmetadata_id</strong> → <em>statistics_meta.id</em>
                             </p>
                         </div>
                     </div>
@@ -934,7 +864,7 @@
                         <p class="small text-muted">Logs database schema modifications.</p>
                     </div>
 
-                    <div class="card p-3">
+                    <div class="col p-3">
                         <h4 class="text-secondary">Relation Map</h4>
                         <div class="bg-light p-3 rounded shadow text-center">
                             <a href="https://drive.google.com/file/d/1NCYrITbk3u4k57o3gyaq6rC7jbufb-Pa/view?usp=drive_link" 
@@ -963,33 +893,33 @@
             <div class="mb-5">
                 <h2 class="text-secondary">Our Vision for Optimized Smart Homes</h2>
                 <p>
-                    This project proposal outlines a <strong>data-driven approach</strong> to enhancing <strong>Home Assistant's</strong> automation, 
+                    This project proposal outlines a class="coldata-driven approach</strong> to enhancing class="colHome Assistant's</strong> automation, 
                     climate control, and security capabilities. By leveraging structured data analysis, we aim to create 
-                    <strong>a smarter, more responsive, and more efficient home automation system.</strong>
+                    class="cola smarter, more responsive, and more efficient home automation system.</strong>
                 </p>
             </div>
 
             <!-- Future Expectations & Goals -->
             <div class="row">
                 <div class="col-md-6">
-                    <div class="card p-3">
+                    <div class="col p-3">
                         <h4 class="text-secondary">Future Expectations & Goals</h4>
                         <ul>
-                            <li><strong>Enhancing Automation Performance:</strong> We aim to develop <strong>more reliable</strong> automation sequences, reducing failures and delays.</li>
-                            <li><strong>Improving Climate Control:</strong> By optimizing data-driven decision-making, we <strong>hope to maintain</strong> comfort levels within ideal temperature and humidity ranges.</li>
-                            <li><strong>Refining Security & Sensor Accuracy:</strong> We envision improving <strong>sensor precision</strong> to reduce false positives and enhance system responsiveness.</li>
+                            <li>class="colEnhancing Automation Performance:</strong> We aim to develop class="colmore reliable</strong> automation sequences, reducing failures and delays.</li>
+                            <li>class="colImproving Climate Control:</strong> By optimizing data-driven decision-making, we class="colhope to maintain</strong> comfort levels within ideal temperature and humidity ranges.</li>
+                            <li>class="colRefining Security & Sensor Accuracy:</strong> We envision improving class="colsensor precision</strong> to reduce false positives and enhance system responsiveness.</li>
                         </ul>
                     </div>
                 </div>
 
                 <!-- Next Steps -->
                 <div class="col-md-6">
-                    <div class="card p-3">
+                    <div class="col p-3">
                         <h4 class="text-secondary">Next Steps in the Journey</h4>
                         <ul>
-                            <li><strong>Data Collection & Analysis:</strong> We plan to gather more data to validate key assumptions and refine our strategies.</li>
-                            <li><strong>Optimization Implementation:</strong> Once insights are gathered, we hope to apply <strong>targeted improvements</strong> to automation rules and device calibration.</li>
-                            <li><strong>Scalability & Long-Term Impact:</strong> If successful, these optimizations <strong>could serve as a model</strong> for broader IoT and smart home enhancements.</li>
+                            <li>class="colData Collection & Analysis:</strong> We plan to gather more data to validate key assumptions and refine our strategies.</li>
+                            <li>class="colOptimization Implementation:</strong> Once insights are gathered, we hope to apply class="coltargeted improvements</strong> to automation rules and device calibration.</li>
+                            <li>class="colScalability & Long-Term Impact:</strong> If successful, these optimizations class="colcould serve as a model</strong> for broader IoT and smart home enhancements.</li>
                         </ul>
                     </div>
                 </div>
@@ -997,264 +927,234 @@
         </div>
     </div>
 </section>
+
+
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-3">
         <p>© 2025 Bader Abdulrahim | All Rights Reserved</p>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
     <!-- Include Bootstrap Icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet" />
 
-    <!-- Include Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- Include Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <!-- Chart Initialization Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const ctx = document.getElementById('installationChart').getContext('2d');
-            const installationChart = new Chart(ctx, {
-                type: 'bar', // Bar chart
-                data: {
-                    labels: ['Active Installs', 'Usage Stats', 'Integrations', 'Add-ons'],
-                    datasets: [{
-                        label: 'Installation Statistics',
-                        data: [456794, 358566, 366485, 267058], // Data values
-                        backgroundColor: [
-                            'rgba(59, 130, 246, 0.6)', // Active Installs
-                            'rgba(16, 185, 129, 0.6)', // Usage Stats
-                            'rgba(245, 158, 11, 0.6)', // Integrations
-                            'rgba(239, 68, 68, 0.6)'  // Add-ons
-                        ],
-                        borderColor: [
-                            'rgba(59, 130, 246, 1)',
-                            'rgba(16, 185, 129, 1)',
-                            'rgba(245, 158, 11, 1)',
-                            'rgba(239, 68, 68, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
+<!-- Chart Initialization Script -->
+<script>
+    
+    const ctx = document.getElementById('installationChart').getContext('2d');
+    const installationChart = new Chart(ctx, {
+        type: 'bar', // Bar chart
+        data: {
+            labels: ['Active Installs', 'Usage Stats', 'Integrations', 'Add-ons'],
+            datasets: [{
+                label: 'Installation Statistics',
+                data: [456794, 358566, 366485, 267058], // Data values
+                backgroundColor: [
+                    'rgba(59, 130, 246, 0.6)', // Active Installs
+                    'rgba(16, 185, 129, 0.6)', // Usage Stats
+                    'rgba(245, 158, 11, 0.6)', // Integrations
+                    'rgba(239, 68, 68, 0.6)'  // Add-ons
+                ],
+                borderColor: [
+                    'rgba(59, 130, 246, 1)',
+                    'rgba(16, 185, 129, 1)',
+                    'rgba(245, 158, 11, 1)',
+                    'rgba(239, 68, 68, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false, // Allow flexible height
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Count'
+                    }
                 },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false, // Allow flexible height
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            title: {
-                                display: true,
-                                text: 'Count'
-                            }
-                        },
-                        x: {
-                            title: {
-                                display: true,
-                                text: 'Categories'
-                            }
-                        }
-                    },
-                    plugins: {
-                        legend: {
-                            display: false
-                        },
-                        tooltip: {
-                            enabled: true
-                        }
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Categories'
                     }
                 }
-            });
-
-            let problemImpactChart = null; // Declare chart variable
-
-            function initializeProblemImpactChart() {
-                // Check if chart already exists to avoid reinitialization
-                if (problemImpactChart) return;
-
-                const ctx = document.getElementById('problemImpactChart').getContext('2d');
-
-                // Data for the chart
-                const data = {
-                    labels: ["Automation Failures", "Climate Inconsistencies", "Sensor Inefficiencies"],
-                    datasets: [{
-                        label: 'Impact Level (%)',
-                        data: [15, 10, 20], // Example data
-                        backgroundColor: [
-                            'rgba(255,99,132,0.6)',  // Red
-                            'rgba(54,162,235,0.6)',  // Blue
-                            'rgba(255,206,86,0.6)'   // Yellow
-                        ],
-                        borderColor: [
-                            'rgba(255,99,132,1)',
-                            'rgba(54,162,235,1)',
-                            'rgba(255,206,86,1)'
-                        ],
-                        borderWidth: 1
-                    }]
-                };
-
-                // Chart options
-                const options = {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        title: {
-                            display: true,
-                            text: 'Impact of Key Issues on System Performance'
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            title: {
-                                display: true,
-                                text: 'Impact Level (%)'
-                            }
-                        },
-                        x: {
-                            title: {
-                                display: true,
-                                text: 'Issues'
-                            }
-                        }
-                    }
-                };
-
-                // Initialize the chart
-                problemImpactChart = new Chart(ctx, {
-                    type: 'bar',
-                    data: data,
-                    options: options
-                });
-            }
-
-            class PresentationManager {
-                constructor() {
-                    this.currentSlide = 0;
-                    this.slides = []; // Slides will be dynamically loaded
-                    this.progressIndicator = document.getElementById('progressIndicator');
-                    this.slideCounter = document.getElementById('slideCounter');
-
-                    this.initSlides();
-                    this.initEventListeners();
-                    this.showSlide(0);
-                }
-
-                /**
-                 * Initializes the slide content dynamically.
-                 */
-                initSlides() {
-                    const slideData = [
-                        `<h1>Welcome to the Data Analytics Capstone</h1><p>Introduction to the project</p>`,
-                        `<h1>Problem Statement</h1><p>Exploring issues in Home Assistant automation.</p>`,
-                        `<h1>Key Research Questions</h1><p>Questions guiding the analysis.</p>`,
-                        `<h1>Objectives</h1><p>Understanding the goals of this research.</p>`,
-                        `<h1>Data Analysis Methods</h1><p>Statistical techniques used in this study.</p>`,
-                        `<h1>Results & Insights</h1><p>Findings from the dataset analysis.</p>`,
-                        `<h1>Conclusion</h1><p>Final thoughts and recommendations.</p>`
-                    ];
-
-                    const slideContainer = document.getElementById('slideContainer');
-                    slideData.forEach((content, index) => {
-                        const slideElement = document.createElement('div');
-                        slideElement.classList.add('slide');
-                        slideElement.innerHTML = content;
-                        slideContainer.appendChild(slideElement);
-                    });
-
-                    this.slides = document.querySelectorAll('.slide'); // Refresh slide references
-                }
-
-                /**
-                 * Sets up event listeners for buttons, keyboard controls, and gestures.
-                 */
-                initEventListeners() {
-                    document.getElementById('prevSlide').addEventListener('click', () => this.navigatePrevious());
-                    document.getElementById('nextSlide').addEventListener('click', () => this.navigateNext());
-
-                    // Keyboard Navigation
-                    document.addEventListener('keydown', (e) => {
-                        if (e.key === 'ArrowRight' || e.key === ' ') this.navigateNext();
-                        if (e.key === 'ArrowLeft') this.navigatePrevious();
-                        if (e.key === 'f') this.toggleFullscreen();
-                    });
-
-                    // Swipe Gestures for Mobile
-                    let touchStartX = 0;
-                    document.addEventListener('touchstart', (e) => touchStartX = e.touches[0].clientX);
-                    document.addEventListener('touchend', (e) => {
-                        const touchEndX = e.changedTouches[0].clientX;
-                        if (touchStartX - touchEndX > 50) this.navigateNext();
-                        if (touchStartX - touchEndX < -50) this.navigatePrevious();
-                    });
-                }
-
-                /**
-                 * Shows the slide at the given index.
-                 * @param {number} index - Index of the slide to be displayed.
-                 */
-                showSlide(index) {
-                    if (index < 0 || index >= this.slides.length) return;
-
-                    // Hide all slides
-                    this.slides.forEach(slide => slide.classList.remove('active'));
-
-                    // Show the selected slide
-                    this.slides[index].classList.add('active');
-
-                    this.currentSlide = index;
-                    this.updateProgress();
-                    this.updateSlideCounter();
-                }
-
-                /**
-                 * Moves to the next slide.
-                 */
-                navigateNext() {
-                    if (this.currentSlide < this.slides.length - 1) {
-                        this.showSlide(this.currentSlide + 1);
-                    }
-                }
-
-                /**
-                 * Moves to the previous slide.
-                 */
-                navigatePrevious() {
-                    if (this.currentSlide > 0) {
-                        this.showSlide(this.currentSlide - 1);
-                    }
-                }
-
-                /**
-                 * Updates the progress bar based on the current slide index.
-                 */
-                updateProgress() {
-                    const progress = ((this.currentSlide + 1) / this.slides.length) * 100;
-                    this.progressIndicator.style.width = `${progress}%`;
-                }
-
-                /**
-                 * Updates the slide counter display.
-                 */
-                updateSlideCounter() {
-                    this.slideCounter.textContent = `Slide ${this.currentSlide + 1} of ${this.slides.length}`;
-                }
-
-                /**
-                 * Toggles full-screen mode.
-                 */
-                toggleFullscreen() {
-                    if (!document.fullscreenElement) {
-                        document.documentElement.requestFullscreen();
-                    } else {
-                        document.exitFullscreen();
-                    }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    enabled: true
                 }
             }
+        }
+    });
+ let problemImpactChart = null; // Declare chart variable
 
-            // Initialize Presentation when the DOM is loaded
-            document.addEventListener('DOMContentLoaded', () => new PresentationManager());
-        });
-    </script>
+  function initializeProblemImpactChart() {
+    // Check if chart already exists to avoid reinitialization
+    if (problemImpactChart) return;
+
+    const ctx = document.getElementById('problemImpactChart').getContext('2d');
+
+    // Data for the chart
+    const data = {
+      labels: ["Automation Failures", "Climate Inconsistencies", "Sensor Inefficiencies"],
+      datasets: [{
+        label: 'Impact Level (%)',
+        data: [15, 10, 20], // Example data
+        backgroundColor: [
+          'rgba(255,99,132,0.6)',  // Red
+          'rgba(54,162,235,0.6)',  // Blue
+          'rgba(255,206,86,0.6)'   // Yellow
+        ],
+        borderColor: [
+          'rgba(255,99,132,1)',
+          'rgba(54,162,235,1)',
+          'rgba(255,206,86,1)'
+        ],
+        borderWidth: 1
+      }]
+    };
+
+    // Chart options
+    const options = {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        title: {
+          display: true,
+          text: 'Impact of Key Issues on System Performance'
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: 'Impact Level (%)'
+          }
+        },
+        x: {
+          title: {
+            display: true,
+            text: 'Issues'
+          }
+        }
+      }
+    };
+
+    // Initialize the chart
+    problemImpactChart = new Chart(ctx, {
+      type: 'bar',
+      data: data,
+      options: options
+    });
+  }
+
+  // Hook into your slide navigation logic to initialize the chart on Slide 2
+  document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.page-section');
+
+    slides.forEach((slide, index) => {
+      slide.addEventListener('transitionend', () => {
+        if (index === 1) { // Slide 2 index
+          initializeProblemImpactChart();
+        }
+      });
+    });
+  });
+</script>
+
+<!-- Script to Manage Navigation -->
+<script>
+  const slides = document.querySelectorAll(".page-section");
+  const progressBar = document.getElementById("progressBar");
+  const currentSlideElem = document.getElementById("currentSlide");
+  const totalSlidesElem = document.getElementById("totalSlides");
+  const shortcutHelp = document.getElementById("shortcutHelp");
+
+  let currentSlide = 0;
+  const totalSlides = slides.length;
+
+  // Initialize Slide Info
+  totalSlidesElem.textContent = totalSlides;
+
+  // Function to Show a Specific Slide
+  function showSlide(index) {
+    if (index < 0 || index >= totalSlides) return;
+
+    slides.forEach((slide, i) => {
+      slide.style.display = i === index ? "block" : "none";
+    });
+
+    currentSlide = index;
+    currentSlideElem.textContent = currentSlide + 1;
+    updateProgressBar();
+  }
+
+  // Update Progress Bar
+  function updateProgressBar() {
+    const progress = ((currentSlide + 1) / totalSlides) * 100;
+    progressBar.style.width = `${progress}%`;
+    progressBar.setAttribute("aria-valuenow", progress);
+  }
+
+  // Navigate to the Next Slide
+  function nextSlide() {
+    if (currentSlide < totalSlides - 1) showSlide(currentSlide + 1);
+  }
+
+  // Navigate to the Previous Slide
+  function previousSlide() {
+    if (currentSlide > 0) showSlide(currentSlide - 1);
+  }
+
+  // Keyboard Shortcuts
+  document.addEventListener("keydown", (e) => {
+    switch (e.key) {
+      case "ArrowRight":
+        nextSlide();
+        break;
+      case "ArrowLeft":
+        previousSlide();
+        break;
+      case " ":
+        nextSlide();
+        break;
+      case "Home":
+        showSlide(0);
+        break;
+      case "End":
+        showSlide(totalSlides - 1);
+        break;
+      case "h":
+        shortcutHelp.classList.toggle("d-none");
+        break;
+      case "f":
+        document.fullscreenElement
+          ? document.exitFullscreen()
+          : document.documentElement.requestFullscreen();
+        break;
+      default:
+        break;
+    }
+  });
+
+  // Touch Indicators
+  document.querySelector(".touch-indicator.left").addEventListener("click", previousSlide);
+  document.querySelector(".touch-indicator.right").addEventListener("click", nextSlide);
+
+  // Show the first slide on load
+  showSlide(0);
+
+
+  
+</script>
 </body>
 </html>
