@@ -26,3 +26,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     console.log("Smooth Scroll Initialized!");
 });
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+
