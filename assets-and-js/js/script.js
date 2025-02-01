@@ -25,6 +25,9 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     console.log("Smooth Scroll Initialized!");
+
+    <link rel="stylesheet" href="assets-and-js/css/style.css" />
+<script src="assets-and-js/js/icons.js"></script>
 });
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
