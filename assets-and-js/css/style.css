@@ -69,3 +69,46 @@ footer a:hover {
 html {
     scroll-behavior: smooth;
 }
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+h1, h2 {
+    margin: 10px 0;
+}
+
+#projects {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.project {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.project:last-child {
+    border-bottom: none;
+}
+
+footer {
+    background: #333;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+}
