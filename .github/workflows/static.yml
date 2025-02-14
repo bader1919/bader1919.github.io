@@ -3,7 +3,6 @@ name: Deploy static content to Pages
 on:
   push:
     branches: ["main"]
-
   workflow_dispatch:
 
 permissions:
@@ -28,17 +27,10 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      # Ensure this step generates the correct build directory
-      - name: Build static content
-        run: |
-          # Add the appropriate build commands here
-          # For example, if using Jekyll:
-          # bundle exec jekyll build -d ./public
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "./public"  # Ensure this matches the build output directory
+          path: "."  # Set path to root since files are in the main directory
 
       - name: Deploy to GitHub Pages
         id: deployment
