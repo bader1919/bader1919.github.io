@@ -8,7 +8,7 @@ This **Power BI dashboard** explores the **global food supply chain**, focusing 
 - **Sales rep performance tracking** 📊
 
 ## 📊 Dashboard Highlights
-![Dashboard Preview](Power-BI-Dashboard/dashboard-screenshot.png)
+![Dashboard Preview](Power-BI-Dashboard/dashboard-preview.png)
 
 ## 📂 Project Files
 - **Power BI File**: [`Power BI Project B&M-2.pbix`](Power-BI-Dashboard/Power%20BI%20Project%20B&M-2.pbix)
@@ -27,11 +27,12 @@ This **Power BI dashboard** explores the **global food supply chain**, focusing 
 - **Sales reps impact revenue growth** in different regions.
 
 ## 🚀 Next Steps
-- Convert Power BI visuals into **interactive dashboards**.
-- Extract data insights using **Python & SQL**.
-- Add **predictive analytics** for supply chain forecasting.
+- [ ] Convert Power BI visuals into **interactive dashboards**.
+- [ ] Extract data insights using **Python & SQL**.
+- [ ] Add **predictive analytics** for supply chain forecasting.
 
 ---
 
 📬 **Author:** Bader Abdulrahim  
 📌 **More Projects:** [Portfolio Main Page](../README.md)
+
