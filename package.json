@@ -1,0 +1,10 @@
+{
+  "name": "my-jekyll-site",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "bundle install && bundle exec jekyll build"
+  },
+  "dependencies": {
+    "jekyll": "^4.2.0"
+  }
+}
