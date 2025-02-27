@@ -1,4 +1,5 @@
 source "https://rubygems.org"
 
 gem "jekyll", "~> 4.2.0"
-gem "webrick"  # Required for local Jekyll server
+gem "minima", "~> 2.5"
+gem "webrick" # Required for Ruby 3.0+
