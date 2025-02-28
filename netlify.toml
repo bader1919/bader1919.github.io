@@ -1,6 +1,54 @@
-[build]
-  command = "bundle install && bundle exec jekyll build"
-  publish = "_site"
+# [build]
+#   command = "bundle install && bundle exec jekyll build"
+#   publish = "_site"
 
-[context.production.environment]
-  RUBY_VERSION = "3.2.22"
+# [context.production.environment]
+#   RUBY_VERSION = "3.2.22"
+# # netlify.toml file
+[build]
+  publish = "/"
+  command = "# No build command needed for this static site"
+
+# Redirect rule for SPA-like navigation
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  
+# Pretty URLs - make URLs without extensions work
+[[redirects]]
+  from = "/projects"
+  to = "/projects.html"
+  status = 200
+  
+[[redirects]]
+  from = "/about"
+  to = "/about.html"
+  status = 200
+  
+[[redirects]]
+  from = "/contact"
+  to = "/contact.html"
+  status = 200
+  
+[[redirects]]
+  from = "/capstone"
+  to = "/capstone.html"
+  status = 200
+
+# HTTP to HTTPS redirect
+[[redirects]]
+  from = "http://*"
+  to = "https://:splat"
+  status = 301
+  force = true
+
+# Custom headers for security
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Content-Security-Policy = "default-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net;"
