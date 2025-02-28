@@ -1,51 +1,92 @@
-name: Deploy Jekyll to GitHub Pages
+name: Deploy Netlify GitHub Pages
 
 on:
   push:
-    branches: ["main"]  # Runs on push to main branch
-  workflow_dispatch:  # Allows manual trigger
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+    branches:
+      - main
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
+    
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
+
+      - name: Clean _site directory
+        run: 
+          if [ -d "_site" ]; then
+            rm -rf _site
+          fi
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '4.2.0'
+          ruby-version: 2.7
 
-      - name: Install Jekyll and dependencies
-        run: |
-          gem install bundler
-          bundle install
+      - name: Install dependencies
+        run: bundle install
 
-      - name: Build Jekyll site
+      - name: Build site
         run: bundle exec jekyll build
 
-      - name: Setup GitHub Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: "_site"  # Correct path for Jekyll output
-
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+
+
+# name: Deploy Jekyll to GitHub Pages
+
+# on:
+#   push:
+#     branches: ["main"]  # Runs on push to main branch
+#   workflow_dispatch:  # Allows manual trigger
+
+# permissions:
+#   contents: read
+#   pages: write
+#   id-token: write
+
+# concurrency:
+#   group: "pages"
+#   cancel-in-progress: false
+
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
+#     environment:
+#       name: github-pages
+#       url: ${{ steps.deployment.outputs.page_url }}
+
+#     steps:
+#       - name: Checkout repository
+#         uses: actions/checkout@v4
+
+#       - name: Setup Ruby
+#         uses: ruby/setup-ruby@v1
+#         with:
+#           ruby-version: '4.2.0'
+
+#       - name: Install Jekyll and dependencies
+#         run: |
+#           gem install bundler
+#           bundle install
+
+#       - name: Build Jekyll site
+#         run: bundle exec jekyll build
+
+#       - name: Setup GitHub Pages
+#         uses: actions/configure-pages@v5
+
+#       - name: Upload artifact
+#         uses: actions/upload-pages-artifact@v3
+#         with:
+#           path: "_site"  # Correct path for Jekyll output
+
+#       - name: Deploy to GitHub Pages
+#         id: deployment
+#         uses: actions/deploy-pages@v2
+
+
