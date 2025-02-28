@@ -3,34 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bader's Portfolio</title>
+  <title>Bader Abdulrahim | Portfolio</title>
   
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Meta tags for better SEO -->
+  <meta name="description" content="Professional portfolio of Bader Abdulrahim, specializing in smart home automation, data analytics, and custom tech solutions.">
+  <meta name="keywords" content="smart home, automation, data analytics, Power BI, SQL, Home Assistant">
   
-  <!-- Bootstrap CSS -->
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  
+  <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Custom CSS -->
   <style>
     :root {
-      --primary: #2c3e50;
-      --secondary: #3498db;
-      --accent: #e74c3c;
-      --light: #ecf0f1;
-      --dark: #2c3e50;
+      --primary: #2d46b9;
+      --primary-dark: #1f3c88;
+      --secondary: #f1f2f6;
+      --accent: #ff6b6b;
+      --text-dark: #333;
+      --text-light: #f8f9fa;
     }
     
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #333;
-      background-color: #f8f9fa;
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-dark);
+      background-color: #fcfcfc;
+      overflow-x: hidden;
     }
     
-    /* Navbar styling */
+    /* Navbar Styles */
     .navbar {
-      background-color: var(--primary);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      padding: 15px 0;
+      background-color: var(--primary-dark);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 1rem 0;
     }
     
     .navbar-brand {
@@ -40,261 +53,249 @@
     }
     
     .nav-link {
-      color: rgba(255, 255, 255, 0.85) !important;
+      color: rgba(255,255,255,0.85) !important;
       font-weight: 500;
-      margin: 0 10px;
-      position: relative;
-      transition: all 0.3s;
+      margin: 0 0.5rem;
+      transition: all 0.3s ease;
     }
     
     .nav-link:hover {
       color: white !important;
+      transform: translateY(-2px);
     }
     
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: 0;
-      left: 0;
-      background-color: var(--secondary);
-      transition: width 0.3s;
-    }
-    
-    .nav-link:hover::after {
-      width: 100%;
-    }
-    
-    /* Hero section */
+    /* Hero Section */
     .hero {
-      background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.9)), url('assets/img/hero-bg.jpg');
+      background: linear-gradient(rgba(31, 60, 136, 0.9), rgba(31, 60, 136, 0.9)), url('/assets/img/hero-bg.jpg');
       background-size: cover;
       background-position: center;
-      background-attachment: fixed;
       color: white;
-      padding: 150px 0;
+      padding: 7rem 0;
       position: relative;
+    }
+    
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background: linear-gradient(to top, #fcfcfc, transparent);
     }
     
     .hero h1 {
-      font-size: 3.5rem;
       font-weight: 700;
-      margin-bottom: 20px;
+      font-size: 3rem;
+      margin-bottom: 1rem;
     }
     
     .hero p {
-      font-size: 1.5rem;
-      margin-bottom: 30px;
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 700px;
+      margin: 0 auto;
+      margin-bottom: 2rem;
     }
     
-    .btn-custom {
-      background-color: var(--secondary);
-      color: white;
-      border: none;
-      padding: 12px 30px;
-      font-weight: 600;
-      border-radius: 50px;
-      transition: all 0.3s;
-    }
-    
-    .btn-custom:hover {
-      background-color: #2980b9;
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-      color: white;
-    }
-    
-    /* About section */
+    /* About Section */
     .about-section {
-      padding: 100px 0;
-    }
-    
-    .section-title {
-      position: relative;
-      margin-bottom: 60px;
-      font-weight: 700;
-      color: var(--primary);
-    }
-    
-    .section-title::after {
-      content: '';
-      position: absolute;
-      height: 4px;
-      width: 60px;
-      background-color: var(--secondary);
-      bottom: -15px;
-      left: 50%;
-      transform: translateX(-50%);
+      padding: 5rem 0;
     }
     
     .profile-img {
-      border: 5px solid white;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s;
+      border: 8px solid white;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
     }
     
     .profile-img:hover {
       transform: scale(1.05);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     }
     
-    /* Portfolio section */
-    .portfolio-section {
-      background-color: var(--light);
-      padding: 100px 0;
+    /* Skills Section */
+    .skills-section {
+      background-color: var(--secondary);
+      padding: 5rem 0;
     }
     
-    /* Projects section */
-    .projects-section {
-      padding: 100px 0;
-    }
-    
-    .card {
+    .skill-card {
       border: none;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s;
+      border-radius: 10px;
+      background: white;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
       height: 100%;
     }
     
-    .card:hover {
+    .skill-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
     }
     
-    .card-img-top {
+    .skill-icon {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--primary);
+      color: white;
+      border-radius: 50%;
+      margin: 0 auto 1rem;
+      font-size: 1.5rem;
+    }
+    
+    /* Projects Section */
+    .projects-section {
+      padding: 5rem 0;
+    }
+    
+    .project-card {
+      border: none;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+    
+    .project-img {
       height: 200px;
       object-fit: cover;
     }
     
-    .card-body {
-      padding: 25px;
+    .card-img-overlay {
+      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.5rem;
     }
     
-    .card-title {
-      font-weight: 700;
-      margin-bottom: 15px;
-      color: var(--primary);
-    }
-    
-    .card-text {
-      color: #666;
-      margin-bottom: 20px;
-    }
-    
-    .card-link {
-      color: var(--secondary);
-      font-weight: 600;
-      text-decoration: none;
+    .project-category {
+      background-color: var(--accent);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 500;
       display: inline-block;
-      position: relative;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      margin-bottom: 0.5rem;
     }
     
-    .card-link::after {
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      padding: 5rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cta-section::before {
       content: '';
       position: absolute;
-      width: 100%;
-      height: 2px;
-      bottom: -5px;
-      left: 0;
-      background-color: var(--secondary);
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: transform 0.3s;
+      top: -100px;
+      right: -100px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
     }
     
-    .card-link:hover::after {
-      transform: scaleX(1);
-      transform-origin: left;
-    }
-    
-    /* Skills section */
-    .skills-section {
-      background-color: var(--light);
-      padding: 100px 0;
-    }
-    
-    .skill-item {
-      margin-bottom: 30px;
-    }
-    
-    .skill-name {
-      font-weight: 600;
-      margin-bottom: 10px;
-      color: var(--primary);
-    }
-    
-    .progress {
-      height: 10px;
-      border-radius: 5px;
-      background-color: #ddd;
-    }
-    
-    .progress-bar {
-      background-color: var(--secondary);
-      border-radius: 5px;
+    .cta-section::after {
+      content: '';
+      position: absolute;
+      bottom: -100px;
+      left: -100px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
     }
     
     /* Footer */
     .footer {
-      background-color: var(--primary);
+      background-color: var(--primary-dark);
       color: white;
-      padding: 50px 0 20px;
+      padding: 3rem 0;
     }
     
-    .social-links {
-      margin-bottom: 30px;
-    }
-    
-    .social-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      background-color: rgba(255, 255, 255, 0.1);
-      border-radius: 50%;
+    .social-links a {
+      color: white;
       margin: 0 10px;
-      color: white;
-      transition: all 0.3s;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
     }
     
-    .social-link:hover {
-      background-color: var(--secondary);
-      transform: translateY(-5px);
-      color: white;
+    .social-links a:hover {
+      color: var(--accent);
+      transform: scale(1.2);
+    }
+
+    /* Buttons */
+    .btn-primary {
+      background-color: var(--primary);
+      border-color: var(--primary);
+      border-radius: 30px;
+      padding: 0.5rem 1.5rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
     }
     
-    .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding-top: 20px;
-      margin-top: 30px;
+    .btn-primary:hover {
+      background-color: var(--primary-dark);
+      border-color: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
     
-    /* Animation classes */
+    .btn-outline-light {
+      border-radius: 30px;
+      padding: 0.5rem 1.5rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-outline-light:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    /* Animations */
     .fade-in {
-      animation: fadeIn 1s ease-in;
+      animation: fadeIn 1s ease-in both;
     }
     
     @keyframes fadeIn {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
     
-    /* Responsive adjustments */
+    /* Responsive */
     @media (max-width: 768px) {
       .hero h1 {
         font-size: 2.5rem;
       }
       
       .hero p {
-        font-size: 1.2rem;
+        font-size: 1rem;
       }
       
-      .about-section, .portfolio-section, .projects-section, .skills-section {
-        padding: 60px 0;
+      .hero {
+        padding: 5rem 0;
       }
     }
   </style>
@@ -302,113 +303,88 @@
 
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container">
-      <a class="navbar-brand" href="index.html">Bader<span style="color: var(--secondary);">1919</span></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" href="index.html">Bader<span class="text-accent">1919</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#projects">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#skills">Skills</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="capstone.html">Capstone</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="capstone.html">Capstone</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <header class="hero" id="home">
-    <div class="container text-center">
+  <header class="hero text-center">
+    <div class="container">
       <div class="fade-in">
         <h1>Bader Abdulrahim</h1>
-        <p>Smart Home | Automation | Data Analytics</p>
-        <a href="#projects" class="btn btn-custom btn-lg mt-4">View My Projects</a>
+        <p>Specializing in Smart Home Solutions, Data Analytics, and Custom Tech Implementations that drive real-world results</p>
+        <div class="d-flex justify-content-center gap-3 mt-4">
+          <a href="#projects" class="btn btn-outline-light btn-lg">View Projects</a>
+          <a href="contact.html" class="btn btn-light btn-lg">Get In Touch</a>
+        </div>
       </div>
     </div>
   </header>
 
   <!-- About Section -->
-  <section class="about-section" id="about">
+  <section id="about" class="about-section">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-title">About Me</h2>
-        </div>
-      </div>
       <div class="row align-items-center">
-        <div class="col-md-4 text-center">
-          <img src="assets/img/profile.jpg" class="img-fluid rounded-circle profile-img mb-4" width="250" alt="Bader Abdulrahim">
+        <div class="col-md-5 mb-4 mb-md-0">
+          <img src="/assets/img/profile.jpg" alt="Bader Abdulrahim" class="img-fluid rounded-circle profile-img" width="350">
         </div>
-        <div class="col-md-8">
-          <h3>Hi, I'm Bader</h3>
-          <p class="lead">A tech enthusiast specializing in smart home automation, data analytics, and custom technology solutions.</p>
-          <p>I'm passionate about leveraging technology to solve real-world problems and enhance everyday experiences. With expertise in Power BI, SQL, Odoo ERP, and Home Assistant, I create data-driven solutions that drive efficiency and innovation.</p>
-          <p>My approach combines analytical thinking with creative problem-solving to deliver impactful results for both personal projects and business applications.</p>
+        <div class="col-md-7">
+          <h2 class="mb-4">About Me</h2>
+          <p class="lead mb-4">I'm a technology professional focused on building smart solutions that solve real-world problems.</p>
+          <p>With expertise in data analytics, smart home automation, and digital transformation, I help businesses and individuals implement technology that makes life and work more efficient.</p>
+          <p>My approach combines technical know-how with practical business understanding to deliver results that matter.</p>
           <div class="mt-4">
-            <a href="contact.html" class="btn btn-custom me-3">Get In Touch</a>
-            <a href="about.html" class="btn btn-outline-secondary">Learn More</a>
+            <a href="about.html" class="btn btn-primary">Learn More</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Portfolio Section -->
-  <section class="portfolio-section" id="portfolio">
+  <!-- Skills Section -->
+  <section id="skills" class="skills-section">
     <div class="container text-center">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-title">Professional Portfolio</h2>
-          <p class="mb-5">Showcasing my experience, achievements, and professional journey</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <div class="card">
-            <div class="card-body p-5">
-              <h3 class="mb-4">My Expertise</h3>
-              <div class="row text-start">
-                <div class="col-md-6">
-                  <div class="mb-4">
-                    <h5><i class="fas fa-home me-2" style="color: var(--secondary);"></i> Smart Home Solutions</h5>
-                    <p>Designing and implementing comprehensive smart home systems using Home Assistant and other IoT platforms.</p>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="mb-4">
-                    <h5><i class="fas fa-chart-line me-2" style="color: var(--secondary);"></i> Data Analytics</h5>
-                    <p>Creating insightful dashboards and reports using Power BI, SQL, and advanced analytics techniques.</p>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="mb-4">
-                    <h5><i class="fas fa-cogs me-2" style="color: var(--secondary);"></i> Automation</h5>
-                    <p>Designing workflows and systems that automate repetitive tasks and improve efficiency.</p>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="mb-4">
-                    <h5><i class="fas fa-database me-2" style="color: var(--secondary);"></i> ERP Solutions</h5>
-                    <p>Implementing and customizing Odoo ERP systems for business process optimization.</p>
-                  </div>
-                </div>
-              </div>
+      <h2 class="mb-5">Areas of Expertise</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="skill-card p-4">
+            <div class="skill-icon mb-3">
+              <i class="fas fa-home"></i>
             </div>
+            <h4>Smart Home Automation</h4>
+            <p>Creating integrated smart home systems using Home Assistant, ZigBee, and custom automation solutions.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="skill-card p-4">
+            <div class="skill-icon mb-3">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h4>Data Analytics</h4>
+            <p>Transforming raw data into actionable insights using Power BI, SQL, and advanced analytical techniques.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="skill-card p-4">
+            <div class="skill-icon mb-3">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <h4>Custom Tech Solutions</h4>
+            <p>Developing tailored solutions for business needs, including ERP customizations and process automation.</p>
           </div>
         </div>
       </div>
@@ -416,117 +392,80 @@
   </section>
 
   <!-- Projects Section -->
-  <section class="projects-section" id="projects">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-title">Featured Projects</h2>
-          <p class="mb-5">A showcase of my recent work and technical capabilities</p>
-        </div>
-      </div>
+  <section id="projects" class="projects-section">
+    <div class="container text-center">
+      <h2 class="mb-5">Featured Projects</h2>
       <div class="row g-4">
         <div class="col-md-4">
-          <div class="card h-100">
-            <img src="assets/img/project1.jpg" class="card-img-top" alt="Smart Home Automation">
+          <div class="project-card">
+            <div class="position-relative">
+              <img src="/assets/img/airbnb-analysis.jpg" class="card-img-top project-img" alt="Airbnb Market Analysis">
+              <div class="card-img-overlay">
+                <span class="project-category">Data Analytics</span>
+                <h5 class="card-title text-white">Airbnb Market Analysis</h5>
+              </div>
+            </div>
             <div class="card-body">
-              <h5 class="card-title">Smart Home Automation</h5>
-              <p class="card-text">Comprehensive IoT solution for modern homes featuring voice control, energy monitoring, and custom automations using Home Assistant.</p>
-              <a href="projects/smart-home-automation.html" class="card-link">View Project <i class="fas fa-arrow-right ms-1"></i></a>
+              <p class="card-text">Comprehensive analysis of Cape Town's Airbnb market, identifying pricing trends and investment opportunities.</p>
+              <a href="/projects/airbnb-market-analysis" class="btn btn-sm btn-primary">View Project</a>
             </div>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card h-100">
-            <img src="assets/img/project2.jpg" class="card-img-top" alt="Data Analytics Dashboard">
+          <div class="project-card">
+            <div class="position-relative">
+              <img src="/assets/img/home-assistant.png" class="card-img-top project-img" alt="Smart Home Hub">
+              <div class="card-img-overlay">
+                <span class="project-category">Automation</span>
+                <h5 class="card-title text-white">Smart Home Hub</h5>
+              </div>
+            </div>
             <div class="card-body">
-              <h5 class="card-title">Data Analytics Dashboard</h5>
-              <p class="card-text">Interactive business intelligence dashboard built with Power BI and SQL, providing real-time insights and customizable reporting.</p>
-              <a href="projects/data-analytics-dashboard.html" class="card-link">View Project <i class="fas fa-arrow-right ms-1"></i></a>
+              <p class="card-text">Custom Home Assistant implementation with energy monitoring, security integration, and voice control.</p>
+              <a href="/projects/smart-home-hub" class="btn btn-sm btn-primary">View Project</a>
             </div>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card h-100">
-            <img src="assets/img/project3.jpg" class="card-img-top" alt="Smart Security System">
+          <div class="project-card">
+            <div class="position-relative">
+              <img src="/assets/img/customer-churn.jpg" class="card-img-top project-img" alt="Customer Churn Analysis">
+              <div class="card-img-overlay">
+                <span class="project-category">Business Intelligence</span>
+                <h5 class="card-title text-white">Customer Churn Analysis</h5>
+              </div>
+            </div>
             <div class="card-body">
-              <h5 class="card-title">Smart Security System</h5>
-              <p class="card-text">AI-powered surveillance and security solution for businesses with facial recognition, motion detection, and remote monitoring capabilities.</p>
-              <a href="projects/smart-security-system.html" class="card-link">View Project <i class="fas fa-arrow-right ms-1"></i></a>
+              <p class="card-text">Predictive analytics model to identify at-risk customers and provide targeted retention strategies.</p>
+              <a href="/projects/customer-churn-analysis" class="btn btn-sm btn-primary">View Project</a>
             </div>
           </div>
         </div>
       </div>
-      <div class="text-center mt-5">
-        <a href="projects.html" class="btn btn-custom">View All Projects</a>
+      <div class="mt-5">
+        <a href="projects.html" class="btn btn-primary">View All Projects</a>
       </div>
     </div>
   </section>
 
-  <!-- Skills Section -->
-  <section class="skills-section" id="skills">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-title">Skills & Expertise</h2>
-          <p class="mb-5">Technical skills and competencies I've developed through education and experience</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="skill-item">
-            <div class="skill-name">Home Assistant</div>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-name">Power BI</div>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-name">SQL</div>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="skill-item">
-            <div class="skill-name">Odoo ERP</div>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-name">Data Analysis</div>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-name">IoT Integration</div>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-        </div>
-      </div>
+  <!-- CTA Section -->
+  <section class="cta-section text-center">
+    <div class="container position-relative">
+      <h2 class="mb-4">Interested in working together?</h2>
+      <p class="lead mb-4">Let's discuss how my expertise in automation and analytics can help your next project.</p>
+      <a href="contact.html" class="btn btn-outline-light btn-lg">Get In Touch</a>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container text-center">
-      <div class="social-links">
-        <a href="https://linkedin.com/in/bader-abdulrahim/" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://github.com/Bader1919" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="mailto:contact@bader-portfolio.com" class="social-link"><i class="fas fa-envelope"></i></a>
+  <footer class="footer text-center">
+    <div class="container">
+      <div class="mb-4 social-links">
+        <a href="https://linkedin.com/in/bader-abdulrahim/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/Bader1919" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="mailto:contact@baderabdulrahim.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
       </div>
-      <div class="footer-bottom">
-        <p>© 2025 Bader Abdulrahim | All Rights Reserved</p>
-      </div>
+      <p>© 2025 Bader Abdulrahim | All Rights Reserved</p>
     </div>
   </footer>
 
@@ -535,41 +474,29 @@
   
   <!-- Custom JS -->
   <script>
-    // Add smooth scrolling
+    // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          window.scrollTo({
-            top: target.offsetTop - 70,
-            behavior: 'smooth'
-          });
-        }
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
       });
     });
     
-    // Activate navbar links on scroll
-    window.addEventListener('scroll', () => {
-      const sections = document.querySelectorAll('section');
-      const navLinks = document.querySelectorAll('.nav-link');
-      
-      let current = '';
-      
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (pageYOffset >= sectionTop - 100) {
-          current = section.getAttribute('id');
+    // Add fade-in animation to elements as they enter viewport
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
         }
       });
-      
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-          link.classList.add('active');
-        }
-      });
+    }, {
+      threshold: 0.1
+    });
+    
+    document.querySelectorAll('.skill-card, .project-card').forEach(el => {
+      observer.observe(el);
     });
   </script>
 </body>
