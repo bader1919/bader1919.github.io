@@ -3,6 +3,7 @@
 A simple hugo theme for personal portfolio
 ## Performance
 
+<<<<<<< HEAD
 ![Performance of hugo-profile theme](https://github.com/gurusabarish/hugo-profile/blob/master/static/images/performance.png)
 
 ## Demo
@@ -10,6 +11,14 @@ A simple hugo theme for personal portfolio
 ![Thumpnail](https://github.com/gurusabarish/hugo-profile/blob/master/images/tn.png)
 
 ### Site: [Hugo-profile](https://hugo-profile.netlify.com)
+=======
+![Thumpnail](https://github.com/gurusabarish/hugo-profile/blob/master/images/tn.png)
+>>>>>>> 42a6f23 (Update README.md)
+
+
+## Performance
+
+![Performance of hugo-profile theme](https://github.com/gurusabarish/hugo-profile/blob/master/static/images/performance.png)
 
 
 ## Features
