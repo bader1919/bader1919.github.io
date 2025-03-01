@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{- partial "head.html" . -}}
+    <title>{{ .Title }}</title>
+    <meta name="description" content="{{ .Site.Params.description }}" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167646412-7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', '{{ .Site.Params.googleanalytics }}');
+    </script>
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/index.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    {{- partial "sections/home.html" . -}}
+    {{- partial "sections/blog.html" . -}}
+    {{- partial "sections/about.html" . -}}
+    {{- partial "sections/do_things.html" . -}}
+    {{- partial "sections/projects.html" . -}}
+    {{- partial "sections/contact.html" . -}}
+
+    {{- partial "footer.html" . -}}
+    {{- partial "scripts.html" . -}}
+</body>
+
+</html>

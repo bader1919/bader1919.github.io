@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{- partial "head.html" . -}}
+    {{- block "head" . -}}{{- end }}
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/blog.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Peddana&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    {{- partial "header.html" . -}}
+    {{- block "main" . -}}{{- end }}
+    {{- partial "footer.html" . -}}
+    {{- partial "scripts.html" . -}}
+
+</body>
+
+</html>
