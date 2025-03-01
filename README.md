@@ -1,136 +1,61 @@
-# hugo-profile
+# Bader Abdulrahim – Portfolio 🌟
 
-A simple hugo theme for personal portfolio
-## Performance
+Welcome to my personal portfolio website: **[bader1919.github.io](https://bader1919.github.io)**  
+This site showcases my key projects in **data analytics, smart home solutions, and automation**.
 
-<<<<<<< HEAD
-![Performance of hugo-profile theme](https://github.com/gurusabarish/hugo-profile/blob/master/static/images/performance.png)
+---
 
-## Demo
+## 🚀 About Me
+I am passionate about **data analytics and smart home automation**, leveraging tools like **Python, SQL, Power BI, and Home Assistant** to create efficient and insightful solutions.
 
-![Thumpnail](https://github.com/gurusabarish/hugo-profile/blob/master/images/tn.png)
+---
 
-### Site: [Hugo-profile](https://hugo-profile.netlify.com)
-=======
-![Thumpnail](https://github.com/gurusabarish/hugo-profile/blob/master/images/tn.png)
->>>>>>> 42a6f23 (Update README.md)
+## 📌 Featured Projects
 
+### **1️⃣ Home Assistant Optimization**
+- **Description:** Improved smart home system performance.
+- **Skills:** SQL, Python, Power BI, Tableau
 
-## Performance
+### **2️⃣ Airbnb Data Analysis**
+- **Description:** Evaluated pricing and occupancy trends.
+- **Skills:** Excel, Power BI
 
-![Performance of hugo-profile theme](https://github.com/gurusabarish/hugo-profile/blob/master/static/images/performance.png)
+### **3️⃣ Kickstarter Analysis**
+- **Description:** Identified success factors in campaigns.
+- **Skills:** Python, Tableau, Excel
 
+### **4️⃣ Food Distribution Dashboard**
+- **Description:** Visualized distribution data trends.
+- **Skills:** Power BI, SQL
 
-## Features
-- Minimalist Design
-- Fully Responsive
-- Google Analytics Support
-- Disqus Comment Support
-- Contact form using [Formpree](https://formspree.io/)
+### **5️⃣ Gender Pay Gap Study**
+- **Description:** Analyzed pay disparity trends.
+- **Skills:** Excel, Power BI
 
+### **6️⃣ StreamVerse Lab**
+- **Description:** Delivered insights on user engagement.
+- **Skills:** Python, Power BI, SQL
 
+### **7️⃣ SQL Challenges**
+- **Description:** Completed advanced query tasks, focusing on joins, subqueries, and aggregations.
+- **Skills:** SQL
 
-## Requirements
+---
 
-- Hugo Version 0.68.0 or higher
+## 🔧 Technologies Used
+- **Languages:** Python, SQL
+- **Visualization:** Power BI, Tableau, Excel
+- **Automation & IoT:** Home Assistant, MQTT, Zigbee
+- **Web Development:** HTML, CSS, GitHub Pages
 
+---
 
+## 📩 Contact Me
+🔗 **Portfolio:** [bader1919.github.io](https://bader1919.github.io)  
+📧 **Email:** [Bader.abdulrahim@gmail.com](mailto:Bader.abdulrahim@gmail.com)  
+💼 **LinkedIn:** [linkedin.com/in/bader-abdulrahim](https://linkedin.com/in/bader-abdulrahim/)  
+📂 **GitHub:** [github.com/Bader1919](https://github.com/Bader1919)  
 
-## Installation
+---
 
-- [Install Hugo](https://gohugo.io/overview/installing)
-
-- Create your site if you haven't already
-
-```console
-hugo new site my-site -f=yaml
-cd my-site
-git init
-```
-
-- Add the theme as git sub-module
-
-```console
-git submodule add https://github.com/gurusabarish/hugo-profile.git themes/hugo-profile
-```
-
->Don't use SSH URL of the theme during adding as git sub-module. Also, don't clone the theme in your `themes` directory using `git clone`. They don't work well with Github Action or Netlify.
-
-
-## Configuration
-
-Configure your `config.yaml` file of your site as below:
-
-```yaml
-baseURL: "https://example.com"
-languageCode: "en-us"
-title: "Hugo-profile"
-theme: "hugo-profile"
-
-Paginate: 3
-
-taxonomies:
-  tag: "tags"
-  category: "categories"
-  
-  
-params:
-  favicon: "/images/hugo.png"
-  description: "Portfolio and personal blog of gurusabarish"
-  googleanalytics: "UA-167646412-8"
-  disqus: ""
-  
-  # Contact
-  contact: true
-  action: ""
-  emailname: ""
-  messagename: ""
-  
-  # Navbar Menus
-  customMenus:
-  - name: "Blog"
-    url: "https://example.com/blog"
- 
-  # Home
-  name: "Gurusabarish"
-  profile: "/images/avatar-370-456322.webp"
-  github: "https://github.com/gurusabarish"
-  linkedin: "https://linkedin.com/in/gurusabarish"
-  twitter: "https://twitter.com/gurusabarishh"
-  instagram: "https://instagram.com/gurusabarishh"
-
-  # Do things { Please change the svg icons width="3em" height="3em" }
-  thing1: "Python"
-  thing2: "Machine learning"
-  thing3: "Build things for web"
-  thing1_des: "I build something beautiful using python."
-  thing2_des: "I train robust models for various tasks."
-  thing3_des: "I love to build things for web."
-
-  # About
-  profile_image: "/images/gurusabarish.jpg"
-  jop: "Web developer"
-  jops_about: "web developer and ML engineer"
-  resume: ""
-  
-  projects:
-  - title: "Project name"
-    image: "/images/project.png"
-    description:  "This is your description"
-    url: "https://github.com"
-  
-
-Author:
-  name: "Gurusabarish"
-  website: "https://github.com/gurusabarish"
-```
-
-<b>Use Yaml as config file</b>
-
-You can just copy the content for `config.yaml` files from `theme/toha/exampleSite/config.yaml`.
-
-
-## Contributing
-
-> Contributers are always welcome :heart:
-
+### ⭐ If you find my work interesting, consider giving this repository a star!
