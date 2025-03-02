@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 # Define your Ruby version (optional but recommended)
-ruby '3.2.0'
+ruby '3.2.7'
 
 # Rails example (only if you are using Rails)
 # gem 'rails', '~> 7.1'
