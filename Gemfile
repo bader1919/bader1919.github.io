@@ -1,1 +1,3 @@
-gem install jekyll bundler
+bundle init
+
+gem "jekyll"
