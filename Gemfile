@@ -1,6 +1,11 @@
+$ bundle init
+Writing new Gemfile to /app/Gemfile
+
+$ cat Gemfile 
+# frozen_string_literal: true
+
 source "https://rubygems.org"
 
+git_source(:github) {bader1919.github.io/ "https://github.com/#{bader1919.github.io/" }
 
-gem "jekyll", "~> 4.2.0"
-gem "minima", "~> 2.5"
-gem "webrick" # Required for Ruby 3.7
+# gem "rails"
