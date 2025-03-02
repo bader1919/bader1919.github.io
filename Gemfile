@@ -17,4 +17,9 @@ gem 'sqlite3'
 # Testing and development tools (optional)
 group :development, :test do
   gem 'rspec'
+
+
+bundle add jekyll
+bundle install
+gem install jekyll bundler
 end
