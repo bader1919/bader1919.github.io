@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Resources | Data Analysis Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../assets/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header will be loaded dynamically -->
+    <div id="header"></div>
+
+    <!-- Project Banner -->
+    <section class="project-banner bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 fw-bold fade-in">SQL Resources</h1>
+                    <p class="lead fade-in-delay">A comprehensive collection of SQL techniques, patterns, and best practices</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="mb-4 slide-in">Project Overview</h2>
+                    <p class="lead slide-in-delay">This resource hub provides a collection of SQL knowledge, from fundamental concepts to advanced techniques, designed to help data analysts and developers write more efficient and effective queries.</p>
+                    <p class="slide-in-delay">Whether you're a beginner looking to understand SQL basics or an experienced developer seeking to optimize complex queries, this resource provides practical examples, best practices, and solutions to common challenges.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SQL Best Practices -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="mb-4 slide-in">SQL Best Practices</h2>
+                    <div class="card mb-4 shadow slide-in-delay">
+                        <div class="card-body">
+                            <h3 class="card-title">Query Optimization</h3>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Use appropriate indexes for frequent query patterns</li>
+                                <li class="list-group-item">Avoid SELECT * and retrieve only needed columns</li>
+                                <li class="list-group-item">Minimize the use of DISTINCT when possible</li>
+                                <li class="list-group-item">Use EXISTS instead of IN for better performance with subqueries</li>
+                                <li class="list-group-item">Consider query execution plans when optimizing complex queries</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card mb-4 shadow slide-in-delay">
+                        <div class="card-body">
+                            <h3 class="card-title">Database Design</h3>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Normalize your database to reduce redundancy</li>
+                                <li class="list-group-item">Use appropriate data types for columns</li>
+                                <li class="list-group-item">Implement constraints to maintain data integrity</li>
+                                <li class="list-group-item">Create meaningful naming conventions for tables and columns</li>
+                                <li class="list-group-item">Document your database schema thoroughly</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card mb-4 shadow slide-in-delay">
+                        <div class="card-body">
+                            <h3 class="card-title">Query Writing Style</h3>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Use consistent formatting and indentation</li>
+                                <li class="list-group-item">Utilize table aliases for readability in joins</li>
+                                <li class="list-group-item">Break complex queries into CTEs (Common Table Expressions)</li>
+                                <li class="list-group-item">Comment your SQL, especially complex logic</li>
+                                <li class="list-group-item">Use parameters instead of hardcoded values</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Common SQL Patterns -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="mb-4 slide-in">Common SQL Patterns</h2>
+                    
+                    <div class="card mb-4 shadow slide-in-delay">
+                        <div class="card-body">
+                            <h3 class="card-title">Hierarchical Data Queries</h3>
+                            <p>Techniques for working with tree structures and parent-child relationships:</p>
+                            <pre class="bg-light p-3 rounded"><code>-- Recursive CTE for traversing hierarchies
+WITH RECURSIVE employee_hierarchy AS (
+  SELECT id, name, manager_id, 1 AS level
+  FROM employees
+  WHERE manager_id IS NULL
+  
+  UNION ALL
+  
+  SELECT e.id, e.name, e.manager_id, eh.level + 1
+  FROM employees e
+  JOIN employee_hierarchy eh ON e.manager_id = eh.id
+)
+SELECT * FROM employee_hierarchy
+ORDER BY level, name;</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="card mb-4 shadow slide-in-delay">
+                        <div class="card-body">
+                            <h3 class="card-title">Date and Time Operations</h3>
+                            <p>Effective ways to manipulate and analyze date-based data:</p>
+                            <pre class="bg-light p-3 rounded"><code>-- Extract data for specific date ranges
+SELECT *
+FROM orders
+WHERE order_date BETWEEN
+  DATE_TRUNC('month', CURRENT_DATE) AND
+  DATE_TRUNC('month', CURRENT_DATE) + INTERVAL '1 month' - INTERVAL '1 day';
+
+-- Group by time periods
+SELECT 
+  DATE_TRUNC('month', order_date) AS month,
+  COUNT(*) AS order_count,
+  SUM(amount) AS total_sales
+FROM orders
+GROUP BY DATE_TRUNC('month', order_date)
+ORDER BY month;</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="card mb-4 shadow slide-in-delay">
+                        <div class="card-body">
+                            <h3 class="card-title">Window Functions</h3>
+                            <p>Powerful techniques for analyzing data across rows:</p>
+                            <pre class="bg-light p-3 rounded"><code>-- Calculate running totals
+SELECT 
+  order_date,
+  amount,
+  SUM(amount) OVER (ORDER BY order_date) AS running_total
+FROM orders;
+
+-- Rank results within partitions
+SELECT 
+  department,
+  employee_name,
+  salary,
+  RANK() OVER (PARTITION BY department ORDER BY salary DESC) AS salary_rank
+FROM employees;</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Query Techniques -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="mb-4 slide-in">Advanced Query Techniques</h2>
+                    
+                    <div class="card mb-4 shadow slide-in-delay">
+                        <div class="card-body">
+                            <h3 class="card-title">Pivot and Unpivot Operations</h3>
+                            <p>Transforming row data into columns and vice versa:</p>
+                            <pre class="bg-light p-3 rounded"><code>-- Dynamic pivot using CROSSTAB
+SELECT * FROM CROSSTAB(
+  'SELECT category, quarter, sales
+   FROM quarterly_sales
+   ORDER BY 1, 2',
+  'SELECT DISTINCT quarter
+   FROM quarterly_sales
+   ORDER BY 1'
+) AS ct (category TEXT, q1 NUMERIC, q2 NUMERIC, q3 NUMERIC, q4 NUMERIC);</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="card mb-4 shadow slide-in-delay">
+                        <div class="card-body">
+                            <h3 class="card-title">Complex Joins and Set Operations</h3>
+                            <p>Beyond simple joins to more sophisticated data combinations:</p>
+                            <pre class="bg-light p-3 rounded"><code>-- Self join for comparing rows
+SELECT a.product_name, a.price AS price_2022, b.price AS price_2023,
+  ((b.price - a.price) / a.price * 100)::NUMERIC(5,2) AS price_change_pct
+FROM products_2022 a
+JOIN products_2023 b ON a.product_id = b.product_id;
+
+-- FULL OUTER JOIN with COALESCE for reporting
+SELECT 
+  COALESCE(a.category, b.category) AS category,
+  COALESCE(a.total, 0) AS sales_2022,
+  COALESCE(b.total, 0) AS sales_2023
+FROM sales_2022 a
+FULL OUTER JOIN sales_2023 b ON a.category = b.category;</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="card mb-4 shadow slide-in-delay">
+                        <div class="card-body">
+                            <h3 class="card-title">Dynamic SQL and Metadata Queries</h3>
+                            <p>Generating SQL dynamically and querying database objects:</p>
+                            <pre class="bg-light p-3 rounded"><code>-- Query to find tables with specific columns
+SELECT t.table_schema, t.table_name
+FROM information_schema.tables t
+JOIN information_schema.columns c 
+  ON c.table_schema = t.table_schema AND c.table_name = t.table_name
+WHERE t.table_schema NOT IN ('pg_catalog', 'information_schema')
+  AND c.column_name = 'customer_id'
+ORDER BY t.table_schema, t.table_name;</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SQL Challenges -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="mb-4 slide-in">SQL Practice Challenges</h2>
+                    <p class="slide-in-delay">Sharpen your SQL skills with these practice problems ranging from beginner to expert levels.</p>
+                    
+                    <div class="accordion slide-in-delay" id="sqlChallenges">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Challenge #1: Employee Department Analytics
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#sqlChallenges">
+                                <div class="accordion-body">
+                                    <p><strong>Problem:</strong> Find the department with the highest average salary and the employee with the highest salary in that department.</p>
+                                    <pre class="bg-light p-3 rounded"><code>-- Solution
+WITH dept_avg AS (
+  SELECT 
+    department_id,
+    AVG(salary) AS avg_salary,
+    MAX(salary) AS max_salary
+  FROM employees
+  GROUP BY department_id
+  ORDER BY avg_salary DESC
+  LIMIT 1
+)
+SELECT 
+  d.department_name,
+  da.avg_salary,
+  e.employee_name,
+  e.salary
+FROM dept_avg da
+JOIN departments d ON d.department_id = da.department_id
+JOIN employees e ON e.department_id = da.department_id AND e.salary = da.max_salary;</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Challenge #2: Customer Purchase Patterns
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#sqlChallenges">
+                                <div class="accordion-body">
+                                    <p><strong>Problem:</strong> Find customers who have made purchases in at least 3 consecutive months.</p>
+                                    <pre class="bg-light p-3 rounded"><code>-- Solution
+WITH monthly_purchases AS (
+  SELECT 
+    customer_id,
+    DATE_TRUNC('month', purchase_date) AS purchase_month
+  FROM purchases
+  GROUP BY customer_id, DATE_TRUNC('month', purchase_date)
+),
+consecutive_months AS (
+  SELECT
+    customer_id,
+    purchase_month,
+    LEAD(purchase_month, 1) OVER (PARTITION BY customer_id ORDER BY purchase_month) AS next_month,
+    LEAD(purchase_month, 2) OVER (PARTITION BY customer_id ORDER BY purchase_month) AS next_next_month
+  FROM monthly_purchases
+)
+SELECT DISTINCT customer_id
+FROM consecutive_months
+WHERE 
+  next_month = purchase_month + INTERVAL '1 month' AND
+  next_next_month = purchase_month + INTERVAL '2 month';</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Challenge #3: Inventory Management
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#sqlChal
+
