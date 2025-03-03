@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;Bader Abdulrahim | Portfolio&lt;/title&gt;
+  
+  &lt;!-- Meta tags for better SEO --&gt;
+  &lt;meta name=&quot;description&quot; content=&quot;Professional portfolio of Bader Abdulrahim, specializing in smart home automation, data analytics, and custom tech solutions.&quot;&gt;
+  &lt;meta name=&quot;keywords&quot; content=&quot;smart home, automation, data analytics, Power BI, SQL, Home Assistant&quot;&gt;
+  
+  &lt;!-- Favicon --&gt;
+  &lt;link rel=&quot;icon&quot; href=&quot;/assets/img/favicon.ico&quot; type=&quot;image/x-icon&quot;&gt;
+  
+  &lt;!-- Bootstrap 5 CSS --&gt;
+  &lt;link href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+  
+  &lt;!-- Font Awesome --&gt;
+  &lt;link href=&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+  
+  &lt;!-- Google Fonts --&gt;
+  &lt;link href=&quot;https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+  <!-- Custom CSS -->
+  <style>
+    :root {
+      --primary: #2d46b9;
+      --primary-dark: #1f3c88;
+      --secondary: #f1f2f6;
+      --accent: #ff6b6b;
+      --text-dark: #333;
+      --text-light: #f8f9fa;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-dark);
+      background-color: #fcfcfc;
+      overflow-x: hidden;
+    }
+    
+    /* Navbar Styles */
+    .navbar {
+      background-color: var(--primary-dark);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 1rem 0;
+    }
+    
+    .navbar-brand {
+      font-weight: 700;
+      color: white !important;
+      font-size: 1.5rem;
+    }
+    
+    .nav-link {
+      color: rgba(255,255,255,0.85) !important;
+      font-weight: 500;
+      margin: 0 0.5rem;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-link:hover {
+      color: white !important;
+      transform: translateY(-2px);
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(31, 60, 136, 0.9), rgba(31, 60, 136, 0.9)), url('/assets/img/hero-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 7rem 0;
+      position: relative;
+    }
+    
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background: linear-gradient(to top, #fcfcfc, transparent);
+    }
+    
+    .hero h1 {
+      font-weight: 700;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 700px;
+      margin: 0 auto;
+      margin-bottom: 2rem;
+    }
+    
+    /* About Section */
+    .about-section {
+      padding: 5rem 0;
+    }
+    
+    .profile-img {
+      border: 8px solid white;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    
+    .profile-img:hover {
+      transform: scale(1.05);
+    }
+    
+    /* Skills Section */
+    .skills-section {
+      background-color: var(--secondary);
+      padding: 5rem 0;
+    }
+    
+    .skill-card {
+      border: none;
+      border-radius: 10px;
+      background: white;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+    
+    .skill-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+    
+    .skill-icon {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--primary);
+      color: white;
+      border-radius: 50%;
+      margin: 0 auto 1rem;
+      font-size: 1.5rem;
+    }
+    
+    /* Projects Section */
+    .projects-section {
+      padding: 5rem 0;
+    }
+    
+    .project-card {
+      border: none;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+    
+    .project-img {
+      height: 200px;
+      object-fit: cover;
+    }
+    
+    .card-img-overlay {
+      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.5rem;
+    }
+    
+    .project-category {
+      background-color: var(--accent);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 500;
+      display: inline-block;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      margin-bottom: 0.5rem;
+    }
+    
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      padding: 5rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+    }
+    
+    .cta-section::after {
+      content: '';
+      position: absolute;
+      bottom: -100px;
+      left: -100px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+    }
+    
+    /* Footer */
+    .footer {
+      background-color: var(--primary-dark);
+      color: white;
+      padding: 3rem 0;
+    }
+    
+    .social-links a {
+      color: white;
+      margin: 0 10px;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      color: var(--accent);
+      transform: scale(1.2);
+    }
+
+    /* Buttons */
+    .btn-primary {
+      background-color: var(--primary);
+      border-color: var(--primary);
+      border-radius: 30px;
+      padding: 0.5rem 1.5rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+      background-color: var(--primary-dark);
+      border-color: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .btn-outline-light {
+      border-radius: 30px;
+      padding: 0.5rem 1.5rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-outline-light:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    /* Animations */
+    .fade-in {
+      animation: fadeIn 1s ease-in both;
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero p {
+        font-size: 1rem;
+      }
+      
+      .hero {
+        padding: 5rem 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Bader<span class="text-accent">1919</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="capstone.html">Capstone</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero text-center">
+    <div class="container">
+      <div class="fade-in">
+        <h1>Bader Abdulrahim</h1>
+        <p>Specializing in Smart Home Solutions, Data Analytics, and Custom Tech Implementations that drive real-world results</p>
+        <div class="d-flex justify-content-center gap-3 mt-4">
+          <a href="#projects" class="btn btn-outline-light btn-lg">View Projects</a>
+          <a href="contact.html" class="btn btn-light btn-lg">Get In Touch</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-5 mb-4 mb-md-0">
+          <img src="/assets/img/profile.jpg" alt="Bader Abdulrahim" class="img-fluid rounded-circle profile-img" width="350">
+        </div>
+        <div class="col-md-7">
+          <h2 class="mb-4">About Me</h2>
+          <p class="lead mb-4">I’m Bader Abdulrahim, a data-driven strategist with a passion for turning raw information into actionable insights. </p>
+          <p>As the founder of BY MB Consultancy, I specialize in data analytics, business intelligence, and digital transformation, helping businesses in Bahrain leverage their data for smarter decision-making.</p> 
+          <p>MMy expertise spans SQL, Power BI, and Python, enabling me to analyze trends, optimize processes, and uncover growth opportunities.</p>
+           <p> I thrive on solving complex problems and transforming data into valuable narratives that drive efficiency and innovation. </p>
+          <p>With expertise in data analytics, smart home automation, and digital transformation, I help businesses and individuals implement technology that makes life and work more efficient.</p>
+          <div class="mt-4">
+            <a href="about.html" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills-section">
+    <div class="container text-center">
+      <h2 class="mb-5">Areas of Expertise</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="skill-card p-4">
+            <div class="skill-icon mb-3">
+              <i class="fas fa-home"></i>
+            </div>
+            <h4>Smart Home Automation</h4>
+            <p>Creating integrated smart home systems using Home Assistant, ZigBee, and custom automation solutions.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="skill-card p-4">
+            <div class="skill-icon mb-3">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h4>Data Analytics</h4>
+            <p>Transforming raw data into actionable insights using Power BI, SQL, and advanced analytical techniques.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="skill-card p-4">
+            <div class="skill-icon mb-3">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <h4>Custom Tech Solutions</h4>
+            <p>Developing tailored solutions for business needs, including ERP customizations and process automation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects-section">
+    <div class="container text-center">
+      <h2 class="mb-5">Featured Projects</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="project-card">
+            <div class="position-relative">
+              <img src="/assets/img/airbnb-analysis.jpg" class="card-img-top project-img" alt="Airbnb Market Analysis">
+              <div class="card-img-overlay">
+                <span class="project-category">Data Analytics</span>
+                <h5 class="card-title text-white">Airbnb Market Analysis</h5>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="card-text">Comprehensive analysis of Cape Town's Airbnb market, identifying pricing trends and investment opportunities.</p>
+              <a href="/projects/airbnb-market-analysis" class="btn btn-sm btn-primary">View Project</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="project-card">
+            <div class="position-relative">
+              <img src="/assets/img/home-assistant.png" class="card-img-top project-img" alt="Smart Home Hub">
+              <div class="card-img-overlay">
+                <span class="project-category">Automation</span>
+                <h5 class="card-title text-white">Smart Home Hub</h5>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="card-text">Custom Home Assistant implementation with energy monitoring, security integration, and voice control.</p>
+              <a href="/projects/smart-home-hub" class="btn btn-sm btn-primary">View Project</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="project-card">
+            <div class="position-relative">
+              <img src="/assets/img/customer-churn.jpg" class="card-img-top project-img" alt="Customer Churn Analysis">
+              <div class="card-img-overlay">
+                <span class="project-category">Business Intelligence</span>
+                <h5 class="card-title text-white">Customer Churn Analysis</h5>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="card-text">Predictive analytics model to identify at-risk customers and provide targeted retention strategies.</p>
+              <a href="/projects/customer-churn-analysis" class="btn btn-sm btn-primary">View Project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-5">
+        <a href="projects.html" class="btn btn-primary">View All Projects</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section text-center">
+    <div class="container position-relative">
+      <h2 class="mb-4">Interested in working together?</h2>
+      <p class="lead mb-4">Let's discuss how my expertise in automation and analytics can help your next project.</p>
+      <a href="contact.html" class="btn btn-outline-light btn-lg">Get In Touch</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer text-center">
+    <div class="container">
+      <div class="mb-4 social-links">
+        <a href="https://linkedin.com/in/bader-abdulrahim/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/Bader1919" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="mailto:contact@baderabdulrahim.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+      <p>© 2025 Bader Abdulrahim | All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Custom JS -->
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
