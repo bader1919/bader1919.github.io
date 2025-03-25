@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kickstarter Growth Analysis | Bader Abdulrahim</title>
+  
+  <!-- Meta tags for better SEO -->
+  <meta name="description" content="Comprehensive analysis of Kickstarter crowdfunding campaigns from 2009-2012, identifying success factors and growth trends.">
+  <meta name="keywords" content="kickstarter, crowdfunding, growth analysis, data analytics, funding success">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+  
+  <style>
+    .project-banner {
+      background-color: var(--primary-dark);
+      padding-top: calc(56px + 5rem) !important; /* Add 56px (navbar height) + additional padding */
+      padding-bottom: 5rem !important;
+      color: white;
+      text-align: center;
+    }
+    
+    .project-section {
+      padding: 5rem 0;
+    }
+    
+    .project-img {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    .document-card {
+      border: 1px solid #eee;
+      padding: 2rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      margin-bottom: 2rem;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+    
+    .document-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+    
+    .document-icon {
+      font-size: 3rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header component will be loaded here -->
+  <div id="header-placeholder"></div>
+
+  <!-- Project Banner -->
+  <section class="project-banner">
+    <div class="container">
+      <h1 class="mb-4">Kickstarter Growth Analysis</h1>
+      <p class="lead">Comprehensive analysis of Kickstarter crowdfunding campaigns from 2009-2012, identifying key success factors and growth trends.</p>
+    </div>
+  </section>
+
+  <!-- Project Overview -->
+  <section class="project-section bg-light">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <img src="/assets/img/kickstarter.jpg" alt="Kickstarter Growth Analysis" class="project-img">
+        </div>
+        <div class="col-lg-6">
+          <h2 class="mb-4">Project Overview</h2>
+          <p>This in-depth analysis examines the growth and performance of Kickstarter crowdfunding campaigns from 2009 to 2012, a formative period for the platform. The study investigates various factors that influence campaign success rates, funding amounts, and backer engagement.</p>
+          <p>By analyzing historical Kickstarter data, this project identifies trends in category performance, optimal funding goals, campaign duration impacts, and geographical distribution of successful projects. The insights provide valuable guidance for creators looking to launch effective crowdfunding campaigns.</p>
+          <div class="d-flex align-items-center mt-4">
+            <div class="me-4">
+              <span class="d-block text-muted mb-1">Project Type</span>
+              <span class="fw-bold">Data Analytics</span>
+            </div>
+            <div class="me-4">
+              <span class="d-block text-muted mb-1">Tools Used</span>
+              <span class="fw-bold">Excel, PowerPoint, Data Visualization</span>
+            </div>
+            <div>
+              <span class="d-block text-muted mb-1">Date</span>
+              <span class="fw-bold">2022</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Findings -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="text-center mb-5">Key Findings</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <div class="text-center mb-3">
+                <i class="fas fa-chart-line fa-2x text-primary"></i>
+              </div>
+              <h4 class="card-title text-center">Growth Patterns</h4>
+              <p class="card-text">Identified exponential growth in Kickstarter campaigns between 2009-2012, with a 500% increase in total funding volume and significant upward trends in average pledge amounts.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <div class="text-center mb-3">
+                <i class="fas fa-tags fa-2x text-primary"></i>
+              </div>
+              <h4 class="card-title text-center">Category Analysis</h4>
+              <p class="card-text">Discovered that Games, Technology, and Design categories had the highest success rates and funding amounts, while Dance and Theater showed the highest success percentages despite lower funding goals.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <div class="text-center mb-3">
+                <i class="fas fa-bullseye fa-2x text-primary"></i>
+              </div>
+              <h4 class="card-title text-center">Success Factors</h4>
+              <p class="card-text">Analyzed the correlation between funding goals, campaign duration, and success rates, finding that campaigns with moderate goals (under $10,000) and durations of 30 days or less had significantly higher success rates.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Documents -->
+  <section class="project-section bg-light">
+    <div class="container">
+      <h2 class="text-center mb-5">Project Documents</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="document-card text-center">
+            <div class="document-icon">
+              <i class="far fa-file-powerpoint"></i>
+            </div>
+            <h4>Complete Analysis Presentation</h4>
+            <p>Detailed presentation of Kickstarter's growth from 2009-2012 with comprehensive analyses, visualizations, and key insights.</p>
+            <a href="annotated-Kickstarter_Complete_Analysis_2009_2012%20final.pptx.pdf" class="btn btn-primary mt-3" target="_blank">
+              <i class="fas fa-download me-2"></i>Download PDF
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="document-card text-center">
+            <div class="document-icon">
+              <i class="far fa-file-excel"></i>
+            </div>
+            <h4>Excel Data Analysis</h4>
+            <p>Comprehensive Excel workbook containing raw data, analysis methodology, pivot tables, and data visualizations.</p>
+            <a href="annotated-Updated_Kickstarter_Project_2009_2012_Final.xlsx.pdf" class="btn btn-primary mt-3" target="_blank">
+              <i class="fas fa-download me-2"></i>Download PDF
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Methodology -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="text-center mb-5">Methodology</h2>
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body p-5">
+              <div class="d-flex mb-4">
+                <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                  <span>1</span>
+                </div>
+                <div class="ms-3">
+                  <h5>Data Collection</h5>
+                  <p>Gathered historical Kickstarter campaign data from 2009-2012, including funding goals, pledged amounts, backer counts, categories, and campaign durations.</p>
+                </div>
+              </div>
+              <div class="d-flex mb-4">
+                <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                  <span>2</span>
+                </div>
+                <div class="ms-3">
+                  <h5>Data Preparation</h5>
+                  <p>Cleaned and structured the dataset, addressing missing values and standardizing formats for consistent analysis.</p>
+                </div>
+              </div>
+              <div class="d-flex mb-4">
+                <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                  <span>3</span>
+                </div>
+                <div class="ms-3">
+                  <h5>Time Series Analysis</h5>
+                  <p>Conducted time series analysis to track growth patterns and identify seasonality in campaign launches and funding success.</p>
+                </div>
+              </div>
+              <div class="d-flex mb-4">
+                <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                  <span>4</span>
+                </div>
+                <div class="ms-3">
+                  <h5>Categorical Analysis</h5>
+                  <p>Performed comparative analysis across different project categories to identify performance variations and success rates.</p>
+                </div>
+              </div>
+              <div class="d-flex">
+                <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                  <span>5</span>
+                </div>
+                <div class="ms-3">
+                  <h5>Visualization & Reporting</h5>
+                  <p>Created comprehensive visualizations and statistical summaries to clearly communicate findings and actionable insights.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Other Projects Section -->
+  <section class="project-section bg-light">
+    <div class="container text-center">
+      <h2 class="mb-5">Explore Other Projects</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100">
+            <img src="/assets/img/airbnb-analysis.jpg" class="card-img-top" alt="Airbnb Market Analysis">
+            <div class="card-body">
+              <h5 class="card-title">Airbnb Market Analysis</h5>
+              <p class="card-text">Comprehensive analysis of Cape Town's Airbnb market, identifying pricing trends and investment opportunities.</p>
+              <a href="/projects/airbnb-market-analysis" class="btn btn-outline-primary">View Project</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <img src="/assets/img/global-food.jpg" class="card-img-top" alt="Global Food Supply Chain">
+            <div class="card-body">
+              <h5 class="card-title">Global Food Supply Chain</h5>
+              <p class="card-text">Analysis of international food distribution networks and optimization strategies for supply chain efficiency.</p>
+              <a href="/projects/global-food-supply-chain" class="btn btn-outline-primary">View Project</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <img src="/assets/img/ba-service.jpg" class="card-img-top" alt="BA Service Quality Review">
+            <div class="card-body">
+              <h5 class="card-title">BA Service Quality Review</h5>
+              <p class="card-text">Comprehensive analysis of British Airways service quality metrics and customer satisfaction factors.</p>
+              <a href="/projects/ba-service-quality-review" class="btn btn-outline-primary">View Project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-5">
+        <a href="/projects.html" class="btn btn-primary">View All Projects</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer component will be loaded here -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Component loader -->
+  <script src="/assets/js/components.js"></script>
+  
+  <!-- Custom JS -->
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
+

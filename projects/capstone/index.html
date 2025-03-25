@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bader Abdulrahim - Data Analytics Capstone Project</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    
+    <!-- Animate.css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        /* Hero Section Styles */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                        url('https://i.ibb.co/5G7fR5x/freepik-edit-5.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding-top: calc(56px + 5rem) !important; /* Add 56px (navbar height) + additional padding */
+            padding-bottom: 5rem !important;
+            margin-top: 0 !important;
+        }
+        
+        /* Page Sections */
+        .page-section {
+            min-height: calc(100vh - 56px);
+            padding-top: 56px;
+        }
+        
+        /* Navigation Link Hover Effect */
+        .nav-link {
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover {
+            transform: translateY(2px);
+        }
+
+        /* Card Hover Effect */
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+
+            /* Style for the page numbers */
+        .slide-info #currentSlide,
+        .slide-info #totalSlides {
+        color: #fff; /* Current slide is green */
+        }
+
+        /* Style for total slides */
+        .slide-info #totalSlides {
+        color: #fff; /* Total slides are red */
+        }
+
+        /* Optional: Style for "Slide" and "of" */
+        .slide-info {
+        font-size: 16px; /* Adjust size as needed */
+        font-weight: bold;
+        color: #fff; /* Blue for default text ("Slide" and "of") */
+}
+
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">Bader Abdulrahim</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<!-- Progress Bar -->
+<div class="progress-container fixed-top">
+    <div class="progress">
+      <div
+        class="progress-bar"
+        role="progressbar"
+        id="progressBar"
+        style="width: 0%"
+        aria-valuenow="0"
+        aria-valuemin="0"
+        aria-valuemax="100"
+      ></div>
+    </div>
+  </div>
+  
+  <!-- Slide Information (Bottom-Left) -->
+  <div class="bg-dark slide-info position-absolute bottom-0 start-0 mb-4 ms-4 bg-dark text-white p-2 rounded">
+    Slide <span id="currentSlide">1</span> of <span id="totalSlides">10</span>
+  </div>
+  
+  <!-- Navigation Buttons (Bottom-Right) -->
+  <div class="navigation position-absolute bottom-0 end-0 mb-4 me-4">
+    <button class="btn btn-primary me-2" onclick="previousSlide()" aria-label="Previous Slide">
+      <i class="bi bi-chevron-left"></i> Previous
+    </button>
+    <button class="btn btn-primary" onclick="nextSlide()" aria-label="Next Slide">
+      Next <i class="bi bi-chevron-right"></i>
+    </button>
+  </div>
+  
+  <!-- Keyboard Shortcuts Help -->
+  <div class="keyboard-shortcuts position-fixed top-50 start-50 translate-middle bg-white p-3 rounded shadow d-none" id="shortcutHelp">
+    <h6 class="mb-2">Keyboard Shortcuts</h6>
+    <small>
+      <div>← → : Navigate slides</div>
+      <div>Space : Next slide</div>
+      <div>Home/End : First/Last slide</div>
+      <div>H : Toggle this help</div>
+      <div>F : Toggle fullscreen</div>
+    </small>
+  </div>
+  
+  <!-- Touch Indicators -->
+  <div class="touch-indicator left position-fixed top-50 start-0 translate-middle-y">◀</div>
+  <div class="touch-indicator right position-fixed top-50 end-0 translate-middle-y">▶</div>
+  
+
+    <!-- Home Section -->
+    <section id="home" class="page-section hero-section text-center">
+        <div class="container">
+            <h1 class="display-4 mb-4 animate__animated animate__fadeInDown">Bader Abdulrahim - Data Analytics Capstone Project</h1>
+            <p class="lead mb-4 animate__animated animate__fadeInUp">A Comprehensive Analysis Project Demonstrating Skills in Data Extraction, Cleaning, Analysis, and Visualization</p>
+        </div>
+    </section>
+
+    <!-- Slides Section -->
+    <!-- Slide1: Introduction to Home Assistant -->
+<!-- Slide1: Introduction to Home Assistant -->
+<section id="slide1" class="page-section">
+    <div class="container py-5">
+        <h1 class="text-primary mb-4">Introduction to Home Assistant</h1>
+        <p>Home Assistant is an open-source home automation platform designed with a strong focus on local control and privacy. It provides a powerful yet simple framework, enabling users to manage and understand their smart homes effectively.</p>
+        <p>The platform's data model revolves around four key components: <strong>events</strong>, <strong>states</strong>, <strong>services</strong>, and <strong>context</strong>. This straightforward structure allows users to monitor ongoing activities and analyze historical data seamlessly.</p>
+
+        <!-- Two Columns: Left and Right -->
+        <div class="row">
+            <!-- Left Column -->
+            <div class="col-md-6">
+                <div class="card p-3">
+                    <h4 class="text-secondary">Who Uses It?</h4>
+                    <ul>
+                        <li><strong>Homeowners:</strong> Enhance comfort, efficiency, and security.</li>
+                        <li><strong>Smart Home Enthusiasts:</strong> Customize and optimize smart home setups.</li>
+                        <li><strong>Developers:</strong> Create advanced automation workflows and integrations.</li>
+                    </ul>
+                </div>
+                
+                <div class="card p-3 mt-4">
+                    <h4 class="text-secondary">What Kind of Data Does It Have?</h4>
+                    <ul>
+                        <li>Device states (e.g., on/off, temperature, humidity)</li>
+                        <li>Automation logs (e.g., triggers, actions, failures)</li>
+                        <li>Sensor data (e.g., motion, door/window status)</li>
+                        <li>Historical statistics (e.g., energy usage, climate trends)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="col-md-6">
+                <div class="card p-3">
+                    <h4 class="text-secondary">Key Metrics</h4>
+                    <ul>
+                        <li><strong>456,794</strong> Active Home Assistant Installations</li>
+                        <li><strong>78.71%</strong> of installations share usage statistics</li>
+                        <li><strong>80.45%</strong> of installations share integrations</li>
+                        <li><strong>58.62%</strong> of installations share add-ons</li>
+                    </ul>
+                </div>
+
+                <div class="card p-3 mt-4" style="height: 300px;">
+                    <h4 class="text-secondary">Installation Statistics</h4>
+                    <canvas id="installationChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Slide 2 -->
+<section id="slide2" class="page-section" style="display: none;">
+    <div class="container py-5">
+        <!-- Slide Title -->
+        <h1 class="text-primary mb-4">Optimizing Home Automation for Smarter Living</h1>
+
+        <!-- Problem Statement -->
+        <div class="mb-5">
+            <h2 class="text-secondary">Problem Statement</h2>
+            <p>
+                Home Assistant is a robust platform for home automation, offering capabilities in automation execution, 
+                climate control, and security monitoring. However, users encounter significant challenges that hinder its full potential:
+            </p>
+
+<!-- Key Issues -->
+<div class="card p-3">
+    <h4 class="text-secondary">Key Issues:</h4>
+    <div class="row">
+        <!-- Automation Failures -->
+        <div class="col-md-4">
+            <div class="bg-light p-3 rounded shadow">
+                <h5 class="text-danger"><i class="bi bi-exclamation-triangle-fill"></i> Automation Failures & Delays</h5>
+                <p class="small">
+                    Maintaining optimal comfort ranges is challenging due to inconsistent device control. HVAC systems may run longer than necessary or shut off prematurely, leading to discomfort and increased energy consumption.
+                </p>
+            </div>
+        </div>
+
+        <!-- Inconsistent Climate Control -->
+        <div class="col-md-4">
+            <div class="bg-light p-3 rounded shadow">
+                <h5 class="text-warning"><i class="bi bi-thermometer-half"></i> Inconsistent Climate Control</h5>
+                <p class="small">
+                    Temperature and humidity levels fluctuate by up to 10% outside the optimal comfort range across rooms, impacting comfort and energy efficiency.
+                </p>
+            </div>
+        </div>
+
+        <!-- Sensor Inefficiencies -->
+        <div class="col-md-4">
+            <div class="bg-light p-3 rounded shadow">
+                <h5 class="text-primary"><i class="bi bi-shield-exclamation"></i> Sensor Inefficiencies</h5>
+                <p class="small">
+                    Motion, door, and window sensors generate false positives or miss critical events, compromising security and system responsiveness.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+            <!-- Key Question -->
+            <div class="mt-4">
+                <h4 class="text-secondary">Key Question:</h4>
+                <p>
+                    How can we analyze and optimize Home Assistant's performance to improve automation reliability, enhance climate control, and reduce sensor inefficiencies?
+                </p>
+            </div>
+        </div>
+
+        <!-- System Overview -->
+        <div class="row">
+  <!-- System Overview with Total Automation -->
+  <div class="card p-3">
+    <h4 class="text-secondary">System Overview</h4>
+    <div class="row text-center">
+        <div class="col-3">
+            <div class="bg-light p-3 rounded shadow">
+                <h3 class="text-primary">419</h3>
+                <p>Total Devices</p>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="bg-light p-3 rounded shadow">
+                <h3 class="text-primary">1,706</h3>
+                <p>Total Entities</p>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="bg-light p-3 rounded shadow">
+                <h3 class="text-primary">16</h3>
+                <p>Total Domains</p>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="bg-light p-3 rounded shadow">
+                <h3 class="text-primary">26</h3>
+                <p>Total Automation Tasks</p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</section>
+
+
+
+   <!-- Slide 3 -->
+<section id="slide3" class="page-section" style="display: none;">
+    <div class="container py-5">
+        <!-- Slide Title -->
+        <h1 class="text-primary mb-4">Objectives and Goals</h1>
+
+        <!-- Primary Objectives -->
+        <div class="mb-5">
+            <h2 class="text-secondary">Primary Objectives</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="bg-light p-3 rounded shadow">
+                        <h4 class="text-secondary">Enhance Automation Performance</h4>
+                        <ul class="small list-unstyled mt-2">
+                            <li>Identify automations with high failure rates</li>
+                            <li>Analyze trigger-to-completion delays</li>
+                            <li>Optimize workflows (30s execution threshold)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="bg-light p-3 rounded shadow">
+                        <h4 class="text-secondary">Improve Climate Control</h4>
+                        <ul class="small list-unstyled mt-2">
+                            <li>Monitor temperature and humidity per room</li>
+                            <li>Maintain comfort range 90% of time</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="bg-light p-3 rounded shadow">
+                        <h4 class="text-secondary">Optimize Security Sensors</h4>
+                        <ul class="small list-unstyled mt-2">
+                            <li>Physical calibration routines</li>
+                            <li>Trigger threshold configuration</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Success Metrics -->
+        <div>
+            <h2 class="text-secondary">Success Metrics</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="bg-light p-3 rounded shadow text-center">
+                        <h3 class="text-primary">&lt; 5%</h3>
+                        <p>Automation Failure Rate</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="bg-light p-3 rounded shadow text-center">
+                        <h3 class="text-primary">90%</h3>
+                        <p>Time in Comfort Range</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="bg-light p-3 rounded shadow text-center">
+                        <h3 class="text-primary">20%</h3>
+                        <p>Reduction in False Alerts</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+   <!-- Slide 4 -->
+<section id="slide4" class="page-section" style="display: none;">
+    <div class="container py-5">
+        <!-- Slide Title -->
+        <h1 class="text-primary mb-4">Risks and Assumptions</h1>
+
+        <div class="row">
+            <!-- Key Risks -->
+            <div class="col-md-6">
+                <div class="card p-3">
+                    <h4 class="text-secondary">Key Risks</h4>
+
+                    <!-- Data Gaps -->
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>Data Gaps</h5>
+                        <p class="small mb-1">
+                            Missing or incomplete data may limit the depth of analysis.
+                        </p>
+                        <strong>Mitigation:</strong>
+                        <p class="small">
+                            Implement data validation checks and seek alternative data sources if necessary.
+                        </p>
+                    </div>
+
+                    <!-- Performance Impact -->
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>Performance Impact</h5>
+                        <p class="small mb-1">
+                            Running analytics on live data may slow down Home Assistant operations.
+                        </p>
+                        <strong>Mitigation:</strong>
+                        <p class="small">
+                            Schedule analytics tasks during off-peak hours and optimize query performance.
+                        </p>
+                    </div>
+
+                    <!-- Implementation Resistance -->
+                    <div class="bg-light p-3 rounded shadow">
+                        <h5>Implementation Resistance</h5>
+                        <p class="small mb-1">
+                            Users may resist configuration changes required by proposed optimizations.
+                        </p>
+                        <strong>Mitigation:</strong>
+                        <p class="small">
+                            Provide clear documentation and demonstrate the benefits of changes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Core Assumptions -->
+            <div class="col-md-6">
+                <div class="card p-3">
+                    <h4 class="text-secondary">Core Assumptions</h4>
+
+                    <!-- Data Availability -->
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>Data Availability</h5>
+                        <p class="small">
+                            Historical data from Home Assistant is available and reliable.
+                        </p>
+                    </div>
+
+                    <!-- System Logging -->
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>System Logging</h5>
+                        <p class="small">
+                            The system accurately logs context and timestamps for all relevant events.
+                        </p>
+                    </div>
+
+                    <!-- User Flexibility -->
+                    <div class="bg-light p-3 rounded shadow">
+                        <h5>User Flexibility</h5>
+                        <p class="small">
+                            Users are open to implementing recommendations for system adjustments.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Slide 5 -->
+<section id="slide5" class="page-section" style="display: none;">
+    <div class="container py-5">
+        <!-- Slide Title -->
+        <h1 class="text-primary mb-4">Analysis Approach</h1>
+
+        <div class="row">
+            <!-- Approach Steps -->
+            <div class="col-md-6">
+                <div class="card p-3">
+                    <h4 class="text-secondary">Approach</h4>
+
+                    <!-- Step 1: Data Extraction -->
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>1. Data Extraction</h5>
+                        <ul class="small list-unstyled mt-2">
+                            <li>Query key tables (events, states, state_attributes) from MariaDB</li>
+                            <li>Focus on event types (automation_triggered, call_service, state_changed)</li>
+                        </ul>
+                    </div>
+
+                    <!-- Step 2: Data Cleaning & Preprocessing -->
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>2. Data Cleaning & Preprocessing</h5>
+                        <ul class="small list-unstyled mt-2">
+                            <li>Handle missing data, link events and states using context_id_hex</li>
+                            <li>Normalize timestamps and entity identifiers</li>
+                            <li>Remove duplicates to streamline analysis</li>
+                        </ul>
+                    </div>
+
+                    <!-- Step 3: Analysis -->
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>3. Analysis</h5>
+                        <ul class="small list-unstyled mt-2">
+                            <li>Python: Measure automation success, response times, and state consistency</li>
+                            <li>Power BI Dashboards: Visualize trigger-response times, correlations, and reliability trends</li>
+                        </ul>
+                    </div>
+
+                    <!-- Step 4: Optimization -->
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>4. Optimization</h5>
+                        <ul class="small list-unstyled mt-2">
+                            <li>Detect inefficiencies, propose workflow adjustments</li>
+                            <li>Refine based on performance metrics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Analysis, Optimization, and Placeholder -->
+            <div class="col-md-6">
+                <div class="card p-3">
+
+
+                    <!-- Placeholder for Picture -->
+                    <div class="bg-light p-3 rounded shadow text-center">
+                        <p class="small text-muted">Placeholder for Image</p>
+                        <div class="placeholder-img" style="width: 100%; height: 200px; background-color: #e9ecef;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Slide 6 -->
+<section id="slide6" class="page-section" style="display: none;">
+    <div class="container py-5">
+        <!-- Slide Title -->
+        <h1 class="text-primary mb-4">Analysis Methods</h1>
+
+        <div class="row">
+            <!-- Proposed Techniques -->
+            <div class="col-md-6">
+                <div class="card p-3">
+                    <h4 class="text-secondary">Proposed Techniques</h4>
+
+                    <!-- Statistical Analysis -->
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>Statistical Analysis</h5>
+                        <ul class="small list-unstyled mt-2">
+                            <li>Success Rate: Percentage of automation_triggered events leading to state_changed</li>
+                            <li>Response Time: Time difference between automation_triggered and state_changed</li>
+                            <li>Failure Analysis: Identify automations with no state change</li>
+                        </ul>
+                    </div>
+
+                    <!-- Sequence Analysis -->
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>Sequence Analysis</h5>
+                        <ul class="small list-unstyled mt-2">
+                            <li>Extract valid sequences (automation_triggered → call_service → state_changed)</li>
+                            <li>Detect delays and outliers</li>
+                        </ul>
+                    </div>
+
+                    <!-- Time Series Analysis -->
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>Time Series Analysis</h5>
+                        <ul class="small list-unstyled mt-2">
+                            <li>Monitor success rates, response times, and seasonal trends</li>
+                            <li>Identify systemic issues and patterns</li>
+                        </ul>
+                    </div>
+
+                    <!-- Visualization -->
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>Visualization</h5>
+                        <ul class="small list-unstyled mt-2">
+                            <li>Use histograms, bar charts, and time series plots for insights</li>
+                            <li>Build interactive dashboards for real-time monitoring</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Time Series Analysis, Visualization, and Placeholder -->
+            <div class="col-md-6">
+                <div class="card p-3">
+
+
+
+
+                    <!-- Placeholder for Picture -->
+                    <div class="bg-light p-3 rounded shadow text-center">
+                        <p class="small text-muted">Placeholder for Image</p>
+                        <div class="placeholder-img" style="width: 100%; height: 200px; background-color: #e9ecef;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Slide 7 -->
+<section id="slide7" class="page-section" style="display: none;">
+    <div class="container py-5">
+        <!-- Slide Title -->
+        <h1 class="text-primary mb-4">Potential Audience</h1>
+
+        <div class="row">
+            <!-- Audience Details -->
+            <div class="col-md-6">
+                <div class="card p-3">
+                    <h4 class="text-secondary">Potential Audience</h4>
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>Home Assistant Users</h5>
+                        <p class="small">
+                            Regular users of Home Assistant seeking to understand and optimize their existing setups for better daily use.
+                        </p>
+                    </div>
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>Home Automation Enthusiasts</h5>
+                        <p class="small">
+                            Individuals seeking to enhance their smart home setups through optimized automation and climate control.
+                        </p>
+                    </div>
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>Data Analysts</h5>
+                        <p class="small">
+                            Professionals interested in leveraging IoT data for actionable insights and system improvements.
+                        </p>
+                    </div>
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>System Integrators</h5>
+                        <p class="small">
+                            Developers and engineers working on integrating and customizing Home Assistant platforms for diverse applications.
+                        </p>
+                    </div>
+                    <div class="bg-light p-3 rounded shadow">
+                        <h5>Smart Home Product Developers</h5>
+                        <p class="small">
+                            Companies designing sensors and automation devices aiming to improve product reliability and performance.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Audience Distribution Chart -->
+            <div class="col-md-6">
+                <div class="card p-3">
+                    <h4 class="text-secondary">Audience Distribution</h4>
+                    <canvas id="audienceDistributionChart" style="height: 250px;"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Script for Audience Distribution Chart -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const ctx = document.getElementById('audienceDistributionChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: [
+          'Home Assistant Users',
+          'Home Automation Enthusiasts',
+          'Data Analysts',
+          'System Integrators',
+          'Smart Home Product Developers'
+        ],
+        datasets: [{
+          data: [40, 25, 15, 12, 8],
+          backgroundColor: [
+            'rgba(59, 130, 246, 0.6)',
+            'rgba(16, 185, 129, 0.6)',
+            'rgba(245, 158, 11, 0.6)',
+            'rgba(168, 85, 247, 0.6)',
+            'rgba(239, 68, 68, 0.6)'
+          ],
+          hoverOffset: 4
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'top',
+          },
+          title: {
+            display: true,
+            text: 'Audience Distribution'
+          }
+        }
+      }
+    });
+  });
+</script>
+
+
+<!-- Slide 8 -->
+<section id="slide8" class="page-section" style="display: none;">
+    <div class="container py-5">
+        <!-- Slide Title -->
+        <h1 class="text-primary mb-4">Dataset Overview</h1>
+
+        <div class="row">
+            <!-- Key Tables -->
+            <div class="col-md-6">
+                <div class="card p-3">
+                    <h4 class="text-secondary">Key Tables</h4>
+            
+                    <!-- Key Tables -->
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>events</h5>
+                        <a href="https://drive.google.com/file/d/events_202501121331.csv/view" target="_blank" class="text-primary">
+                            events_202501121331.csv
+                        </a>
+                        <p class="small text-muted">Logs system events (e.g., triggers, automations).</p>
+                    </div>
+            
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>event_data</h5>
+                        <a href="https://drive.google.com/file/d/event_data_202501121331.csv/view" target="_blank" class="text-primary">
+                            event_data_202501121331.csv
+                        </a>
+                        <p class="small text-muted">Stores additional data linked to events.</p>
+                    </div>
+            
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>event_types</h5>
+                        <a href="https://drive.google.com/file/d/event_types_202501121331.csv/view" target="_blank" class="text-primary">
+                            event_types_202501121331.csv
+                        </a>
+                        <p class="small text-muted">Defines types of events (e.g., "state_changed").</p>
+                    </div>
+            
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>states</h5>
+                        <a href="https://drive.google.com/file/d/states_202501121331.csv/view" target="_blank" class="text-primary">
+                            states_202501121331.csv
+                        </a>
+                        <p class="small text-muted">Records entity states (e.g., sensor values).</p>
+                    </div>
+            
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>states_meta</h5>
+                        <a href="https://drive.google.com/file/d/states_meta_202501121331.csv/view" target="_blank" class="text-primary">
+                            states_meta_202501121331.csv
+                        </a>
+                        <p class="small text-muted">Metadata for entities (e.g., entity IDs).</p>
+                    </div>
+            
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>state_attributes</h5>
+                        <a href="https://drive.google.com/file/d/state_attributes_202501121331.csv/view" target="_blank" class="text-primary">
+                            state_attributes_202501121331.csv
+                        </a>
+                        <p class="small text-muted">Attributes associated with entity states.</p>
+                    </div>
+            
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>statistics</h5>
+                        <a href="https://drive.google.com/file/d/statistics_202501121331.csv/view" target="_blank" class="text-primary">
+                            statistics_202501121331.csv
+                        </a>
+                        <p class="small text-muted">Long-term aggregated data (e.g., energy usage).</p>
+                    </div>
+            
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>statistics_meta</h5>
+                        <a href="https://drive.google.com/file/d/statistics_meta_202501121331.csv/view" target="_blank" class="text-primary">
+                            statistics_meta_202501121331.csv
+                        </a>
+                        <p class="small text-muted">Metadata for statistics (e.g., units, names).</p>
+                    </div>
+            
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>statistics_short_term</h5>
+                        <a href="https://drive.google.com/file/d/statistics_short_term_202501121331.csv/view" target="_blank" class="text-primary">
+                            statistics_short_term_202501121331.csv
+                        </a>
+                        <p class="small text-muted">Short-term statistical aggregates.</p>
+                    </div>
+            
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>recorder_runs</h5>
+                        <a href="https://drive.google.com/file/d/recorder_runs_202501121331.csv/view" target="_blank" class="text-primary">
+                            recorder_runs_202501121331.csv
+                        </a>
+                        <p class="small text-muted">Tracks recorder operation periods.</p>
+                    </div>
+            
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>schema_changes</h5>
+                        <a href="https://drive.google.com/file/d/schema_changes_202501121331.csv/view" target="_blank" class="text-primary">
+                            schema_changes_202501121331.csv
+                        </a>
+                        <p class="small text-muted">Logs database schema modifications.</p>
+                    </div>
+            
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>migration_changes</h5>
+                        <a href="https://drive.google.com/file/d/migration_changes_202501121331.csv/view" target="_blank" class="text-primary">
+                            migration_changes_202501121331.csv
+                        </a>
+                        <p class="small text-muted">Records migration history.</p>
+                    </div>
+                    
+            
+                </div>
+            </div>
+
+            <!-- Relational Schema -->
+            <div class="col-md-6">
+                <div class="card p-3">
+                    <h4 class="text-secondary">Relational Schema</h4>
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>events</h5>
+                        <p class="small">
+                            <strong>data_id</strong> → <em>event_data.data_id</em><br>
+                            <strong>event_type_id</strong> → <em>event_types.event_type_id</em>
+                        </p>
+                    </div>
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>states</h5>
+                        <p class="small">
+                            <strong>attributes_id</strong> → <em>state_attributes.attributes_id</em><br>
+                            <strong>metadata_id</strong> → <em>states_meta.metadata_id</em>
+                        </p>
+                    </div>
+                    <div class="bg-light p-3 rounded shadow mb-3">
+                        <h5>statistics</h5>
+                        <p class="small">
+                            <strong>metadata_id</strong> → <em>statistics_meta.id</em>
+                        </p>
+                    </div>
+                </div>
+
+
+                        <div class="bg-light p-3 rounded shadow mb-3">
+                            <h5>Data Base schema</h5>
+                            <a href="https://drive.google.com/file/d/1WmmTyFQSM40IYf8SJWhcZ6t-1ydWHcsC/view?usp=drive_link" target="_blank" class="text-primary">
+                                homeassistant (3).pdf
+                            </a>
+                            <p class="small text-muted">Logs database schema modifications.</p>
+                        </div>
+
+
+                        <div class="card p-3">
+                            <h4 class="text-secondary">Relation Map</h4>
+                            <div class="bg-light p-3 rounded shadow text-center">
+                                <a href="https://drive.google.com/file/d/1NCYrITbk3u4k57o3gyaq6rC7jbufb-Pa/view?usp=drive_link" 
+                                   class="text-primary text-decoration-none" 
+                                   target="_blank" 
+                                   rel="noopener noreferrer">
+                                    View Relation Map
+                                </a>
+                                <div style="width: 100%; height: 250px; background-color: #e9ecef;" class="mt-3">
+                                    <img src="https://drive.google.com/uc?id=1NCYrITbk3u4k57o3gyaq6rC7jbufb-Pa" alt="Relation Map" style="width: 100%; height: 250px; object-fit: cover;">
+
+                            </div>
+                        </div>
+                
+        </section>
+
+
+        <!-- Additional Resources -->
+
+
+
+
+<!-- Slide 9: Conclusion -->
+<section id="slide9" class="page-section" style="display: none;">
+    <div class="container py-5">
+        <!-- Slide Title -->
+        <h1 class="text-primary mb-4">Conclusion: A Vision for the Future</h1>
+
+        <!-- Vision for Optimized Smart Homes -->
+        <div class="mb-5">
+            <h2 class="text-secondary">Our Vision for Optimized Smart Homes</h2>
+            <p>
+                This project proposal outlines a <strong>data-driven approach</strong> to enhancing <strong>Home Assistant's</strong> automation, 
+                climate control, and security capabilities. By leveraging structured data analysis, we aim to create 
+                <strong>a smarter, more responsive, and more efficient home automation system.</strong>
+            </p>
+        </div>
+
+        <!-- Future Expectations & Goals -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card p-3">
+                    <h4 class="text-secondary">Future Expectations & Goals</h4>
+                    <ul>
+                        <li><strong>Enhancing Automation Performance:</strong> We aim to develop <strong>more reliable</strong> automation sequences, reducing failures and delays.</li>
+                        <li><strong>Improving Climate Control:</strong> By optimizing data-driven decision-making, we <strong>hope to maintain</strong> comfort levels within ideal temperature and humidity ranges.</li>
+                        <li><strong>Refining Security & Sensor Accuracy:</strong> We envision improving <strong>sensor precision</strong> to reduce false positives and enhance system responsiveness.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Next Steps -->
+            <div class="col-md-6">
+                <div class="card p-3">
+                    <h4 class="text-secondary">Next Steps in the Journey</h4>
+                    <ul>
+                        <li><strong>Data Collection & Analysis:</strong> We plan to gather more data to validate key assumptions and refine our strategies.</li>
+                        <li><strong>Optimization Implementation:</strong> Once insights are gathered, we hope to apply <strong>targeted improvements</strong> to automation rules and device calibration.</li>
+                        <li><strong>Scalability & Long-Term Impact:</strong> If successful, these optimizations <strong>could serve as a model</strong> for broader IoT and smart home enhancements.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Placeholder for Visual Representation -->
+        <div class="mt-5 text-center">
+            <div class="bg-light p-5 rounded shadow">
+                <h4 class="text-secondary">[Placeholder for Future Impact Visualization]</h4>
+                <p class="text-muted">A graphical representation or roadmap could be added here to illustrate the project's expected impact.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>© 2025 Bader Abdulrahim | All Rights Reserved</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <!-- Include Bootstrap Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+<!-- Include Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Chart Initialization Script -->
+<script>
+    
+    const ctx = document.getElementById('installationChart').getContext('2d');
+    const installationChart = new Chart(ctx, {
+        type: 'bar', // Bar chart
+        data: {
+            labels: ['Active Installs', 'Usage Stats', 'Integrations', 'Add-ons'],
+            datasets: [{
+                label: 'Installation Statistics',
+                data: [456794, 358566, 366485, 267058], // Data values
+                backgroundColor: [
+                    'rgba(59, 130, 246, 0.6)', // Active Installs
+                    'rgba(16, 185, 129, 0.6)', // Usage Stats
+                    'rgba(245, 158, 11, 0.6)', // Integrations
+                    'rgba(239, 68, 68, 0.6)'  // Add-ons
+                ],
+                borderColor: [
+                    'rgba(59, 130, 246, 1)',
+                    'rgba(16, 185, 129, 1)',
+                    'rgba(245, 158, 11, 1)',
+                    'rgba(239, 68, 68, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false, // Allow flexible height
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Count'
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Categories'
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    enabled: true
+                }
+            }
+        }
+    });
+ let problemImpactChart = null; // Declare chart variable
+
+  function initializeProblemImpactChart() {
+    // Check if chart already exists to avoid reinitialization
+    if (problemImpactChart) return;
+
+    const ctx = document.getElementById('problemImpactChart').getContext('2d');
+
+    // Data for the chart
+    const data = {
+      labels: ["Automation Failures", "Climate Inconsistencies", "Sensor Inefficiencies"],
+      datasets: [{
+        label: 'Impact Level (%)',
+        data: [15, 10, 20], // Example data
+        backgroundColor: [
+          'rgba(255,99,132,0.6)',  // Red
+          'rgba(54,162,235,0.6)',  // Blue
+          'rgba(255,206,86,0.6)'   // Yellow
+        ],
+        borderColor: [
+          'rgba(255,99,132,1)',
+          'rgba(54,162,235,1)',
+          'rgba(255,206,86,1)'
+        ],
+        borderWidth: 1
+      }]
+    };
+
+    // Chart options
+    const options = {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        title: {
+          display: true,
+          text: 'Impact of Key Issues on System Performance'
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: 'Impact Level (%)'
+          }
+        },
+        x: {
+          title: {
+            display: true,
+            text: 'Issues'
+          }
+        }
+      }
+    };
+
+    // Initialize the chart
+    problemImpactChart = new Chart(ctx, {
+      type: 'bar',
+      data: data,
+      options: options
+    });
+  }
+
+  // Hook into your slide navigation logic to initialize the chart on Slide 2
+  document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.page-section');
+
+    slides.forEach((slide, index) => {
+      slide.addEventListener('transitionend', () => {
+        if (index === 1) { // Slide 2 index
+          initializeProblemImpactChart();
+        }
+      });
+    });
+  });
+</script>
+
+<!-- Script to Manage Navigation -->
+<script>
+  const slides = document.querySelectorAll(".page-section");
+  const progressBar = document.getElementById("progressBar");
+  const currentSlideElem = document.getElementById("currentSlide");
+  const totalSlidesElem = document.getElementById("totalSlides");
+  const shortcutHelp = document.getElementById("shortcutHelp");
+
+  let currentSlide = 0;
+  const totalSlides = slides.length;
+
+  // Initialize Slide Info
+  totalSlidesElem.textContent = totalSlides;
+
+  // Function to Show a Specific Slide
+  function showSlide(index) {
+    if (index < 0 || index >= totalSlides) return;
+
+    slides.forEach((slide, i) => {
+      slide.style.display = i === index ? "block" : "none";
+    });
+
+    currentSlide = index;
+    currentSlideElem.textContent = currentSlide + 1;
+    updateProgressBar();
+  }
+
+  // Update Progress Bar
+  function updateProgressBar() {
+    const progress = ((currentSlide + 1) / totalSlides) * 100;
+    progressBar.style.width = `${progress}%`;
+    progressBar.setAttribute("aria-valuenow", progress);
+  }
+
+  // Navigate to the Next Slide
+  function nextSlide() {
+    if (currentSlide < totalSlides - 1) showSlide(currentSlide + 1);
+  }
+
+  // Navigate to the Previous Slide
+  function previousSlide() {
+    if (currentSlide > 0) showSlide(currentSlide - 1);
+  }
+
+  // Keyboard Shortcuts
+  document.addEventListener("keydown", (e) => {
+    switch (e.key) {
+      case "ArrowRight":
+        nextSlide();
+        break;
+      case "ArrowLeft":
+        previousSlide();
+        break;
+      case " ":
+        nextSlide();
+        break;
+      case "Home":
+        showSlide(0);
+        break;
+      case "End":
+        showSlide(totalSlides - 1);
+        break;
+      case "h":
+        shortcutHelp.classList.toggle("d-none");
+        break;
+      case "f":
+        document.fullscreenElement
+          ? document.exitFullscreen()
+          : document.documentElement.requestFullscreen();
+        break;
+      default:
+        break;
+    }
+  });
+
+  // Touch Indicators
+  document.querySelector(".touch-indicator.left").addEventListener("click", previousSlide);
+  document.querySelector(".touch-indicator.right").addEventListener("click", nextSlide);
+
+  // Show the first slide on load
+  showSlide(0);
+
+
+  
+</script>
+</body>
+</html>

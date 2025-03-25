@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Churn Analysis | Data Analytics Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <!-- Header will be loaded dynamically -->
+    <div id="header-placeholder"></div>
+
+    <!-- Project Hero Section -->
+    <section class="project-hero py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 fw-bold mb-4" data-aos="fade-up">Customer Churn Analysis</h1>
+                    <p class="lead mb-4" data-aos="fade-up" data-aos-delay="100">
+                        Identifying patterns, predicting customer attrition, and developing retention strategies
+                    </p>
+                    <div class="d-flex justify-content-center gap-3" data-aos="fade-up" data-aos-delay="200">
+                        <a href="#project-details" class="btn btn-primary">View Details</a>
+                        <a href="#methodology" class="btn btn-outline-secondary">Methodology</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section id="project-details" class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h2 class="section-title mb-4" data-aos="fade-up">Project Overview</h2>
+                    <div class="mb-5" data-aos="fade-up" data-aos-delay="100">
+                        <p>
+                            Customer churn, also known as customer attrition, refers to when customers stop doing business with a company or service. In this project, I conducted a comprehensive analysis of customer churn data to identify patterns, predict attrition, and develop effective retention strategies.
+                        </p>
+                        <p>
+                            Understanding why customers leave is crucial for businesses across industries. This analysis focused on identifying key factors that contribute to churn and developing predictive models to identify at-risk customers before they leave, allowing for proactive retention efforts.
+                        </p>
+                    </div>
+
+                    <div class="row mb-5 align-items-center">
+                        <div class="col-md-6" data-aos="fade-right">
+                            <h3>Key Objectives</h3>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-check-circle-fill text-primary me-2"></i> Identify primary drivers of customer churn</li>
+                                <li><i class="bi bi-check-circle-fill text-primary me-2"></i> Develop predictive models for early churn detection</li>
+                                <li><i class="bi bi-check-circle-fill text-primary me-2"></i> Segment customers based on churn risk</li>
+                                <li><i class="bi bi-check-circle-fill text-primary me-2"></i> Provide actionable recommendations for retention</li>
+                                <li><i class="bi bi-check-circle-fill text-primary me-2"></i> Quantify the financial impact of reducing churn</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6" data-aos="fade-left">
+                            <div class="card bg-light border-0 p-4">
+                                <h4>Business Impact</h4>
+                                <p>It costs 5-25x more to acquire a new customer than to retain an existing one. Reducing churn by just 5% can increase profits by 25-95%.</p>
+                                <div class="text-center">
+                                    <div class="display-4 text-primary fw-bold">5-25x</div>
+                                    <p class="text-muted">Customer acquisition vs. retention cost</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Causes of Customer Churn -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h2 class="section-title mb-4" data-aos="fade-up">Common Causes of Customer Churn</h2>
+                    
+                    <div class="row g-4 mb-5">
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="bi bi-cash-coin text-primary fs-3 me-3"></i>
+                                        <h4 class="mb-0">Pricing Issues</h4>
+                                    </div>
+                                    <p>Customers may leave due to high prices, unexpected fees, or better pricing from competitors.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="bi bi-headset text-primary fs-3 me-3"></i>
+                                        <h4 class="mb-0">Poor Service</h4>
+                                    </div>
+                                    <p>Inadequate customer service, long wait times, and unresolved issues drive customers to competitors.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="bi bi-stars text-primary fs-3 me-3"></i>
+                                        <h4 class="mb-0">Quality Concerns</h4>
+                                    </div>
+                                    <p>Product quality issues, bugs, or service degradation can lead to customer dissatisfaction and churn.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="bi bi-lightning text-primary fs-3 me-3"></i>
+                                        <h4 class="mb-0">Competitor Actions</h4>
+                                    </div>
+                                    <p>Aggressive competitor campaigns, better features, or new market entrants can lure customers away.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="bi bi-person-x text-primary fs-3 me-3"></i>
+                                        <h4 class="mb-0">Poor Onboarding</h4>
+                                    </div>
+                                    <p>Customers who don't experience adequate onboarding may not understand the full value proposition.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="bi bi-life-preserver text-primary fs-3 me-3"></i>
+                                        <h4 class="mb-0">Changing Needs</h4>
+                                    </div>
+                                    <p>Customer requirements evolve over time, and services may no longer align with their needs.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology -->
+    <section id="methodology" class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h2 class="section-title mb-4" data-aos="fade-up">Methodology</h2>
+                    
+                    <div class="timeline mb-5">
+                        <div class="timeline-item" data-aos="fade-up">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h4>Data Collection & Preprocessing</h4>
+                                <p>Gathered customer demographic data, transaction history, service usage patterns, customer support interactions, and churn status. Handled missing values, outliers, and created relevant features for analysis.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h4>Exploratory Data Analysis</h4>
+                                <p>Conducted comprehensive EDA to understand the distribution of features, identify correlations, and visualize patterns in customer behavior that may indicate churn risk.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h4>Feature Engineering</h4>
+                                <p>Created derived features including customer lifetime value, recency-frequency-monetary (RFM) metrics, and engagement scores to enhance model performance.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h4>Model Development & Evaluation</h4>
+                                <p>Implemented and compared multiple classification algorithms (Random Forest, Logistic Regression, Gradient Boosting) to predict churn probability. Used metrics such as AUC-ROC, precision-recall, and F1 score for evaluation.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h4>Customer Segmentation</h4>
+                                <p>Used clustering techniques to segment customers based on churn risk and value, enabling targeted retention strategies for different customer groups.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item" data-aos="fade-up" data-aos-delay="500">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h4>Insights & Recommendations</h4>
+                                <p>Translated analytical findings into actionable business recommendations with potential ROI calculations for implementation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visualizations -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h2 class="section-title mb-4" data-aos="fade-up">Key Visualizations</h2>
+                    
+                    <div class="row g-4">
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body">
+                                    <h4>Churn Rate by Customer Segment</h4>
+                                    <div class="visualization-placeholder bg-secondary bg-opacity-10 d-flex align-items-center justify-content-center" style="height: 250px;">
+                                        <div class="text-center">
+                                            <i class="bi bi-bar-chart-fill text-primary fs-1"></i>
+                                            <p class="mt-2">Bar chart visualization showing churn rates across different customer segments</p>
+                                        </div>
+                                    </div>
+                                    <p class="mt-3">Analysis revealed that new customers (0-6 months) had a churn rate 3x higher than established customers (>2 years), highlighting the importance of strong onboarding.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body">
+                                    <h4>Feature Importance in Churn Prediction</h4>
+                                    <div class="visualization-placeholder bg-secondary bg-opacity-10 d-flex align-items-center justify-content-center" style="height: 250px;">
+                                        <div class="text-center">
+                                            <i class="bi bi-graph-up text-primary fs-1"></i>
+                                            <p class="mt-2">Horizontal bar chart showing top predictors of customer churn</p>
+                                        </div>
+                                    </div>
+                                    <p class="mt-3">The top three predictors of churn were customer service call frequency, contract type, and tenure, accounting for 62% of the model's predictive power.
+
