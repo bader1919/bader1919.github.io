@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SQL Resources | Data Analysis Portfolio</title>
+    <title>Projects Directory | Bader Abdulrahim</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../assets/css/main.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="../assets/css/main.css" rel="stylesheet">
 </head>
 <body>
     <!-- Header will be loaded dynamically -->
-    <div id="header"></div>
+    <div id="header-placeholder"></div>
 
     <!-- Project Banner -->
     <section class="project-banner bg-dark text-white py-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
-                    <h1 class="display-4 fw-bold fade-in">SQL Resources</h1>
-                    <p class="lead fade-in-delay">A comprehensive collection of SQL techniques, patterns, and best practices</p>
+                    <h1 class="display-4 fw-bold fade-in">Projects Directory</h1>
+                    <p class="lead fade-in-delay">A comprehensive overview of all projects in this portfolio</p>
                 </div>
             </div>
         </div>
@@ -28,382 +28,299 @@
     <section class="py-5">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2 class="mb-4 slide-in">Project Overview</h2>
-                    <p class="lead slide-in-delay">This resource hub provides a collection of SQL knowledge, from fundamental concepts to advanced techniques, designed to help data analysts and developers write more efficient and effective queries.</p>
-                    <p class="slide-in-delay">Whether you're a beginner looking to understand SQL basics or an experienced developer seeking to optimize complex queries, this resource provides practical examples, best practices, and solutions to common challenges.</p>
+                <div class="col-lg-10 mx-auto">
+                    <h2 class="mb-4 slide-in">Portfolio Structure</h2>
+                    <p class="lead slide-in-delay">This directory provides an organized view of all projects and resources available in this portfolio.</p>
+                    
+                    <div class="alert alert-info slide-in-delay">
+                        <i class="fas fa-info-circle me-2"></i> Navigate through the different project categories to explore my data analytics, business intelligence, and smart home automation work.
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SQL Best Practices -->
+    <!-- Projects Directory -->
     <section class="py-5 bg-light">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2 class="mb-4 slide-in">SQL Best Practices</h2>
-                    <div class="card mb-4 shadow slide-in-delay">
+                <div class="col-lg-10 mx-auto">
+                    <h2 class="mb-4 slide-in">Project Categories</h2>
+                    
+                    <!-- Data Analytics Projects -->
+                    <div class="card mb-5 shadow slide-in-delay">
+                        <div class="card-header bg-primary text-white">
+                            <h3 class="mb-0"><i class="fas fa-chart-bar me-2"></i>Data Analytics Projects</h3>
+                        </div>
                         <div class="card-body">
-                            <h3 class="card-title">Query Optimization</h3>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Use appropriate indexes for frequent query patterns</li>
-                                <li class="list-group-item">Avoid SELECT * and retrieve only needed columns</li>
-                                <li class="list-group-item">Minimize the use of DISTINCT when possible</li>
-                                <li class="list-group-item">Use EXISTS instead of IN for better performance with subqueries</li>
-                                <li class="list-group-item">Consider query execution plans when optimizing complex queries</li>
-                            </ul>
+                            <div class="row row-cols-1 row-cols-md-2 g-4">
+                                <!-- Kickstarter Growth Analysis -->
+                                <div class="col">
+                                    <div class="card h-100 border-0 shadow-sm">
+                                        <div class="card-body">
+                                            <h4 class="card-title">
+                                                <a href="./Kickstarter Growth Analysis/" class="text-decoration-none">
+                                                    Kickstarter Growth Analysis
+                                                </a>
+                                            </h4>
+                                            <p class="card-text">Analysis of successful crowdfunding campaigns, identifying key factors that contribute to project success.</p>
+                                            <h6 class="text-muted">Project Contains:</h6>
+                                            <ul class="small">
+                                                <li>Excel data analysis (2009-2012)</li>
+                                                <li>PowerPoint presentation (PDF)</li>
+                                                <li>Detailed README documentation</li>
+                                            </ul>
+                                        </div>
+                                        <div class="card-footer bg-white border-0">
+                                            <a href="./Kickstarter Growth Analysis/" class="btn btn-sm btn-outline-primary">
+                                                <i class="fas fa-external-link-alt me-1"></i> View Project
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Airbnb Market Analysis -->
+                                <div class="col">
+                                    <div class="card h-100 border-0 shadow-sm">
+                                        <div class="card-body">
+                                            <h4 class="card-title">
+                                                <a href="./BA-Service-Quality-Review/Airbnb Market Analysis - Cape Town/" class="text-decoration-none">
+                                                    Airbnb Market Analysis
+                                                </a>
+                                            </h4>
+                                            <p class="card-text">Comprehensive analysis of Cape Town's Airbnb market, identifying pricing trends and investment opportunities.</p>
+                                            <h6 class="text-muted">Project Contains:</h6>
+                                            <ul class="small">
+                                                <li>Interactive visualizations</li>
+                                                <li>Market trend analysis</li>
+                                                <li>Pricing strategy recommendations</li>
+                                            </ul>
+                                        </div>
+                                        <div class="card-footer bg-white border-0">
+                                            <a href="./BA-Service-Quality-Review/Airbnb Market Analysis - Cape Town/" class="btn btn-sm btn-outline-primary">
+                                                <i class="fas fa-external-link-alt me-1"></i> View Project
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="card mb-4 shadow slide-in-delay">
+                    <!-- Business Intelligence Projects -->
+                    <div class="card mb-5 shadow slide-in-delay">
+                        <div class="card-header bg-info text-white">
+                            <h3 class="mb-0"><i class="fas fa-briefcase me-2"></i>Business Intelligence Projects</h3>
+                        </div>
                         <div class="card-body">
-                            <h3 class="card-title">Database Design</h3>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Normalize your database to reduce redundancy</li>
-                                <li class="list-group-item">Use appropriate data types for columns</li>
-                                <li class="list-group-item">Implement constraints to maintain data integrity</li>
-                                <li class="list-group-item">Create meaningful naming conventions for tables and columns</li>
-                                <li class="list-group-item">Document your database schema thoroughly</li>
-                            </ul>
+                            <div class="row row-cols-1 row-cols-md-2 g-4">
+                                <!-- BA Service Quality Review -->
+                                <div class="col">
+                                    <div class="card h-100 border-0 shadow-sm">
+                                        <div class="card-body">
+                                            <h4 class="card-title">
+                                                <a href="./BA-Service-Quality-Review/" class="text-decoration-none">
+                                                    British Airways Service Quality
+                                                </a>
+                                            </h4>
+                                            <p class="card-text">Analysis of British Airways service quality through customer reviews and operational metrics.</p>
+                                            <h6 class="text-muted">Project Contains:</h6>
+                                            <ul class="small">
+                                                <li>Customer review analysis (PDF)</li>
+                                                <li>Service quality presentation</li>
+                                                <li>Detailed README documentation</li>
+                                            </ul>
+                                        </div>
+                                        <div class="card-footer bg-white border-0">
+                                            <a href="./BA-Service-Quality-Review/" class="btn btn-sm btn-outline-primary">
+                                                <i class="fas fa-external-link-alt me-1"></i> View Project
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Customer Churn Analysis -->
+                                <div class="col">
+                                    <div class="card h-100 border-0 shadow-sm">
+                                        <div class="card-body">
+                                            <h4 class="card-title">
+                                                <a href="./Customer-Churn-Analysis/" class="text-decoration-none">
+                                                    Customer Churn Analysis
+                                                </a>
+                                            </h4>
+                                            <p class="card-text">Predictive analytics model to identify at-risk customers and provide targeted retention strategies.</p>
+                                            <h6 class="text-muted">Project Contains:</h6>
+                                            <ul class="small">
+                                                <li>Dataset analysis</li>
+                                                <li>Tableau visualizations</li>
+                                                <li>Predictive modeling</li>
+                                                <li>Data folder with datasets</li>
+                                            </ul>
+                                        </div>
+                                        <div class="card-footer bg-white border-0">
+                                            <a href="./Customer-Churn-Analysis/" class="btn btn-sm btn-outline-primary">
+                                                <i class="fas fa-external-link-alt me-1"></i> View Project
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Global Food Supply Chain -->
+                                <div class="col">
+                                    <div class="card h-100 border-0 shadow-sm">
+                                        <div class="card-body">
+                                            <h4 class="card-title">
+                                                <a href="./Global-Food-Supply-Chain/" class="text-decoration-none">
+                                                    Global Food Supply Chain
+                                                </a>
+                                            </h4>
+                                            <p class="card-text">Power BI dashboard analyzing global food supply chains, identifying inefficiencies and trends.</p>
+                                            <h6 class="text-muted">Project Contains:</h6>
+                                            <ul class="small">
+                                                <li>Supply chain analytics</li>
+                                                <li>Efficiency improvement recommendations</li>
+                                                <li>Interactive visualizations</li>
+                                                <li>README documentation</li>
+                                            </ul>
+                                        </div>
+                                        <div class="card-footer bg-white border-0">
+                                            <a href="./Global-Food-Supply-Chain/" class="btn btn-sm btn-outline-primary">
+                                                <i class="fas fa-external-link-alt me-1"></i> View Project
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="card mb-4 shadow slide-in-delay">
+                    <!-- Smart Home & Automation Projects -->
+                    <div class="card mb-5 shadow slide-in-delay">
+                        <div class="card-header bg-success text-white">
+                            <h3 class="mb-0"><i class="fas fa-home me-2"></i>Smart Home & Automation Projects</h3>
+                        </div>
                         <div class="card-body">
-                            <h3 class="card-title">Query Writing Style</h3>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Use consistent formatting and indentation</li>
-                                <li class="list-group-item">Utilize table aliases for readability in joins</li>
-                                <li class="list-group-item">Break complex queries into CTEs (Common Table Expressions)</li>
-                                <li class="list-group-item">Comment your SQL, especially complex logic</li>
-                                <li class="list-group-item">Use parameters instead of hardcoded values</li>
-                            </ul>
+                            <div class="row row-cols-1 row-cols-md-2 g-4">
+                                <!-- Home Assistant Capstone -->
+                                <div class="col">
+                                    <div class="card h-100 border-0 shadow-sm">
+                                        <div class="card-body">
+                                            <h4 class="card-title">
+                                                <a href="./capstone/" class="text-decoration-none">
+                                                    Home Assistant Capstone
+                                                </a>
+                                            </h4>
+                                            <p class="card-text">Comprehensive analysis and optimization of Home Assistant automation system with energy monitoring, security integration, and voice control.</p>
+                                            <h6 class="text-muted">Project Contains:</h6>
+                                            <ul class="small">
+                                                <li>Jupyter notebook analysis files</li>
+                                                <li>Database query examples</li>
+                                                <li>PowerPoint presentations</li>
+                                                <li>Implementation documentation</li>
+                                            </ul>
+                                        </div>
+                                        <div class="card-footer bg-white border-0">
+                                            <a href="./capstone/" class="btn btn-sm btn-outline-primary">
+                                                <i class="fas fa-external-link-alt me-1"></i> View Project
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Learning Resources -->
+                    <div class="card mb-5 shadow slide-in-delay">
+                        <div class="card-header bg-secondary text-white">
+                            <h3 class="mb-0"><i class="fas fa-book me-2"></i>Learning Resources</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="row row-cols-1 row-cols-md-2 g-4">
+                                <!-- SQL Resources -->
+                                <div class="col">
+                                    <div class="card h-100 border-0 shadow-sm">
+                                        <div class="card-body">
+                                            <h4 class="card-title">
+                                                <a href="./sql-resources/" class="text-decoration-none">
+                                                    SQL Resources
+                                                </a>
+                                            </h4>
+                                            <p class="card-text">Collection of SQL learning resources, guides, and practical examples for data analysis.</p>
+                                            <h6 class="text-muted">Resources Include:</h6>
+                                            <ul class="small">
+                                                <li>SQL Basics Guide (PDF)</li>
+                                                <li>Column Operations Tutorial (PDF)</li>
+                                                <li>Best practices documentation</li>
+                                                <li>README with additional resources</li>
+                                            </ul>
+                                        </div>
+                                        <div class="card-footer bg-white border-0">
+                                            <a href="./sql-resources/" class="btn btn-sm btn-outline-primary">
+                                                <i class="fas fa-external-link-alt me-1"></i> View Resources
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Common SQL Patterns -->
+    
+    <!-- Project Structure -->
     <section class="py-5">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2 class="mb-4 slide-in">Common SQL Patterns</h2>
+                <div class="col-lg-10 mx-auto">
+                    <h2 class="mb-4 slide-in">Project Directory Structure</h2>
+                    <p class="slide-in-delay">The following tree diagram illustrates the organization of the projects in this portfolio:</p>
                     
-                    <div class="card mb-4 shadow slide-in-delay">
+                    <div class="card shadow-sm slide-in-delay">
                         <div class="card-body">
-                            <h3 class="card-title">Hierarchical Data Queries</h3>
-                            <p>Techniques for working with tree structures and parent-child relationships:</p>
-                            <pre class="bg-light p-3 rounded"><code>-- Recursive CTE for traversing hierarchies
-WITH RECURSIVE employee_hierarchy AS (
-  SELECT id, name, manager_id, 1 AS level
-  FROM employees
-  WHERE manager_id IS NULL
-  
-  UNION ALL
-  
-  SELECT e.id, e.name, e.manager_id, eh.level + 1
-  FROM employees e
-  JOIN employee_hierarchy eh ON e.manager_id = eh.id
-)
-SELECT * FROM employee_hierarchy
-ORDER BY level, name;</code></pre>
-                        </div>
-                    </div>
-                    
-                    <div class="card mb-4 shadow slide-in-delay">
-                        <div class="card-body">
-                            <h3 class="card-title">Date and Time Operations</h3>
-                            <p>Effective ways to manipulate and analyze date-based data:</p>
-                            <pre class="bg-light p-3 rounded"><code>-- Extract data for specific date ranges
-SELECT *
-FROM orders
-WHERE order_date BETWEEN
-  DATE_TRUNC('month', CURRENT_DATE) AND
-  DATE_TRUNC('month', CURRENT_DATE) + INTERVAL '1 month' - INTERVAL '1 day';
-
--- Group by time periods
-SELECT 
-  DATE_TRUNC('month', order_date) AS month,
-  COUNT(*) AS order_count,
-  SUM(amount) AS total_sales
-FROM orders
-GROUP BY DATE_TRUNC('month', order_date)
-ORDER BY month;</code></pre>
-                        </div>
-                    </div>
-                    
-                    <div class="card mb-4 shadow slide-in-delay">
-                        <div class="card-body">
-                            <h3 class="card-title">Window Functions</h3>
-                            <p>Powerful techniques for analyzing data across rows:</p>
-                            <pre class="bg-light p-3 rounded"><code>-- Calculate running totals
-SELECT 
-  order_date,
-  amount,
-  SUM(amount) OVER (ORDER BY order_date) AS running_total
-FROM orders;
-
--- Rank results within partitions
-SELECT 
-  department,
-  employee_name,
-  salary,
-  RANK() OVER (PARTITION BY department ORDER BY salary DESC) AS salary_rank
-FROM employees;</code></pre>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Advanced Query Techniques -->
-    <section class="py-5 bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2 class="mb-4 slide-in">Advanced Query Techniques</h2>
-                    
-                    <div class="card mb-4 shadow slide-in-delay">
-                        <div class="card-body">
-                            <h3 class="card-title">Pivot and Unpivot Operations</h3>
-                            <p>Transforming row data into columns and vice versa:</p>
-                            <pre class="bg-light p-3 rounded"><code>-- Dynamic pivot using CROSSTAB
-SELECT * FROM CROSSTAB(
-  'SELECT category, quarter, sales
-   FROM quarterly_sales
-   ORDER BY 1, 2',
-  'SELECT DISTINCT quarter
-   FROM quarterly_sales
-   ORDER BY 1'
-) AS ct (category TEXT, q1 NUMERIC, q2 NUMERIC, q3 NUMERIC, q4 NUMERIC);</code></pre>
-                        </div>
-                    </div>
-                    
-                    <div class="card mb-4 shadow slide-in-delay">
-                        <div class="card-body">
-                            <h3 class="card-title">Complex Joins and Set Operations</h3>
-                            <p>Beyond simple joins to more sophisticated data combinations:</p>
-                            <pre class="bg-light p-3 rounded"><code>-- Self join for comparing rows
-SELECT a.product_name, a.price AS price_2022, b.price AS price_2023,
-  ((b.price - a.price) / a.price * 100)::NUMERIC(5,2) AS price_change_pct
-FROM products_2022 a
-JOIN products_2023 b ON a.product_id = b.product_id;
-
--- FULL OUTER JOIN with COALESCE for reporting
-SELECT 
-  COALESCE(a.category, b.category) AS category,
-  COALESCE(a.total, 0) AS sales_2022,
-  COALESCE(b.total, 0) AS sales_2023
-FROM sales_2022 a
-FULL OUTER JOIN sales_2023 b ON a.category = b.category;</code></pre>
-                        </div>
-                    </div>
-                    
-                    <div class="card mb-4 shadow slide-in-delay">
-                        <div class="card-body">
-                            <h3 class="card-title">Dynamic SQL and Metadata Queries</h3>
-                            <p>Generating SQL dynamically and querying database objects:</p>
-                            <pre class="bg-light p-3 rounded"><code>-- Query to find tables with specific columns
-SELECT t.table_schema, t.table_name
-FROM information_schema.tables t
-JOIN information_schema.columns c 
-  ON c.table_schema = t.table_schema AND c.table_name = t.table_name
-WHERE t.table_schema NOT IN ('pg_catalog', 'information_schema')
-  AND c.column_name = 'customer_id'
-ORDER BY t.table_schema, t.table_name;</code></pre>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SQL Challenges -->
-    <section class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2 class="mb-4 slide-in">SQL Practice Challenges</h2>
-                    <p class="slide-in-delay">Sharpen your SQL skills with these practice problems ranging from beginner to expert levels.</p>
-                    
-                    <div class="accordion slide-in-delay" id="sqlChallenges">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    Challenge #1: Employee Department Analytics
-                                </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#sqlChallenges">
-                                <div class="accordion-body">
-                                    <p><strong>Problem:</strong> Find the department with the highest average salary and the employee with the highest salary in that department.</p>
-                                    <pre class="bg-light p-3 rounded"><code>-- Solution
-WITH dept_avg AS (
-  SELECT 
-    department_id,
-    AVG(salary) AS avg_salary,
-    MAX(salary) AS max_salary
-  FROM employees
-  GROUP BY department_id
-  ORDER BY avg_salary DESC
-  LIMIT 1
-)
-SELECT 
-  d.department_name,
-  da.avg_salary,
-  e.employee_name,
-  e.salary
-FROM dept_avg da
-JOIN departments d ON d.department_id = da.department_id
-JOIN employees e ON e.department_id = da.department_id AND e.salary = da.max_salary;</code></pre>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    Challenge #2: Customer Purchase Patterns
-                                </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#sqlChallenges">
-                                <div class="accordion-body">
-                                    <p><strong>Problem:</strong> Find customers who have made purchases in at least 3 consecutive months.</p>
-                                    <pre class="bg-light p-3 rounded"><code>-- Solution
-WITH monthly_purchases AS (
-  SELECT 
-    customer_id,
-    DATE_TRUNC('month', purchase_date) AS purchase_month
-  FROM purchases
-  GROUP BY customer_id, DATE_TRUNC('month', purchase_date)
-),
-consecutive_months AS (
-  SELECT
-    customer_id,
-    purchase_month,
-    LEAD(purchase_month, 1) OVER (PARTITION BY customer_id ORDER BY purchase_month) AS next_month,
-    LEAD(purchase_month, 2) OVER (PARTITION BY customer_id ORDER BY purchase_month) AS next_next_month
-  FROM monthly_purchases
-)
-SELECT DISTINCT customer_id
-FROM consecutive_months
-WHERE 
-  next_month = purchase_month + INTERVAL '1 month' AND
-  next_next_month = purchase_month + INTERVAL '2 month';</code></pre>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingThree">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    Challenge #3: Inventory Management
-                                </button>
-                            </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#sqlChallenges">
-                                <div class="accordion-body">
-                                    <p><strong>Problem:</strong> Calculate the optimal reorder quantities for products based on sales velocity, lead time, and safety stock.</p>
-                                    <pre class="bg-light p-3 rounded"><code>-- Solution
-WITH sales_velocity AS (
-  SELECT 
-    product_id,
-    COUNT(*) / 30.0 AS daily_sales_rate,  -- Sales per day over last 30 days
-    STDDEV(quantity) AS sales_stddev      -- Standard deviation of sales
-  FROM sales
-  WHERE sale_date >= CURRENT_DATE - INTERVAL '30 days'
-  GROUP BY product_id
-),
-inventory_metrics AS (
-  SELECT 
-    p.product_id,
-    p.product_name,
-    p.lead_time_days,                               -- Time to receive new inventory
-    sv.daily_sales_rate,
-    sv.daily_sales_rate * p.lead_time_days AS lead_time_demand,
-    CEILING(sv.sales_stddev * SQRT(p.lead_time_days) * 1.65) AS safety_stock  -- 95% service level
-  FROM products p
-  JOIN sales_velocity sv ON p.product_id = sv.product_id
-)
-SELECT 
-  product_id,
-  product_name,
-  lead_time_days,
-  daily_sales_rate::NUMERIC(10,2),
-  lead_time_demand::NUMERIC(10,2) AS lead_time_demand,
-  safety_stock,
-  CEILING(lead_time_demand + safety_stock) AS reorder_point,
-  CEILING((lead_time_demand + safety_stock) * 2) AS reorder_quantity  -- Economic order quantity simplified
-FROM inventory_metrics
-ORDER BY daily_sales_rate DESC;</code></pre>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Resources and Links -->
-    <section class="py-5 bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2 class="mb-4 slide-in">Helpful SQL Resources</h2>
-                    <p class="slide-in-delay">These resources provide additional SQL learning materials and references.</p>
-                    
-                    <div class="row row-cols-1 row-cols-md-2 g-4 slide-in-delay">
-                        <div class="col">
-                            <div class="card h-100 shadow">
-                                <div class="card-body">
-                                    <h5 class="card-title"><i class="fas fa-book me-2 text-primary"></i>Documentation</h5>
-                                    <ul class="list-unstyled">
-                                        <li><a href="https://www.postgresql.org/docs/" class="text-decoration-none" target="_blank">PostgreSQL Documentation</a></li>
-                                        <li><a href="https://dev.mysql.com/doc/" class="text-decoration-none" target="_blank">MySQL Documentation</a></li>
-                                        <li><a href="https://docs.microsoft.com/en-us/sql/" class="text-decoration-none" target="_blank">SQL Server Documentation</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card h-100 shadow">
-                                <div class="card-body">
-                                    <h5 class="card-title"><i class="fas fa-laptop-code me-2 text-primary"></i>Practice Sites</h5>
-                                    <ul class="list-unstyled">
-                                        <li><a href="https://www.hackerrank.com/domains/sql" class="text-decoration-none" target="_blank">HackerRank SQL Challenges</a></li>
-                                        <li><a href="https://leetcode.com/problemset/database/" class="text-decoration-none" target="_blank">LeetCode Database Problems</a></li>
-                                        <li><a href="https://sqlzoo.net/" class="text-decoration-none" target="_blank">SQLZoo Interactive Tutorials</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card h-100 shadow">
-                                <div class="card-body">
-                                    <h5 class="card-title"><i class="fas fa-graduation-cap me-2 text-primary"></i>Courses</h5>
-                                    <ul class="list-unstyled">
-                                        <li><a href="https://www.datacamp.com/courses/sql-fundamentals" class="text-decoration-none" target="_blank">DataCamp SQL Fundamentals</a></li>
-                                        <li><a href="https://www.coursera.org/specializations/learn-sql-basics-data-science" class="text-decoration-none" target="_blank">Coursera SQL for Data Science</a></li>
-                                        <li><a href="https://mode.com/sql-tutorial/" class="text-decoration-none" target="_blank">Mode Analytics SQL Tutorial</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card h-100 shadow">
-                                <div class="card-body">
-                                    <h5 class="card-title"><i class="fas fa-tools me-2 text-primary"></i>Tools</h5>
-                                    <ul class="list-unstyled">
-                                        <li><a href="https://www.postgresql.org/download/" class="text-decoration-none" target="_blank">PostgreSQL Download</a></li>
-                                        <li><a href="https://dbeaver.io/" class="text-decoration-none" target="_blank">DBeaver Universal Database Tool</a></li>
-                                        <li><a href="https://www.mysql.com/products/workbench/" class="text-decoration-none" target="_blank">MySQL Workbench</a></li>
-                                    </ul>
-                                </div>
-                            </div>
+                            <pre class="bg-light p-3 rounded mb-0">
+projects/
+├── BA-Service-Quality-Review/
+│   ├── Airbnb Market Analysis - Cape Town/
+│   ├── README.md
+│   ├── annotated-BA Airline_Reviews.xlsx.pdf
+│   ├── annotated-BA Passanger Service Quality Review.pptx.pdf
+│   └── index.html
+│
+├── Customer-Churn-Analysis/
+│   ├── data/
+│   ├── README.md
+│   ├── index.html
+│   └── tableau
+│
+├── Global-Food-Supply-Chain/
+│   ├── README.md
+│   └── index.html
+│
+├── Kickstarter Growth Analysis/
+│   ├── README.md
+│   ├── annotated-Kickstarter_Complete_Analysis_2009_2012 final.pptx.pdf
+│   ├── annotated-Updated_Kickstarter_Project_2009_2012_Final.xlsx.pdf
+│   └── index.html
+│
+├── capstone/
+│   ├── dbquery/
+│   ├── power_point/
+│   ├── final.ipynb
+│   ├── index.html
+│   └── orgnized.ipynb
+│
+├── sql-resources/
+│   ├── README.md
+│   ├── annotated-Column Operations.pdf
+│   ├── annotated-TheBasics.pdf
+│   └── annotated.pdf
+│
+├── README.md
+└── index.html
+                            </pre>
                         </div>
                     </div>
                 </div>
@@ -412,13 +329,13 @@ ORDER BY daily_sales_rate DESC;</code></pre>
     </section>
 
     <!-- Footer will be loaded dynamically -->
-    <div id="footer"></div>
+    <div id="footer-placeholder"></div>
 
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     
     <!-- Component loader -->
-    <script src="../../assets/js/components.js"></script>
+    <script src="../assets/js/components.js"></script>
     
     <!-- Custom scripts for animations -->
     <script>
@@ -481,6 +398,15 @@ ORDER BY daily_sales_rate DESC;</code></pre>
         
         code {
             font-family: 'Source Code Pro', monospace;
+        }
+        
+        .card-title a {
+            color: #333;
+            transition: color 0.3s;
+        }
+        
+        .card-title a:hover {
+            color: #0d6efd;
         }
     </style>
 </body>
