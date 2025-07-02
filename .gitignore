@@ -27,6 +27,3 @@ pids
 *.pid
 *.seed
 *.pid.lock
-
-# Development utilities
-utils/
