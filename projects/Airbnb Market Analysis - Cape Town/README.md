@@ -1,4 +1,4 @@
-Airbnb Market Analysis - Cape Town# Airbnb Market Analysis - Cape Town
+# Airbnb Market Analysis - Cape Town
 
 ## 📌 Overview
 This project provides an **investment analysis** of Airbnb properties in Cape Town, identifying:
@@ -9,7 +9,8 @@ This project provides an **investment analysis** of Airbnb properties in Cape To
 ## 📄 Report
 You can view the full analysis here:  
 📎 [Final Report (PowerPoint)](AAMB & Co. - FINAL.pptx)  
-📎 [Analysis Data (Excel)](Airbnb_Excel_Lab_AAMB & Co.xlsx)
+📎 [Analysis Data (Excel)](Airbnb_Excel_Lab_AAMB & Co.xlsx)  
+📎 [Final Report (PDF)](annotated-AAMB%20%26%20Co.%20-%20FINAL.pptx.pdf)
 
 ## 🏆 Key Insights
 - **Top-rated properties:** Tiny houses & guest suites.
@@ -20,5 +21,5 @@ You can view the full analysis here:
 - Convert insights into interactive **data dashboards**.
 - Collect more Airbnb data for deeper analysis.
 
-🔗 **Author**: Bader Abdulrahim, Ali, Maria,   
+🔗 **Authors**: Bader Abdulrahim, Ali, Maria  
 📬 **Contact**: bader.abdulrahim@gmail.com
