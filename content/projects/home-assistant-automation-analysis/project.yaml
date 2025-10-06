@@ -1,0 +1,38 @@
+slug: home-assistant-automation-analysis
+title: "Home Assistant Automation Performance Analysis"
+summary: "Data-driven optimization of smart home automation across 419 devices and 26 automation tasks to improve reliability, climate control, and sensor efficiency"
+description_path: narrative.md
+published_on: "2025-07-19"
+status: published
+hero_image: assets/home-assistant-dashboard.png
+tech_stack: Python, SQL, MariaDB, Power BI, Jupyter
+primary_metric: <5% automation failure rate target
+tags:
+  - Data Analytics
+  - Home Automation
+  - Python
+  - SQL
+  - Data Visualization
+  - IoT
+  - Capstone Project
+  - MariaDB
+  - Power BI
+links:
+  - name: "Technical Presentation (PowerPoint)"
+    url: "../../bader1919.github.io-main/projects/capstone/power_point/The Power of Data.pptx"
+    type: "presentation"
+  - name: "Analysis Notebook (Final)"
+    url: "../../bader1919.github.io-main/projects/capstone/final.ipynb"
+    type: "notebook"
+  - name: "Organized Analysis Notebook"
+    url: "../../bader1919.github.io-main/projects/capstone/orgnized.ipynb"
+    type: "notebook"
+  - name: "SQL Queries"
+    url: "../../bader1919.github.io-main/projects/capstone/dbquery/SQL.sql"
+    type: "code"
+  - name: "Database Schema Documentation"
+    url: "https://drive.google.com/file/d/1WmmTyFQSM40IYf8SJWhcZ6t-1ydWHcsC/view?usp=drive_link"
+    type: "external"
+  - name: "Database Relation Map"
+    url: "https://drive.google.com/file/d/1NCYrITbk3u4k57o3gyaq6rC7jbufb-Pa/view?usp=drive_link"
+    type: "external"
