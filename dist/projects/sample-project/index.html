@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample Data Analytics Project | Bader Abdulrahim</title>
+  
+  <!-- Meta tags for better SEO -->
+  <meta name="description" content="A comprehensive analysis of customer behavior patterns using SQL and Power BI to drive business insights.">
+  <meta name="keywords" content="smart home, automation, data analytics, Power BI, SQL, Home Assistant">
+  
+  <!-- Open Graph meta tags -->
+  <meta property="og:title" content="Sample Data Analytics Project | Bader Abdulrahim">
+  <meta property="og:description" content="A comprehensive analysis of customer behavior patterns using SQL and Power BI to drive business insights.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bader1919.github.io/projects/sample-project/">
+  <meta property="og:image" content="/assets/img/placeholder/project-placeholder.jpg">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/animations.css">
+  
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="/">Bader Abdulrahim</a>
+    <button 
+      class="navbar-toggler" 
+      type="button" 
+      data-bs-toggle="collapse" 
+      data-bs-target="#navbarNav" 
+      aria-controls="navbarNav" 
+      aria-expanded="false" 
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/projects.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>  
+  <!-- Skip to main content link for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <main id="main-content">
+  <!-- Project Hero Section -->
+  <section class="project-hero" style="background-image: url('/assets/img/placeholder/project-placeholder.jpg');">
+    <div class="hero-overlay">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h1 class="display-4 text-white mb-3">Sample Data Analytics Project</h1>
+            <p class="lead text-white-50">A comprehensive analysis of customer behavior patterns using SQL and Power BI to drive business insights.</p>
+            <div class="project-tags mt-4">
+                <span class="badge bg-light text-dark">Data Analytics</span>
+                <span class="badge bg-light text-dark">Business Intelligence</span>
+                <span class="badge bg-light text-dark">SQL</span>
+                <span class="badge bg-light text-dark">Power BI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Details -->
+  <article class="project-content">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <!-- Project Meta -->
+          <div class="project-meta mb-5">
+            <div class="row g-4">
+              <div class="col-md-4">
+                <h6 class="text-muted mb-2"><i class="fas fa-calendar me-2"></i>Published</h6>
+                <p>2024-03-15</p>
+              </div>
+              <div class="col-md-4">
+                <h6 class="text-muted mb-2"><i class="fas fa-tools me-2"></i>Tech Stack</h6>
+                <p>SQL, Power BI, Python, Excel</p>
+              </div>
+              <div class="col-md-4">
+                <h6 class="text-muted mb-2"><i class="fas fa-chart-line me-2"></i>Key Metric</h6>
+                <p>25% increase in customer retention</p>
+              </div>
+            </div>
+            
+            <div class="project-links mt-4">
+              <a href="https://github.com/bader1919/sample-project" class="btn btn-outline-dark me-2" target="_blank">
+                <i class="fab fa-github me-2"></i>View Code
+              </a>
+            </div>
+          </div>
+
+          <!-- Project Narrative -->
+          <div class="project-narrative">
+            <h1 id="sample-data-analytics-project">Sample Data Analytics Project</h1>
+<h2 id="overview">Overview</h2>
+<p>This project demonstrates a comprehensive approach to customer behavior analysis, combining SQL data extraction, Power BI visualization, and Python-based statistical analysis to uncover actionable insights that drove a 25% improvement in customer retention.</p>
+<h2 id="business-challenge">Business Challenge</h2>
+<p>The client, a mid-sized e-commerce company, was experiencing declining customer retention rates and needed to understand the underlying patterns in customer behavior to implement targeted retention strategies.</p>
+<h3 id="key-questions">Key Questions</h3>
+<ul>
+<li>Which customer segments showed the highest churn risk?</li>
+<li>What behavioral patterns correlated with long-term loyalty?</li>
+<li>How could interventions be timed for maximum impact?</li>
+</ul>
+<h2 id="approach">Approach</h2>
+<h3 id="1-data-collection-preparation">1. Data Collection &amp; Preparation</h3>
+<p>Using SQL Server, I extracted and cleaned transactional data from multiple sources:</p>
+<pre><code class="language-sql">SELECT 
+    c.customer_id,
+    c.signup_date,
+    COUNT(DISTINCT o.order_id) as total_orders,
+    SUM(o.order_value) as lifetime_value,
+    DATEDIFF(day, MAX(o.order_date), GETDATE()) as days_since_last_order
+FROM customers c
+LEFT JOIN orders o ON c.customer_id = o.customer_id
+GROUP BY c.customer_id, c.signup_date
+HAVING COUNT(DISTINCT o.order_id) &gt; 0
+</code></pre>
+<h3 id="2-exploratory-analysis">2. Exploratory Analysis</h3>
+<p>Python was used for statistical analysis and segmentation:</p>
+<ul>
+<li>RFM (Recency, Frequency, Monetary) analysis to segment customers</li>
+<li>Cohort analysis to track retention over time</li>
+<li>Correlation analysis to identify key behavioral indicators</li>
+</ul>
+<h3 id="3-visualization-insights">3. Visualization &amp; Insights</h3>
+<p>Power BI dashboards were developed to present findings to stakeholders, featuring:</p>
+<ul>
+<li>Customer segment performance metrics</li>
+<li>Churn prediction indicators</li>
+<li>Intervention opportunity timelines</li>
+<li>ROI projections for retention initiatives</li>
+</ul>
+<h2 id="key-findings">Key Findings</h2>
+<ol>
+<li><strong>High-Value At-Risk Segment</strong>: 15% of customers with 90+ day inactivity represented 30% of potential revenue recovery</li>
+<li><strong>Optimal Contact Timing</strong>: Engagement campaigns at 60 days post-purchase showed 3x better response than 90+ day interventions</li>
+<li><strong>Product Affinity Patterns</strong>: Cross-category purchasers demonstrated 40% higher lifetime value</li>
+</ol>
+<h2 id="impact">Impact</h2>
+<p>The insights from this analysis led to:</p>
+<ul>
+<li>Implementation of automated engagement workflows</li>
+<li>Targeted product recommendations based on affinity patterns</li>
+<li>Tiered loyalty program aligned with customer segments</li>
+<li><strong>25% improvement in customer retention rate</strong> over 6 months</li>
+<li><strong>$450K in recovered revenue</strong> from at-risk segment</li>
+</ul>
+<h2 id="technologies-used">Technologies Used</h2>
+<ul>
+<li><strong>SQL Server</strong>: Data extraction and transformation</li>
+<li><strong>Python (pandas, scikit-learn)</strong>: Statistical analysis and segmentation</li>
+<li><strong>Power BI</strong>: Interactive dashboard development</li>
+<li><strong>Excel</strong>: Ad-hoc analysis and stakeholder reporting</li>
+</ul>
+<h2 id="lessons-learned">Lessons Learned</h2>
+<ul>
+<li>Early intervention is significantly more effective than recovery efforts</li>
+<li>Combining multiple data sources provides richer customer understanding</li>
+<li>Visual storytelling accelerates stakeholder buy-in and action</li>
+</ul>
+<hr />
+<p><em>This project showcases the end-to-end analytics process from data collection through actionable recommendations and measurable business impact.</em></p>
+          </div>
+
+          <!-- Project Gallery -->
+
+          <!-- Performance Metrics -->
+
+          <!-- Navigation -->
+          <div class="project-navigation mt-5 pt-4 border-top">
+            <div class="row">
+              <div class="col-6">
+                <a href="/projects.html" class="btn btn-outline-secondary">
+                  <i class="fas fa-arrow-left me-2"></i>Back to Projects
+                </a>
+              </div>
+              <div class="col-6 text-end">
+                <a href="/contact.html" class="btn btn-primary">
+                  Discuss This Project<i class="fas fa-arrow-right ms-2"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+  </main>
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h4 class="footer-heading">Bader Abdulrahim</h4>
+        <p>Transforming data into insights and creating innovative automation solutions to make businesses more efficient and homes smarter.</p>
+        <div class="social-icons">
+          <a href="https://linkedin.com/in/bader-abdulrahim/" class="social-icon" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/bader1919" class="social-icon" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://instagram.com/bader1919" class="social-icon" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://facebook.com/bader1919" class="social-icon" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="mailto:bader.abdulrahim@gmail.com" class="social-icon" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4 mb-md-0">
+        <h4 class="footer-heading">Quick Links</h4>
+        <a href="/" class="footer-link">Home</a>
+        <a href="/about.html" class="footer-link">About</a>
+        <a href="/projects.html" class="footer-link">Projects</a>
+        <a href="/contact.html" class="footer-link">Contact</a>
+      </div>
+      <div class="col-md-3 mb-4 mb-md-0">
+        <h4 class="footer-heading">Services</h4>
+        <a href="/about.html#data-analytics" class="footer-link">Data Analytics</a>
+        <a href="/about.html#smart-home" class="footer-link">Smart Home Automation</a>
+        <a href="/about.html#business-intelligence" class="footer-link">Business Intelligence</a>
+        <a href="/about.html#tech-solutions" class="footer-link">Custom Tech Solutions</a>
+      </div>
+      <div class="col-md-2">
+        <h4 class="footer-heading">Contact</h4>
+        <p class="mb-1">Manama, Bahrain</p>
+        <p class="mb-1">bader.abdulrahim@gmail.com</p>
+        <p>+973 36888858</p>
+      </div>
+    </div>
+    <div class="text-center footer-bottom">
+      <p class="mb-0">&copy; <span id="current-year"></span> Bader Abdulrahim. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+<script>
+  document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Custom JS -->
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/components.js"></script>
+  
+</body>
+</html>
