@@ -17,7 +17,9 @@
    → Tests: contract tests, integration tests
    → Core: models, services, CLI commands
    → Integration: DB, middleware, logging
-   → Polish: unit tests, performance, docs
+   → UX & Accessibility: layout consistency, copy review, a11y compliance
+   → Performance: audits, asset budgets, monitoring updates
+   → Polish: unit tests, documentation, performance budget sign-off
 4. Apply task rules:
    → Different files = mark [P] for parallel
    → Same file = sequential (no [P])
@@ -70,11 +72,11 @@
 - [ ] T018 CORS and security headers
 
 ## Phase 3.5: Polish
-- [ ] T019 [P] Unit tests for validation in tests/unit/test_validation.py
-- [ ] T020 Performance tests (<200ms)
-- [ ] T021 [P] Update docs/api.md
-- [ ] T022 Remove duplication
-- [ ] T023 Run manual-testing.md
+- [ ] T019 [P] Accessibility audit (axe/lighthouse) with results logged in docs/quality.md
+- [ ] T020 Performance budget validation (≤1.5s LCP, ≤100KB critical assets)
+- [ ] T021 [P] Update README.md with performance + data provenance notes
+- [ ] T022 Proof-read UX copy and responsive behavior checklist
+- [ ] T023 Visual regression or screenshot diff review stored in tests/visual/
 
 ## Dependencies
 - Tests (T004-T007) before implementation (T008-T014)

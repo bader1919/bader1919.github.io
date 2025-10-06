@@ -1,0 +1,30 @@
+<div class="col-md-6 col-lg-4">
+  <div class="project-card h-100">
+    <div class="project-card-image">
+      <img 
+        src="/{{ project.hero_image }}" 
+        alt="{{ project.title }}" 
+        class="img-fluid"
+        loading="lazy">
+      {% if project.primary_metric %}
+      <div class="project-metric">
+        <i class="fas fa-chart-line me-1"></i>{{ project.primary_metric }}
+      </div>
+      {% endif %}
+    </div>
+    <div class="project-card-body">
+      <h3 class="project-card-title">{{ project.title }}</h3>
+      <p class="project-card-summary">{{ project.summary }}</p>
+      {% if project.tags %}
+      <div class="project-card-tags">
+        {% for tag in project.tags[:3] %}
+          <span class="badge bg-secondary">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+      <a href="/projects/{{ project.slug }}/" class="btn btn-outline-primary mt-3">
+        View Project <i class="fas fa-arrow-right ms-1"></i>
+      </a>
+    </div>
+  </div>
+</div>

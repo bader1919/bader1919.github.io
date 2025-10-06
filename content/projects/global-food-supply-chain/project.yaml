@@ -1,0 +1,18 @@
+slug: global-food-supply-chain
+title: "Global Food Supply Chain Analysis"
+summary: "Power BI dashboard analyzing global food supply chain inefficiencies, demand fluctuations, supplier trends, and the impact of global events on food logistics."
+description_path: content/projects/global-food-supply-chain/narrative.md
+published_on: 2025-07-19
+last_updated_on: 2025-10-06
+hero_image: ./assets/global-food.jpg
+status: published
+tech_stack: Power BI, Data Analytics, Supply Chain Management
+primary_metric: Identified key supplier and logistics inefficiencies
+github_url: 
+live_url:
+tags:
+  - "Power BI"
+  - "Data Analytics"
+  - "Supply Chain"
+  - "Agriculture"
+  - "Trade"

@@ -1,0 +1,16 @@
+slug: sample-project
+title: Sample Data Analytics Project
+summary: A comprehensive analysis of customer behavior patterns using SQL and Power BI to drive business insights.
+description_path: content/projects/sample-project/narrative.md
+published_on: 2024-03-15
+last_updated_on: 2024-03-20
+hero_image: assets/img/placeholder/project-placeholder.jpg
+status: published
+tech_stack: SQL, Power BI, Python, Excel
+primary_metric: 25% increase in customer retention
+github_url: https://github.com/bader1919/sample-project
+tags:
+  - Data Analytics
+  - Business Intelligence
+  - SQL
+  - Power BI

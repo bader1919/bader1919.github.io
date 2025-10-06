@@ -1,0 +1,18 @@
+slug: kickstarter-growth-analysis
+title: "Kickstarter Growth Analysis (2009-2012)"
+summary: "Analysis of Kickstarter's crowdfunding platform growth, project success factors, and backer engagement trends from 2009-2012."
+description_path: content/projects/kickstarter-growth-analysis/narrative.md
+published_on: 2025-07-19
+last_updated_on: 2025-10-06
+hero_image: ./assets/kick-starter.jpg
+status: published
+tech_stack: Excel, Data Analytics, PowerPoint
+primary_metric: 50% project success rate, funding patterns analyzed
+github_url: 
+live_url:
+tags:
+  - "Excel"
+  - "Data Analytics"
+  - "Crowdfunding"
+  - "Market Research"
+  - "Business Strategy"

@@ -47,7 +47,11 @@
 ## Constitution Check
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+- **Quality-First Codebase**: Ensure proposed changes maintain semantic HTML/CSS, document component intent, and avoid duplication.
+- **Test-Driven Insights**: Specify the unit, regression, accessibility, and visual tests that will be authored before implementation.
+- **Consistent Experience**: Describe how layouts, breakpoints, copy, and interaction patterns remain aligned with portfolio guidelines.
+- **Performance Transparency**: Capture expected LCP, asset budgets, and the measurement plan for confirming them post-change.
+- **Implementation Constraints**: Verify data provenance documentation, accessibility requirements, and dependency decisions comply with the constitution.
 
 ## Project Structure
 
@@ -216,4 +220,4 @@ directories captured above]
 - [ ] Complexity deviations documented
 
 ---
-*Based on Constitution v2.1.1 - See `/memory/constitution.md`*
+*Based on Constitution v1.0.0 - See `/memory/constitution.md`*

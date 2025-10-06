@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block title %}Bader Abdulrahim | Portfolio - Data Analytics & Smart Home Automation{% endblock %}
+
+{% block content %}
+  <!-- Hero Section with animated typing effect -->
+  <header class="hero text-center">
+    <div class="container">
+      <div class="fade-in">
+        <h1>Bader Abdulrahim</h1>
+        <p class="lead profession"><span id="typing-text"></span><span class="typing-cursor">|</span></p>
+        <div class="d-flex justify-content-center gap-3 mt-4">
+          <a href="#projects" class="btn btn-outline-light btn-lg">View Projects</a>
+          <a class="btn btn-light btn-lg" href="/contact.html">Get In Touch</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-5 mb-4 mb-md-0">
+          <img src="/assets/img/profile.jpg" alt="Bader Abdulrahim" class="img-fluid rounded-circle profile-img" width="350">
+        </div>
+        <div class="col-md-7">
+          <h2 class="mb-4">About Me</h2>
+          <p class="lead mb-4">I'm Bader Abdulrahim, a data-driven strategist with a passion for turning raw information into actionable insights.</p>
+          <p>As the founder of BY MB Consultancy, I specialize in data analytics, business intelligence, and digital transformation, helping businesses in Bahrain leverage their data for smarter decision-making.</p>
+          <p>My expertise spans SQL, Power BI, and Python, enabling me to analyze trends, optimize processes, and uncover growth opportunities.</p>
+          <p>I thrive on solving complex problems and transforming data into valuable narratives that drive efficiency and innovation.</p>
+          <p>With expertise in data analytics, smart home automation, and digital transformation, I help businesses and individuals implement technology that makes life and work more efficient.</p>
+          <div class="mt-4">
+            <a class="btn btn-primary" href="/about.html">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects-section">
+    <div class="container">
+      <h2 class="text-center mb-5">Featured Projects</h2>
+      
+      {% if projects %}
+        <div class="row g-4">
+          {% for project in projects %}
+            {% include 'partials/project_card.html' %}
+          {% endfor %}
+        </div>
+      {% else %}
+        <!-- Zero-state messaging -->
+        <div class="text-center py-5">
+          <i class="fas fa-folder-open fa-5x text-muted mb-4"></i>
+          <h3>No Projects Yet</h3>
+          <p class="text-muted">Check back soon for exciting new projects showcasing data analytics and smart home automation solutions.</p>
+        </div>
+      {% endif %}
+      
+      <div class="text-center mt-5">
+        <a href="/projects.html" class="btn btn-primary btn-lg">View All Projects</a>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+  // Typing effect for profession
+  const professions = [
+    "Data Analyst",
+    "Business Intelligence Specialist",
+    "Smart Home Automation Expert",
+    "Digital Transformation Consultant"
+  ];
+  
+  let professionIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  const typingSpeed = 100;
+  const deletingSpeed = 50;
+  const pauseTime = 2000;
+  
+  function type() {
+    const current = professions[professionIndex];
+    const typingText = document.getElementById('typing-text');
+    
+    if (!typingText) return;
+    
+    if (isDeleting) {
+      typingText.textContent = current.substring(0, charIndex - 1);
+      charIndex--;
+    } else {
+      typingText.textContent = current.substring(0, charIndex + 1);
+      charIndex++;
+    }
+    
+    if (!isDeleting && charIndex === current.length) {
+      isDeleting = true;
+      setTimeout(type, pauseTime);
+      return;
+    }
+    
+    if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      professionIndex = (professionIndex + 1) % professions.length;
+    }
+    
+    const speed = isDeleting ? deletingSpeed : typingSpeed;
+    setTimeout(type, speed);
+  }
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(type, 500);
+  });
+</script>
+{% endblock %}

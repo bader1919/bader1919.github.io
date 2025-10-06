@@ -1,0 +1,18 @@
+slug: customer-churn-analysis
+title: "Customer Churn Analysis - OurBank"
+summary: "Analysis of customer churn patterns to identify key retention factors and develop predictive models using Tableau dashboards and data analytics."
+description_path: content/projects/customer-churn-analysis/narrative.md
+published_on: 2025-07-19
+last_updated_on: 2025-10-06
+hero_image: ./assets/customer-churn.jpg
+status: published
+tech_stack: Tableau, Excel, Data Analytics
+primary_metric: Identified high-risk customer segments for retention
+github_url: 
+live_url:
+tags:
+  - "Tableau"
+  - "Data Analytics"
+  - "Customer Retention"
+  - "Banking"
+  - "Predictive Modeling"
