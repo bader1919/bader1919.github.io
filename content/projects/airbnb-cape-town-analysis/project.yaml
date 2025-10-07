@@ -1,0 +1,31 @@
+slug: airbnb-cape-town-analysis
+title: "Airbnb Market Analysis - Cape Town"
+summary: "Investment analysis of Airbnb properties in Cape Town identifying profitable property types, best locations, and revenue insights from successful hosts."
+description_path: content/projects/airbnb-cape-town-analysis/narrative.md
+published_on: 2025-07-19
+last_updated_on: 2025-10-06
+hero_image: ./assets/airbnb-analysis.jpg
+status: published
+tech_stack: Excel, Data Analytics, PowerPoint
+primary_metric: ZAR 57M+ annual revenue for top hosts
+github_url: 
+live_url:
+tags:
+  - "Excel"
+  - "Data Analytics"
+  - "Market Research"
+  - "Hospitality"
+  - "Real Estate"
+links:
+  - name: "Final Analysis Report (PowerPoint)"
+    url: "../../bader1919.github.io-main/projects/Airbnb Market Analysis - Cape Town/AAMB & Co. - FINAL.pptx"
+    type: "presentation"
+  - name: "Analysis Data (Excel)"
+    url: "../../bader1919.github.io-main/projects/Airbnb Market Analysis - Cape Town/Airbnb_Excel_Lab_AAMB & Co.xlsx"
+    type: "spreadsheet"
+  - name: "Annotated Report (PDF)"
+    url: "../../bader1919.github.io-main/projects/Airbnb Market Analysis - Cape Town/annotated-AAMB%20%26%20Co.%20-%20FINAL.pptx.pdf"
+    type: "document"
+
+
+

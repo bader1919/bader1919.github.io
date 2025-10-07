@@ -1,0 +1,26 @@
+slug: ba-service-quality-review
+title: "British Airways Service Quality Review"
+summary: "Analysis of British Airways customer feedback identifying critical service quality issues in value for money and food quality based on passenger reviews."
+description_path: content/projects/ba-service-quality-review/narrative.md
+published_on: 2025-07-19
+last_updated_on: 2025-10-06
+hero_image: ./assets/british-airways.jpg
+status: published
+tech_stack: Excel, Tableau, Data Visualization
+primary_metric: 579 customers gave score of 1 for value & food quality
+github_url: 
+live_url:
+tags:
+  - "Excel"
+  - "Tableau"
+  - "Data Visualization"
+  - "Customer Service"
+  - "Aviation"
+links:
+  - name: "Service Quality Review Presentation (PDF)"
+    url: "../../bader1919.github.io-main/projects/BA-Service-Quality-Review/annotated-BA%20Passanger%20Service%20Quality%20Review.pptx.pdf"
+    type: "document"
+  - name: "Customer Reviews Data Analysis (PDF)"
+    url: "../../bader1919.github.io-main/projects/BA-Service-Quality-Review/annotated-BA%20Airline_Reviews.xlsx.pdf"
+    type: "document"
+
