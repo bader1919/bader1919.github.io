@@ -72,11 +72,11 @@
             <p class="lead text-white-50">Data-driven optimization of smart home automation across 419 devices and 26 automation tasks to improve reliability, climate control, and sensor efficiency</p>
             <div class="project-tags mt-4">
                 <span class="badge bg-light text-dark">Data Analytics</span>
-                <span class="badge bg-light text-dark">SQL</span>
-                <span class="badge bg-light text-dark">Power BI</span>
                 <span class="badge bg-light text-dark">Data Visualization</span>
+                <span class="badge bg-light text-dark">Power BI</span>
                 <span class="badge bg-light text-dark">Home Automation</span>
                 <span class="badge bg-light text-dark">Python</span>
+                <span class="badge bg-light text-dark">SQL</span>
                 <span class="badge bg-light text-dark">IoT</span>
                 <span class="badge bg-light text-dark">Capstone Project</span>
                 <span class="badge bg-light text-dark">MariaDB</span>
@@ -113,7 +113,157 @@
 
           <!-- Project Narrative -->
           <div class="project-narrative">
-            <p>Project narrative coming soon.</p>
+            <h2 id="the-smart-home-challenge">The Smart Home Challenge</h2>
+<p>Managing a comprehensive smart home with <strong>419 devices</strong>, <strong>1,706 entities</strong> across <strong>16 domains</strong>, and <strong>26 automation tasks</strong> presents significant operational challenges. Home Assistant is a powerful open-source home automation platform focused on local control and privacy, but at scale, even well-configured systems face critical performance issues.</p>
+<h3 id="the-problems">The Problems</h3>
+<p>This project addresses three core challenges affecting smart home reliability and efficiency:</p>
+<p><strong>1. Automation Failures &amp; Delays</strong><br />
+Automation sequences inconsistently execute or experience significant delays between triggers and actions. HVAC systems run longer than necessary or shut off prematurely, creating comfort issues and wasting energy.</p>
+<p><strong>2. Inconsistent Climate Control</strong><br />
+Temperature and humidity levels fluctuate by up to <strong>10% outside optimal comfort ranges</strong> across different rooms, impacting both comfort and energy efficiency.</p>
+<p><strong>3. Sensor Inefficiencies</strong><br />
+Motion, door, and window sensors generate false positives or miss critical events, compromising security monitoring and system responsiveness.</p>
+<h3 id="the-impact">The Impact</h3>
+<p>These issues affect over <strong>456,794 active Home Assistant installations</strong> globally, with <strong>78.71%</strong> sharing usage statistics. Optimizing automation performance has far-reaching implications for energy efficiency, comfort, and security across the smart home ecosystem.</p>
+<hr />
+<h2 id="project-objectives">Project Objectives</h2>
+<p>This data analytics capstone project aims to transform Home Assistant performance through systematic analysis and optimization.</p>
+<h3 id="primary-goals">Primary Goals</h3>
+<p><strong>Enhance Automation Performance</strong>
+- Identify automations with high failure rates
+- Analyze trigger-to-completion delays
+- Optimize workflows exceeding 30-second execution thresholds</p>
+<p><strong>Improve Climate Control Efficiency</strong>
+- Monitor temperature and humidity patterns per room
+- Maintain comfort range 90% of the time
+- Reduce HVAC runtime inefficiencies</p>
+<p><strong>Optimize Security Sensor Reliability</strong>
+- Implement physical calibration routines
+- Configure optimal trigger thresholds
+- Reduce false alerts by 20%</p>
+<h3 id="success-metrics">Success Metrics</h3>
+<ul>
+<li><strong>&lt; 5%</strong> automation failure rate</li>
+<li><strong>90%</strong> time within comfort range (temperature/humidity)</li>
+<li><strong>20%</strong> reduction in false security alerts</li>
+</ul>
+<hr />
+<h2 id="data-driven-approach">Data-Driven Approach</h2>
+<h3 id="dataset-overview">Dataset Overview</h3>
+<p>The project leverages Home Assistant's MariaDB database with 12 key tables:</p>
+<p><strong>Core Tables:</strong>
+- <code>events</code>: System events (triggers, automations)
+- <code>states</code>: Entity state changes (sensor values, device status)
+- <code>state_attributes</code>: Detailed attributes for entity states
+- <code>statistics</code>: Long-term aggregated data (energy usage, climate trends)</p>
+<p><strong>Supporting Tables:</strong>
+- <code>event_data</code>, <code>event_types</code>: Event classification and metadata
+- <code>states_meta</code>: Entity identifiers and metadata
+- <code>statistics_meta</code>, <code>statistics_short_term</code>: Statistical aggregation metadata
+- <code>recorder_runs</code>, <code>schema_changes</code>, <code>migration_changes</code>: System tracking</p>
+<p>The database captures comprehensive automation execution logs, climate sensor readings, and historical performance metrics essential for identifying optimization opportunities.</p>
+<h3 id="analysis-methodology">Analysis Methodology</h3>
+<p><strong>Phase 1: Data Extraction</strong>
+- Queried key tables from MariaDB focusing on critical event types:
+  - <code>automation_triggered</code>: Automation initiation events
+  - <code>call_service</code>: Service invocation logs
+  - <code>state_changed</code>: Entity state transitions
+- Linked events and states using <code>context_id_hex</code> for sequence reconstruction</p>
+<p><strong>Phase 2: Data Cleaning &amp; Preprocessing</strong>
+- Handled missing data and removed duplicates
+- Normalized timestamps and entity identifiers
+- Validated data integrity across related tables</p>
+<p><strong>Phase 3: Statistical Analysis</strong></p>
+<p><strong>Success Rate Calculation</strong><br />
+Percentage of <code>automation_triggered</code> events successfully leading to <code>state_changed</code> outcomes</p>
+<p><strong>Response Time Measurement</strong><br />
+Time difference between <code>automation_triggered</code> and corresponding <code>state_changed</code> events</p>
+<p><strong>Failure Analysis</strong><br />
+Identified automations with no resulting state change, categorized by failure type</p>
+<p><strong>Sequence Analysis</strong><br />
+Extracted valid execution sequences: <code>automation_triggered</code> → <code>call_service</code> → <code>state_changed</code><br />
+Detected delays, outliers, and broken execution chains</p>
+<p><strong>Time Series Analysis</strong><br />
+Monitored success rates, response times, and seasonal trends to identify systemic issues and performance patterns over time</p>
+<p><strong>Phase 4: Visualization</strong>
+- Python visualizations: histograms, bar charts, time series plots
+- Power BI dashboards: interactive monitoring of trigger-response times, reliability trends, and climate control efficiency</p>
+<hr />
+<h2 id="key-findings">Key Findings</h2>
+<h3 id="automation-performance-analysis">Automation Performance Analysis</h3>
+<p>The analysis revealed specific automation sequences with high failure rates exceeding the 5% target threshold. Response time measurements identified automations with execution delays beyond the 30-second optimization threshold, primarily affecting HVAC control sequences.</p>
+<h3 id="climate-control-patterns">Climate Control Patterns</h3>
+<p>Temperature and humidity monitoring across rooms exposed inconsistencies in climate control logic. Certain zones experienced extended periods outside the comfort range due to delayed HVAC responses and suboptimal sensor placement.</p>
+<h3 id="sensor-reliability-assessment">Sensor Reliability Assessment</h3>
+<p>Motion and door/window sensors exhibited false positive patterns during specific environmental conditions (e.g., temperature fluctuations, air circulation changes). Some sensors missed legitimate events due to sensitivity threshold configurations.</p>
+<hr />
+<h2 id="optimization-recommendations">Optimization Recommendations</h2>
+<h3 id="automation-workflow-improvements">Automation Workflow Improvements</h3>
+<ol>
+<li><strong>Retry Logic</strong>: Implement automatic retry mechanisms for failed automation sequences</li>
+<li><strong>Execution Monitoring</strong>: Add timeout detection and alerts for automations exceeding 30-second thresholds</li>
+<li><strong>Dependency Management</strong>: Restructure automation chains to reduce interdependencies causing cascading failures</li>
+</ol>
+<h3 id="climate-control-enhancements">Climate Control Enhancements</h3>
+<ol>
+<li><strong>Zone-Based Logic</strong>: Implement room-specific temperature/humidity targets instead of whole-home averages</li>
+<li><strong>Predictive Scheduling</strong>: Use historical patterns to pre-condition spaces before occupancy</li>
+<li><strong>Sensor Placement</strong>: Relocate climate sensors to more representative positions within zones</li>
+</ol>
+<h3 id="sensor-configuration-optimization">Sensor Configuration Optimization</h3>
+<ol>
+<li><strong>Calibration Routines</strong>: Establish periodic sensor calibration schedules</li>
+<li><strong>Sensitivity Tuning</strong>: Adjust trigger thresholds based on environmental analysis</li>
+<li><strong>Multi-Sensor Validation</strong>: Require confirmation from multiple sensors before triggering security alerts</li>
+</ol>
+<hr />
+<h2 id="expected-impact">Expected Impact</h2>
+<p><strong>Reliability Improvements</strong>
+- Reduced automation failure rates from current levels to &lt;5% target
+- Decreased average response time for automation execution
+- Enhanced system predictability and user confidence</p>
+<p><strong>Energy Efficiency Gains</strong>
+- Optimized HVAC runtime through improved climate control logic
+- Reduced energy waste from premature shutoffs and extended runtimes
+- Better zone management minimizing whole-home climate adjustments</p>
+<p><strong>Enhanced Security &amp; Comfort</strong>
+- 20% reduction in false security alerts
+- 90% time within optimal comfort ranges
+- Improved sensor responsiveness to legitimate events</p>
+<hr />
+<h2 id="technical-implementation">Technical Implementation</h2>
+<p>This project demonstrates comprehensive data analytics skills applied to real-world IoT challenges:</p>
+<p><strong>Technologies Used:</strong>
+- <strong>Python</strong>: Data extraction, cleaning, statistical analysis, visualization
+- <strong>SQL/MariaDB</strong>: Complex queries joining multiple tables, sequence reconstruction
+- <strong>Power BI</strong>: Interactive dashboards for real-time monitoring
+- <strong>Jupyter Notebooks</strong>: Reproducible analysis workflow</p>
+<p><strong>Analytical Techniques:</strong>
+- Statistical analysis (success rates, response times, failure patterns)
+- Time series analysis (trend detection, seasonal patterns)
+- Sequence analysis (event chain reconstruction, delay detection)
+- Data visualization (histograms, time series plots, interactive dashboards)</p>
+<h3 id="project-deliverables">Project Deliverables</h3>
+<p>Complete technical documentation and analysis available:</p>
+<ul>
+<li><strong><a href="../../bader1919.github.io-main/projects/capstone/power_point/The Power of Data.pptx">PowerPoint Presentation</a></strong>: Comprehensive project overview and findings</li>
+<li><strong><a href="../../bader1919.github.io-main/projects/capstone/final.ipynb">Final Analysis Notebook</a></strong>: Complete Python analysis workflow</li>
+<li><strong><a href="../../bader1919.github.io-main/projects/capstone/orgnized.ipynb">Organized Notebook</a></strong>: Structured analysis by category</li>
+<li><strong><a href="../../bader1919.github.io-main/projects/capstone/dbquery/SQL.sql">SQL Queries</a></strong>: Database extraction and analysis queries</li>
+<li><strong><a href="https://drive.google.com/file/d/1WmmTyFQSM40IYf8SJWhcZ6t-1ydWHcsC/view?usp=drive_link">Database Schema</a></strong>: Complete schema documentation</li>
+<li><strong><a href="https://drive.google.com/file/d/1NCYrITbk3u4k57o3gyaq6rC7jbufb-Pa/view?usp=drive_link">Relation Map</a></strong>: Database relationship visualization</li>
+</ul>
+<hr />
+<h2 id="scalability-future-impact">Scalability &amp; Future Impact</h2>
+<p>The optimization strategies developed in this project serve as a model for IoT performance analysis across diverse smart home configurations. By demonstrating data-driven approaches to automation reliability, climate efficiency, and sensor optimization, this work provides actionable insights for:</p>
+<ul>
+<li><strong>Home Assistant Users</strong>: Practical optimization techniques applicable to personal setups</li>
+<li><strong>Home Automation Enthusiasts</strong>: Advanced analysis methodologies for system tuning</li>
+<li><strong>Data Analysts</strong>: Real-world IoT data analysis patterns and techniques</li>
+<li><strong>System Integrators</strong>: Performance benchmarking and optimization frameworks</li>
+<li><strong>Smart Home Product Developers</strong>: Reliability improvement strategies for device manufacturers</li>
+</ul>
+<p>This capstone project showcases the power of data analytics in transforming complex IoT systems into reliable, efficient, and responsive smart home platforms.</p>
           </div>
 
           <!-- Project Gallery -->
