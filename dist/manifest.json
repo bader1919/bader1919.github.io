@@ -1,0 +1,11 @@
+{
+  "generated_at": "2025-10-07T07:41:03.026770",
+  "pages": 9,
+  "assets": {
+    "animations.css": "assets\\css\\animations.css",
+    "main.css": "assets\\css\\main.css",
+    "components.js": "assets\\js\\components.js",
+    "image-placeholder.js": "assets\\js\\image-placeholder.js",
+    "main.js": "assets\\js\\main.js"
+  }
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "slug": "airbnb-cape-town-analysis",
+    "title": "Airbnb Market Analysis - Cape Town",
+    "summary": "Investment analysis of Airbnb properties in Cape Town identifying profitable property types, best locations, and revenue insights from successful hosts.",
+    "hero_image": "./assets/airbnb-analysis.jpg",
+    "published_on": "2025-07-19",
+    "tech_stack": "Excel, Data Analytics, PowerPoint",
+    "primary_metric": "ZAR 57M+ annual revenue for top hosts",
+    "tags": "Excel, Data Analytics, Market Research, Hospitality, Real Estate"
+  },
+  {
+    "slug": "ba-service-quality-review",
+    "title": "British Airways Service Quality Review",
+    "summary": "Analysis of British Airways customer feedback identifying critical service quality issues in value for money and food quality based on passenger reviews.",
+    "hero_image": "./assets/british-airways.jpg",
+    "published_on": "2025-07-19",
+    "tech_stack": "Excel, Tableau, Data Visualization",
+    "primary_metric": "579 customers gave score of 1 for value & food quality",
+    "tags": "Excel, Tableau, Data Visualization, Customer Service, Aviation"
+  },
+  {
+    "slug": "customer-churn-analysis",
+    "title": "Customer Churn Analysis - OurBank",
+    "summary": "Analysis of customer churn patterns to identify key retention factors and develop predictive models using Tableau dashboards and data analytics.",
+    "hero_image": "./assets/customer-churn.jpg",
+    "published_on": "2025-07-19",
+    "tech_stack": "Tableau, Excel, Data Analytics",
+    "primary_metric": "Identified high-risk customer segments for retention",
+    "tags": "Data Analytics, Tableau, Customer Retention, Banking, Predictive Modeling"
+  },
+  {
+    "slug": "global-food-supply-chain",
+    "title": "Global Food Supply Chain Analysis",
+    "summary": "Power BI dashboard analyzing global food supply chain inefficiencies, demand fluctuations, supplier trends, and the impact of global events on food logistics.",
+    "hero_image": "./assets/global-food.jpg",
+    "published_on": "2025-07-19",
+    "tech_stack": "Power BI, Data Analytics, Supply Chain Management",
+    "primary_metric": "Identified key supplier and logistics inefficiencies",
+    "tags": "Data Analytics, Power BI, Supply Chain, Agriculture, Trade"
+  },
+  {
+    "slug": "home-assistant-automation-analysis",
+    "title": "Home Assistant Automation Performance Analysis",
+    "summary": "Data-driven optimization of smart home automation across 419 devices and 26 automation tasks to improve reliability, climate control, and sensor efficiency",
+    "hero_image": "assets/home-assistant-dashboard.png",
+    "published_on": "2025-07-19",
+    "tech_stack": "Python, SQL, MariaDB, Power BI, Jupyter",
+    "primary_metric": "<5% automation failure rate target",
+    "tags": "Data Analytics, Data Visualization, Power BI, Home Automation, Python, SQL, IoT, Capstone Project, MariaDB"
+  },
+  {
+    "slug": "kickstarter-growth-analysis",
+    "title": "Kickstarter Growth Analysis (2009-2012)",
+    "summary": "Analysis of Kickstarter's crowdfunding platform growth, project success factors, and backer engagement trends from 2009-2012.",
+    "hero_image": "./assets/kick-starter.jpg",
+    "published_on": "2025-07-19",
+    "tech_stack": "Excel, Data Analytics, PowerPoint",
+    "primary_metric": "50% project success rate, funding patterns analyzed",
+    "tags": "Excel, Data Analytics, Market Research, Crowdfunding, Business Strategy"
+  },
+  {
+    "slug": "sql-fundamentals-advanced-techniques",
+    "title": "SQL Fundamentals & Advanced Techniques",
+    "summary": "Comprehensive SQL learning journey from basic queries to advanced analytics with CTEs, joins, and revenue analysis",
+    "hero_image": "assets/sql-learning-path.png",
+    "published_on": "2025-07-19",
+    "tech_stack": "SQL, MariaDB, PostgreSQL, Database Management",
+    "primary_metric": "Advanced SQL proficiency across 3 complexity tiers",
+    "tags": "SQL, Database Management, Learning Journey, Query Optimization, Data Analysis, Technical Skills"
+  },
+  {
+    "slug": "sample-project",
+    "title": "Sample Data Analytics Project",
+    "summary": "A comprehensive analysis of customer behavior patterns using SQL and Power BI to drive business insights.",
+    "hero_image": "assets/img/placeholder/project-placeholder.jpg",
+    "published_on": "2024-03-15",
+    "tech_stack": "SQL, Power BI, Python, Excel",
+    "primary_metric": "25% increase in customer retention",
+    "tags": "Data Analytics, Power BI, SQL, Business Intelligence"
+  }
+]

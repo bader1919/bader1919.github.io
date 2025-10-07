@@ -1,0 +1,335 @@
+/* Main Styles for Portfolio Website */
+:root {
+  --primary-color: #2563eb;  /* Blue */
+  --secondary-color: #1e3a8a; /* Darker Blue */
+  --accent-color: #f59e0b;   /* Amber */
+  --dark-color: #0f172a;     /* Dark Blue/Black */
+  --light-color: #f8fafc;    /* Off White */
+  --text-color: #334155;     /* Slate Gray */
+  --transition: all 0.3s ease;
+}
+
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--light-color);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+section {
+  padding: 5rem 0;
+}
+
+.btn {
+  border-radius: 50px;
+  padding: 0.5rem 1.5rem;
+  transition: var(--transition);
+  font-weight: 500;
+}
+
+.btn-primary, .progress-bar {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.btn-outline-light:hover {
+  color: var(--primary-color);
+}
+
+/* Animation Classes */
+.fade-in {
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: rgba(15, 23, 42, 0.9);
+  backdrop-filter: blur(10px);
+  transition: var(--transition);
+  padding: 1rem 0;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: var(--light-color);
+}
+
+.nav-link {
+  font-weight: 500;
+  margin: 0 0.5rem;
+  position: relative;
+}
+
+.nav-link:after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: var(--transition);
+}
+
+.nav-link:hover:after, .nav-link.active:after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, var(--secondary-color), var(--dark-color));
+  color: var(--light-color);
+  padding: 12rem 0 8rem;
+  position: relative;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero .lead {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* About Section */
+.about-section {
+  background-color: var(--light-color);
+}
+
+.profile-img {
+  border: 5px solid var(--primary-color);
+  transition: transform 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.profile-img:hover {
+  transform: scale(1.02);
+}
+
+/* Skills Section */
+.skills-section {
+  background-color: #f1f5f9;
+}
+
+.skill-card {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+  height: 100%;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.skill-icon {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+}
+
+.progress {
+  height: 8px;
+  background-color: #e2e8f0;
+  border-radius: 4px;
+}
+
+.progress-bar {
+  border-radius: 4px;
+}
+
+/* Projects Section */
+.projects-section {
+  background-color: var(--light-color);
+}
+
+.project-card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+  height: 100%;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.project-img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-img-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.project-card:hover .card-img-overlay {
+  opacity: 1;
+}
+
+.project-category {
+  color: var(--light-color);
+  background-color: var(--primary-color);
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  align-self: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+/* Project Page Hero Section Fix */
+.project-hero, .project-banner {
+  padding-top: calc(56px + 5rem) !important; /* Add 56px (navbar height) + additional padding */
+  padding-bottom: 5rem !important;
+}
+
+.project-details {
+  padding-top: calc(56px + 2rem) !important;
+}
+
+/* Stats Section */
+.stats-section {
+  background-color: var(--primary-color);
+  color: var(--light-color);
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.stat-item {
+  padding: 1.5rem;
+  transition: var(--transition);
+}
+
+.stat-item:hover {
+  transform: translateY(-10px);
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: var(--light-color);
+  padding: 5rem 0;
+}
+
+/* Footer Styles */
+footer {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  padding: 4rem 0 2rem;
+}
+
+.footer-heading {
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-link {
+  color: rgba(255, 255, 255, 0.7);
+  display: block;
+  margin-bottom: 0.5rem;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: white;
+  transform: translateX(5px);
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.social-icon {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.7);
+  transition: var(--transition);
+}
+
+.social-icon:hover {
+  color: white;
+  transform: translateY(-5px);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 2rem;
+  margin-top: 3rem;
+}
+
+/* Placeholder Image Styles */
+.placeholder-image {
+  border: 2px dashed rgba(0, 0, 0, 0.1);
+  filter: brightness(0.95);
+  transition: all 0.3s ease;
+}
+
+.placeholder-image:hover {
+  filter: brightness(1.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero .lead {
+    font-size: 1.2rem;
+  }
+  
+  section {
+    padding: 4rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 9rem 0 6rem;
+  }
+  
+  .stat-item {
+    margin-bottom: 2rem;
+  }
+}

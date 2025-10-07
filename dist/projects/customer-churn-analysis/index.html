@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Churn Analysis - OurBank | Bader Abdulrahim</title>
+  
+  <!-- Meta tags for better SEO -->
+  <meta name="description" content="Analysis of customer churn patterns to identify key retention factors and develop predictive models using Tableau dashboards and data analytics.">
+  <meta name="keywords" content="smart home, automation, data analytics, Power BI, SQL, Home Assistant">
+  
+  <!-- Open Graph meta tags -->
+  <meta property="og:title" content="Customer Churn Analysis - OurBank | Bader Abdulrahim">
+  <meta property="og:description" content="Analysis of customer churn patterns to identify key retention factors and develop predictive models using Tableau dashboards and data analytics.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bader1919.github.io/projects/customer-churn-analysis/">
+  <meta property="og:image" content="/./assets/customer-churn.jpg">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/animations.css">
+  
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="/">Bader Abdulrahim</a>
+    <button 
+      class="navbar-toggler" 
+      type="button" 
+      data-bs-toggle="collapse" 
+      data-bs-target="#navbarNav" 
+      aria-controls="navbarNav" 
+      aria-expanded="false" 
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/projects.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>  
+  <!-- Skip to main content link for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <main id="main-content">
+  <!-- Project Hero Section -->
+  <section class="project-hero" style="background-image: url('/./assets/customer-churn.jpg');">
+    <div class="hero-overlay">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h1 class="display-4 text-white mb-3">Customer Churn Analysis - OurBank</h1>
+            <p class="lead text-white-50">Analysis of customer churn patterns to identify key retention factors and develop predictive models using Tableau dashboards and data analytics.</p>
+            <div class="project-tags mt-4">
+                <span class="badge bg-light text-dark">Data Analytics</span>
+                <span class="badge bg-light text-dark">Tableau</span>
+                <span class="badge bg-light text-dark">Customer Retention</span>
+                <span class="badge bg-light text-dark">Banking</span>
+                <span class="badge bg-light text-dark">Predictive Modeling</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Details -->
+  <article class="project-content">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <!-- Project Meta -->
+          <div class="project-meta mb-5">
+            <div class="row g-4">
+              <div class="col-md-4">
+                <h6 class="text-muted mb-2"><i class="fas fa-calendar me-2"></i>Published</h6>
+                <p>2025-07-19</p>
+              </div>
+              <div class="col-md-4">
+                <h6 class="text-muted mb-2"><i class="fas fa-tools me-2"></i>Tech Stack</h6>
+                <p>Tableau, Excel, Data Analytics</p>
+              </div>
+              <div class="col-md-4">
+                <h6 class="text-muted mb-2"><i class="fas fa-chart-line me-2"></i>Key Metric</h6>
+                <p>Identified high-risk customer segments for retention</p>
+              </div>
+            </div>
+            
+          </div>
+
+          <!-- Project Narrative -->
+          <div class="project-narrative">
+            <h2 id="overview">Overview</h2>
+<p>This project analyzes customer churn patterns at OurBank to identify key factors influencing customer retention and develop strategies to reduce attrition. Through comprehensive data analysis and interactive Tableau dashboards, we uncovered critical insights into customer behavior and churn risk factors.</p>
+<h3 id="project-objectives">Project Objectives</h3>
+<ul>
+<li>Identify key factors influencing customer churn</li>
+<li>Analyze churn patterns across different customer segments</li>
+<li>Develop predictive insights to anticipate customer attrition</li>
+<li>Create interactive dashboards for monitoring retention metrics</li>
+<li>Provide actionable recommendations for retention strategies</li>
+</ul>
+<h2 id="business-challenge">Business Challenge</h2>
+<p>Customer churn represents a significant challenge for banking institutions. Acquiring new customers is significantly more expensive than retaining existing ones, making churn reduction a critical business priority.</p>
+<h3 id="research-questions">Research Questions</h3>
+<ul>
+<li>What characteristics define high-churn customer segments?</li>
+<li>Which factors have the strongest correlation with customer attrition?</li>
+<li>Can we predict which customers are likely to churn?</li>
+<li>What interventions can reduce churn rates effectively?</li>
+</ul>
+<h2 id="approach">Approach</h2>
+<h3 id="data-collection-preparation">Data Collection &amp; Preparation</h3>
+<p>The analysis utilized comprehensive customer data including:</p>
+<ul>
+<li><strong>Account Information</strong>: Tenure, account type, balances</li>
+<li><strong>Transaction Activity</strong>: Frequency, volume, patterns</li>
+<li><strong>Demographics</strong>: Age, geography, income levels</li>
+<li><strong>Service Usage</strong>: Product adoption, digital banking engagement</li>
+<li><strong>Churn Status</strong>: Historical retention and attrition data</li>
+</ul>
+<h3 id="analysis-methodology">Analysis Methodology</h3>
+<ol>
+<li><strong>Exploratory Data Analysis</strong>: Examined distributions and patterns in customer behavior</li>
+<li><strong>Segmentation Analysis</strong>: Grouped customers by churn risk and characteristics</li>
+<li><strong>Feature Analysis</strong>: Identified key variables correlated with churn</li>
+<li><strong>Visualization Development</strong>: Created Tableau dashboards for interactive exploration</li>
+<li><strong>Pattern Recognition</strong>: Uncovered trends and anomalies in customer retention</li>
+</ol>
+<h3 id="tools-technologies">Tools &amp; Technologies</h3>
+<ul>
+<li><strong>Tableau</strong>: Interactive dashboards and data visualization</li>
+<li><strong>Microsoft Excel</strong>: Data cleaning, transformation, and preliminary analysis</li>
+<li><strong>Data Analytics</strong>: Statistical analysis and correlation studies</li>
+<li><strong>Business Intelligence</strong>: Dashboard design and stakeholder communication</li>
+</ul>
+<h2 id="key-findings">Key Findings</h2>
+<h3 id="high-risk-customer-segments">High-Risk Customer Segments</h3>
+<p>The analysis identified specific customer segments with elevated churn rates:</p>
+<ul>
+<li><strong>Low Account Tenure</strong>: Newer customers show higher attrition rates</li>
+<li><strong>Minimal Transaction Activity</strong>: Inactive accounts are at higher risk</li>
+<li><strong>Limited Product Adoption</strong>: Single-product customers more likely to leave</li>
+<li><strong>Low Engagement</strong>: Customers not using digital banking services</li>
+</ul>
+<h3 id="key-churn-indicators">Key Churn Indicators</h3>
+<p>Several factors emerged as strong predictors of customer churn:</p>
+<p><strong>Transaction Activity</strong>
+- Significant decrease in transaction frequency precedes churn
+- Declining average transaction values signal disengagement
+- Extended periods of account inactivity</p>
+<p><strong>Account Tenure</strong>
+- First 12 months represent critical retention period
+- Churn risk decreases significantly after 2+ years
+- Onboarding experience impacts long-term retention</p>
+<p><strong>Product Engagement</strong>
+- Customers with multiple products show lower churn
+- Digital banking adoption correlates with retention
+- Service utilization depth matters more than breadth</p>
+<h2 id="recommendations">Recommendations</h2>
+<h3 id="immediate-retention-actions">Immediate Retention Actions</h3>
+<ol>
+<li><strong>Early Warning System</strong></li>
+<li>Implement real-time monitoring of churn risk indicators</li>
+<li>Trigger proactive outreach for at-risk customers</li>
+<li>
+<p>Deploy retention offers before churn occurs</p>
+</li>
+<li>
+<p><strong>Enhanced Onboarding Program</strong></p>
+</li>
+<li>Focus on first 12 months of customer relationship</li>
+<li>Increase touchpoints and engagement opportunities</li>
+<li>
+<p>Ensure successful adoption of key banking services</p>
+</li>
+<li>
+<p><strong>Reactivation Campaigns</strong></p>
+</li>
+<li>Target inactive accounts with personalized offers</li>
+<li>Incentivize transaction activity and engagement</li>
+<li>Simplify return-to-active pathways</li>
+</ol>
+<h3 id="strategic-initiatives">Strategic Initiatives</h3>
+<ul>
+<li><strong>Product Cross-Selling</strong>: Increase multi-product adoption to strengthen relationships</li>
+<li><strong>Digital Banking Promotion</strong>: Drive adoption of online and mobile banking</li>
+<li><strong>Personalization</strong>: Tailor communications and offers based on customer segments</li>
+<li><strong>Customer Experience</strong>: Improve service quality touchpoints identified as pain areas</li>
+<li><strong>Predictive Modeling</strong>: Develop machine learning models for churn prediction</li>
+</ul>
+<h2 id="data-visualizations">Data Visualizations</h2>
+<p>The Tableau dashboard includes:</p>
+<ul>
+<li><strong>Churn Rate Trends</strong>: Historical and current attrition patterns</li>
+<li><strong>Customer Segmentation</strong>: Visual breakdown of churn by demographics</li>
+<li><strong>Risk Scoring</strong>: Heat maps showing high-risk customer groups</li>
+<li><strong>Feature Correlation</strong>: Analysis of factors most predictive of churn</li>
+<li><strong>Retention Metrics</strong>: KPIs for monitoring program effectiveness</li>
+</ul>
+<h2 id="business-impact">Business Impact</h2>
+<h3 id="value-delivered">Value Delivered</h3>
+<ul>
+<li><strong>Risk Identification</strong>: Clear visibility into which customers are at risk</li>
+<li><strong>Actionable Insights</strong>: Specific factors that can be addressed through interventions</li>
+<li><strong>Measurable Metrics</strong>: KPIs for tracking retention improvement</li>
+<li><strong>Strategic Framework</strong>: Data-driven approach to customer retention</li>
+</ul>
+<h3 id="expected-outcomes">Expected Outcomes</h3>
+<ul>
+<li>Reduced customer churn rates through proactive intervention</li>
+<li>Improved customer lifetime value</li>
+<li>More efficient allocation of retention marketing budget</li>
+<li>Enhanced understanding of customer behavior and preferences</li>
+<li>Better onboarding and customer experience strategies</li>
+</ul>
+<h2 id="next-steps">Next Steps</h2>
+<h3 id="future-analysis">Future Analysis</h3>
+<ul>
+<li><strong>Machine Learning Models</strong>: Implement logistic regression and decision trees for churn prediction</li>
+<li><strong>Advanced Segmentation</strong>: Develop more granular customer clustering</li>
+<li><strong>Python Integration</strong>: Combine Tableau with Python for advanced analytics</li>
+<li><strong>Power BI Expansion</strong>: Create additional dashboards for different stakeholders</li>
+<li><strong>Real-Time Analytics</strong>: Build automated monitoring and alerting systems</li>
+</ul>
+<h3 id="implementation-roadmap">Implementation Roadmap</h3>
+<ol>
+<li>Pilot retention program with highest-risk segment</li>
+<li>Measure impact and refine approach</li>
+<li>Scale successful interventions across customer base</li>
+<li>Continuously monitor and optimize retention strategies</li>
+</ol>
+<h2 id="supporting-materials">Supporting Materials</h2>
+<p>Access the detailed analysis and data:</p>
+<ul>
+<li><a href="../../bader1919.github.io-main/projects/Customer-Churn-Analysis/data/OurBank_Customer_Churn_raw_data%20(1).xlsx">Customer Churn Raw Data (Excel)</a></li>
+<li><a href="../../bader1919.github.io-main/projects/Customer-Churn-Analysis/tableau">Tableau Dashboard</a> - Interactive visualization workbook</li>
+</ul>
+<h2 id="project-team">Project Team</h2>
+<p><strong>Author</strong>: Bader Abdulrahim<br />
+<strong>Role</strong>: Data Analyst - Customer Analytics &amp; Retention</p>
+<h2 id="contact">Contact</h2>
+<p>For questions about this analysis or collaboration opportunities:</p>
+<p><strong>Email</strong>: bader.abdulrahim@gmail.com</p>
+<hr />
+<p><em>This analysis demonstrates the application of data visualization and analytics to solve critical business challenges in customer retention and relationship management.</em></p>
+          </div>
+
+          <!-- Project Resources -->
+
+          <!-- Project Gallery -->
+
+          <!-- Performance Metrics -->
+
+          <!-- Navigation -->
+          <div class="project-navigation mt-5 pt-4 border-top">
+            <div class="row">
+              <div class="col-6">
+                <a href="/projects.html" class="btn btn-outline-secondary">
+                  <i class="fas fa-arrow-left me-2"></i>Back to Projects
+                </a>
+              </div>
+              <div class="col-6 text-end">
+                <a href="/contact.html" class="btn btn-primary">
+                  Discuss This Project<i class="fas fa-arrow-right ms-2"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+  </main>
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h4 class="footer-heading">Bader Abdulrahim</h4>
+        <p>Transforming data into insights and creating innovative automation solutions to make businesses more efficient and homes smarter.</p>
+        <div class="social-icons">
+          <a href="https://linkedin.com/in/bader-abdulrahim/" class="social-icon" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/bader1919" class="social-icon" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://instagram.com/bader1919" class="social-icon" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://facebook.com/bader1919" class="social-icon" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="mailto:bader.abdulrahim@gmail.com" class="social-icon" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4 mb-md-0">
+        <h4 class="footer-heading">Quick Links</h4>
+        <a href="/" class="footer-link">Home</a>
+        <a href="/about.html" class="footer-link">About</a>
+        <a href="/projects.html" class="footer-link">Projects</a>
+        <a href="/contact.html" class="footer-link">Contact</a>
+      </div>
+      <div class="col-md-3 mb-4 mb-md-0">
+        <h4 class="footer-heading">Services</h4>
+        <a href="/about.html#data-analytics" class="footer-link">Data Analytics</a>
+        <a href="/about.html#smart-home" class="footer-link">Smart Home Automation</a>
+        <a href="/about.html#business-intelligence" class="footer-link">Business Intelligence</a>
+        <a href="/about.html#tech-solutions" class="footer-link">Custom Tech Solutions</a>
+      </div>
+      <div class="col-md-2">
+        <h4 class="footer-heading">Contact</h4>
+        <p class="mb-1">Manama, Bahrain</p>
+        <p class="mb-1">bader.abdulrahim@gmail.com</p>
+        <p>+973 36888858</p>
+      </div>
+    </div>
+    <div class="text-center footer-bottom">
+      <p class="mb-0">&copy; <span id="current-year"></span> Bader Abdulrahim. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+<script>
+  document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Custom JS -->
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/components.js"></script>
+  
+</body>
+</html>
